@@ -7,39 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF2CD2CD19E66E1F0038D73D /* BBAltcoin_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CD2CC19E66E1F0038D73D /* BBAltcoin_iOSTests.m */; };
-		FFD8915919E6898100F1FB61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD8914F19E6898100F1FB61 /* AppDelegate.m */; };
-		FFD8915A19E6898100F1FB61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD8915019E6898100F1FB61 /* LaunchScreen.xib */; };
-		FFD8915B19E6898100F1FB61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD8915219E6898100F1FB61 /* Main.storyboard */; };
-		FFD8915C19E6898100F1FB61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD8915419E6898100F1FB61 /* Images.xcassets */; };
-		FFD8915E19E6898100F1FB61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD8915619E6898100F1FB61 /* main.m */; };
-		FFD8916719E689D300F1FB61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD8916619E689D300F1FB61 /* ViewController.m */; };
+		B0E29119238B25A095208299 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B18DE758AD0F33FDFBB4205 /* libPods.a */; };
+		FFDA036A19FE321C0073B970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA035319FE321C0073B970 /* AppDelegate.m */; };
+		FFDA036D19FE321C0073B970 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDA035819FE321C0073B970 /* Images.xcassets */; };
+		FFDA036F19FE321C0073B970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA035A19FE321C0073B970 /* main.m */; };
+		FFDA038019FE356C0073B970 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA037919FE356C0073B970 /* Coin.m */; };
+		FFDA038119FE356C0073B970 /* CoinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA037B19FE356C0073B970 /* CoinCell.m */; };
+		FFDA038219FE356C0073B970 /* CoinModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFDA037C19FE356C0073B970 /* CoinModel.xcdatamodeld */; };
+		FFDA038319FE356C0073B970 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA037F19FE356C0073B970 /* ViewController.m */; };
+		FFDA038619FE370F0073B970 /* coins.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDA038519FE370F0073B970 /* coins.json */; };
+		FFDA038A19FE65120073B970 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA038919FE65120073B970 /* DataCenter.m */; };
+		FFEE1CE819FA42E500BD45C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEE1CE719FA42E500BD45C9 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FF2CD2C719E66E1F0038D73D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FF2CD2A519E66E1F0038D73D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FF2CD2AC19E66E1F0038D73D;
-			remoteInfo = "BBAltcoin-iOS";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		FF2CD2AD19E66E1F0038D73D /* BBAltcoin-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBAltcoin-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF2CD2C619E66E1F0038D73D /* BBAltcoin-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BBAltcoin-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF2CD2CB19E66E1F0038D73D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF2CD2CC19E66E1F0038D73D /* BBAltcoin_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAltcoin_iOSTests.m; sourceTree = "<group>"; };
-		FFD8914E19E6898100F1FB61 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FFD8914F19E6898100F1FB61 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FFD8915119E6898100F1FB61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FFD8915319E6898100F1FB61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FFD8915419E6898100F1FB61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FFD8915519E6898100F1FB61 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFD8915619E6898100F1FB61 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FFD8916519E689D300F1FB61 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FFD8916619E689D300F1FB61 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		224119CF7F6F2872CEAD1885 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6B18DE758AD0F33FDFBB4205 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5CB93DFDF84F0137C795EE9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FFDA035219FE321C0073B970 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FFDA035319FE321C0073B970 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FFDA035519FE321C0073B970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FFDA035719FE321C0073B970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFDA035819FE321C0073B970 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FFDA035919FE321C0073B970 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDA035A19FE321C0073B970 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FFDA037619FE34D90073B970 /* BBAltcoin-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBAltcoin-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDA037819FE356C0073B970 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
+		FFDA037919FE356C0073B970 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
+		FFDA037A19FE356C0073B970 /* CoinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinCell.h; sourceTree = "<group>"; };
+		FFDA037B19FE356C0073B970 /* CoinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinCell.m; sourceTree = "<group>"; };
+		FFDA037D19FE356C0073B970 /* CoinModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinModel.xcdatamodel; sourceTree = "<group>"; };
+		FFDA037E19FE356C0073B970 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FFDA037F19FE356C0073B970 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FFDA038519FE370F0073B970 /* coins.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coins.json; sourceTree = "<group>"; };
+		FFDA038819FE65120073B970 /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
+		FFDA038919FE65120073B970 /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
+		FFDA038B19FE7B940073B970 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		FFEE1CE719FA42E500BD45C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,108 +51,113 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF2CD2C319E66E1F0038D73D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				FFEE1CE819FA42E500BD45C9 /* CoreData.framework in Frameworks */,
+				B0E29119238B25A095208299 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E192573C65FADCAACD2A14AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB93DFDF84F0137C795EE9 /* Pods.debug.xcconfig */,
+				224119CF7F6F2872CEAD1885 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ECC39A0B9A4E822A00F72183 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFEE1CE719FA42E500BD45C9 /* CoreData.framework */,
+				6B18DE758AD0F33FDFBB4205 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF2CD2A419E66E1F0038D73D = {
 			isa = PBXGroup;
 			children = (
-				FFD8916019E6899600F1FB61 /* Macro */,
-				FFD8916119E6899600F1FB61 /* Main */,
-				FFD8916219E6899600F1FB61 /* Resource */,
-				FFD8916419E6899600F1FB61 /* Vendor */,
-				FFD8914D19E6898100F1FB61 /* App */,
-				FF2CD2C919E66E1F0038D73D /* BBAltcoin-iOSTests */,
-				FF2CD2AE19E66E1F0038D73D /* Products */,
+				FFDA035019FE321C0073B970 /* BBAltcoin */,
+				E192573C65FADCAACD2A14AA /* Pods */,
+				ECC39A0B9A4E822A00F72183 /* Frameworks */,
+				FFDA037619FE34D90073B970 /* BBAltcoin-iOS.app */,
 			);
 			sourceTree = "<group>";
 		};
-		FF2CD2AE19E66E1F0038D73D /* Products */ = {
+		FFDA035019FE321C0073B970 /* BBAltcoin */ = {
 			isa = PBXGroup;
 			children = (
-				FF2CD2AD19E66E1F0038D73D /* BBAltcoin-iOS.app */,
-				FF2CD2C619E66E1F0038D73D /* BBAltcoin-iOSTests.xctest */,
+				FFDA037719FE356C0073B970 /* Classes */,
+				FFDA035119FE321C0073B970 /* App */,
+				FFDA035E19FE321C0073B970 /* Macro */,
+				FFDA036819FE321C0073B970 /* Resource */,
 			);
-			name = Products;
+			path = BBAltcoin;
 			sourceTree = "<group>";
 		};
-		FF2CD2C919E66E1F0038D73D /* BBAltcoin-iOSTests */ = {
+		FFDA035119FE321C0073B970 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FF2CD2CC19E66E1F0038D73D /* BBAltcoin_iOSTests.m */,
-				FF2CD2CA19E66E1F0038D73D /* Supporting Files */,
-			);
-			path = "BBAltcoin-iOSTests";
-			sourceTree = "<group>";
-		};
-		FF2CD2CA19E66E1F0038D73D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FF2CD2CB19E66E1F0038D73D /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FFD8914D19E6898100F1FB61 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				FFD8914E19E6898100F1FB61 /* AppDelegate.h */,
-				FFD8914F19E6898100F1FB61 /* AppDelegate.m */,
-				FFD8915019E6898100F1FB61 /* LaunchScreen.xib */,
-				FFD8915219E6898100F1FB61 /* Main.storyboard */,
-				FFD8915419E6898100F1FB61 /* Images.xcassets */,
-				FFD8915519E6898100F1FB61 /* Info.plist */,
-				FFD8915619E6898100F1FB61 /* main.m */,
+				FFDA035219FE321C0073B970 /* AppDelegate.h */,
+				FFDA035319FE321C0073B970 /* AppDelegate.m */,
+				FFDA035419FE321C0073B970 /* LaunchScreen.xib */,
+				FFDA035619FE321C0073B970 /* Main.storyboard */,
+				FFDA035819FE321C0073B970 /* Images.xcassets */,
+				FFDA035919FE321C0073B970 /* Info.plist */,
+				FFDA035A19FE321C0073B970 /* main.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
 		};
-		FFD8916019E6899600F1FB61 /* Macro */ = {
+		FFDA035E19FE321C0073B970 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
+				FFDA038B19FE7B940073B970 /* Macro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
 		};
-		FFD8916119E6899600F1FB61 /* Main */ = {
+		FFDA036819FE321C0073B970 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				FFD8916519E689D300F1FB61 /* ViewController.h */,
-				FFD8916619E689D300F1FB61 /* ViewController.m */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		FFD8916219E6899600F1FB61 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				FFD8916319E6899600F1FB61 /* Image */,
+				FFDA038419FE370F0073B970 /* Asset */,
+				FFDA036919FE321C0073B970 /* Image */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		FFD8916319E6899600F1FB61 /* Image */ = {
+		FFDA036919FE321C0073B970 /* Image */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Image;
 			sourceTree = "<group>";
 		};
-		FFD8916419E6899600F1FB61 /* Vendor */ = {
+		FFDA037719FE356C0073B970 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FFDA037819FE356C0073B970 /* Coin.h */,
+				FFDA037919FE356C0073B970 /* Coin.m */,
+				FFDA037A19FE356C0073B970 /* CoinCell.h */,
+				FFDA037B19FE356C0073B970 /* CoinCell.m */,
+				FFDA037C19FE356C0073B970 /* CoinModel.xcdatamodeld */,
+				FFDA037E19FE356C0073B970 /* ViewController.h */,
+				FFDA037F19FE356C0073B970 /* ViewController.m */,
+				FFDA038819FE65120073B970 /* DataCenter.h */,
+				FFDA038919FE65120073B970 /* DataCenter.m */,
 			);
-			path = Vendor;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FFDA038419FE370F0073B970 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				FFDA038519FE370F0073B970 /* coins.json */,
+			);
+			path = Asset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF2CD2D019E66E1F0038D73D /* Build configuration list for PBXNativeTarget "BBAltcoin-iOS" */;
 			buildPhases = (
+				5752AD3536E3B38586124C8D /* Check Pods Manifest.lock */,
 				FF2CD2A919E66E1F0038D73D /* Sources */,
 				FF2CD2AA19E66E1F0038D73D /* Frameworks */,
 				FF2CD2AB19E66E1F0038D73D /* Resources */,
+				CA4C6101D8ECCBFC21532A6A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,26 +179,8 @@
 			);
 			name = "BBAltcoin-iOS";
 			productName = "BBAltcoin-iOS";
-			productReference = FF2CD2AD19E66E1F0038D73D /* BBAltcoin-iOS.app */;
+			productReference = FFDA037619FE34D90073B970 /* BBAltcoin-iOS.app */;
 			productType = "com.apple.product-type.application";
-		};
-		FF2CD2C519E66E1F0038D73D /* BBAltcoin-iOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FF2CD2D319E66E1F0038D73D /* Build configuration list for PBXNativeTarget "BBAltcoin-iOSTests" */;
-			buildPhases = (
-				FF2CD2C219E66E1F0038D73D /* Sources */,
-				FF2CD2C319E66E1F0038D73D /* Frameworks */,
-				FF2CD2C419E66E1F0038D73D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FF2CD2C819E66E1F0038D73D /* PBXTargetDependency */,
-			);
-			name = "BBAltcoin-iOSTests";
-			productName = "BBAltcoin-iOSTests";
-			productReference = FF2CD2C619E66E1F0038D73D /* BBAltcoin-iOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -201,10 +194,6 @@
 					FF2CD2AC19E66E1F0038D73D = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
-					FF2CD2C519E66E1F0038D73D = {
-						CreatedOnToolsVersion = 6.0.1;
-						TestTargetID = FF2CD2AC19E66E1F0038D73D;
-					};
 				};
 			};
 			buildConfigurationList = FF2CD2A819E66E1F0038D73D /* Build configuration list for PBXProject "BBAltcoin-iOS" */;
@@ -216,12 +205,11 @@
 				Base,
 			);
 			mainGroup = FF2CD2A419E66E1F0038D73D;
-			productRefGroup = FF2CD2AE19E66E1F0038D73D /* Products */;
+			productRefGroup = FF2CD2A419E66E1F0038D73D;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FF2CD2AC19E66E1F0038D73D /* BBAltcoin-iOS */,
-				FF2CD2C519E66E1F0038D73D /* BBAltcoin-iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,63 +219,76 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFD8915C19E6898100F1FB61 /* Images.xcassets in Resources */,
-				FFD8915A19E6898100F1FB61 /* LaunchScreen.xib in Resources */,
-				FFD8915B19E6898100F1FB61 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF2CD2C419E66E1F0038D73D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				FFDA038619FE370F0073B970 /* coins.json in Resources */,
+				FFDA036D19FE321C0073B970 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5752AD3536E3B38586124C8D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CA4C6101D8ECCBFC21532A6A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF2CD2A919E66E1F0038D73D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFD8916719E689D300F1FB61 /* ViewController.m in Sources */,
-				FFD8915E19E6898100F1FB61 /* main.m in Sources */,
-				FFD8915919E6898100F1FB61 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF2CD2C219E66E1F0038D73D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF2CD2CD19E66E1F0038D73D /* BBAltcoin_iOSTests.m in Sources */,
+				FFDA038319FE356C0073B970 /* ViewController.m in Sources */,
+				FFDA036F19FE321C0073B970 /* main.m in Sources */,
+				FFDA038219FE356C0073B970 /* CoinModel.xcdatamodeld in Sources */,
+				FFDA036A19FE321C0073B970 /* AppDelegate.m in Sources */,
+				FFDA038A19FE65120073B970 /* DataCenter.m in Sources */,
+				FFDA038119FE356C0073B970 /* CoinCell.m in Sources */,
+				FFDA038019FE356C0073B970 /* Coin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		FF2CD2C819E66E1F0038D73D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FF2CD2AC19E66E1F0038D73D /* BBAltcoin-iOS */;
-			targetProxy = FF2CD2C719E66E1F0038D73D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		FFD8915019E6898100F1FB61 /* LaunchScreen.xib */ = {
+		FFDA035419FE321C0073B970 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FFD8915119E6898100F1FB61 /* Base */,
+				FFDA035519FE321C0073B970 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		FFD8915219E6898100F1FB61 /* Main.storyboard */ = {
+		FFDA035619FE321C0073B970 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FFD8915319E6898100F1FB61 /* Base */,
+				FFDA035719FE321C0073B970 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -373,9 +374,10 @@
 		};
 		FF2CD2D119E66E1F0038D73D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5CB93DFDF84F0137C795EE9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BBAltcoin/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,46 +386,13 @@
 		};
 		FF2CD2D219E66E1F0038D73D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 224119CF7F6F2872CEAD1885 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BBAltcoin/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		FF2CD2D419E66E1F0038D73D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BBAltcoin-iOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBAltcoin-iOS.app/BBAltcoin-iOS";
-			};
-			name = Debug;
-		};
-		FF2CD2D519E66E1F0038D73D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BBAltcoin-iOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBAltcoin-iOS.app/BBAltcoin-iOS";
 			};
 			name = Release;
 		};
@@ -448,16 +417,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF2CD2D319E66E1F0038D73D /* Build configuration list for PBXNativeTarget "BBAltcoin-iOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FF2CD2D419E66E1F0038D73D /* Debug */,
-				FF2CD2D519E66E1F0038D73D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FFDA037C19FE356C0073B970 /* CoinModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FFDA037D19FE356C0073B970 /* CoinModel.xcdatamodel */,
+			);
+			currentVersion = FFDA037D19FE356C0073B970 /* CoinModel.xcdatamodel */;
+			path = CoinModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FF2CD2A519E66E1F0038D73D /* Project object */;
 }
