@@ -32,6 +32,12 @@ DataCenter* dataCenter;
         NSLog(@"%@",[c toString]);
     }
 }
+-(NSString*) coinAbbrOfID:(int)coinID{
+    return [[self.coins objectAtIndex:coinID] name];
+}
+-(NSString*) coinNameOfID:(int)coinID{
+    return [[self.coins objectAtIndex:coinID] name_zh];
+}
 
 +(void) firstLaunchAction {
     NSManagedObjectContext* context = [AppDelegate managedObjectContext];

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CoinCell.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    CoinCell* cell = [[CoinCell alloc] initWithFrame:self.view.frame andCoin:0];
+    [self.view addSubview:cell];
 }
 
 - (void)didReceiveMemoryWarning {

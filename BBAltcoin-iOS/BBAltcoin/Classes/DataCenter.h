@@ -15,4 +15,7 @@
 
 +(DataCenter*) sharedInstance;
 +(void) firstLaunchAction;
+
+-(NSString*) coinNameOfID:(int)coinID;
+-(NSString*) coinAbbrOfID:(int)coinID;
 @end

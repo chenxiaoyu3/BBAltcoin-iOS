@@ -24,7 +24,11 @@
     [self judgeFirstLaunch];
     [DataCenter sharedInstance];
     self.mainViewController = [[ViewController alloc] init];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.mainViewController;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

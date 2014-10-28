@@ -27,7 +27,6 @@
 		FFDA035219FE321C0073B970 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FFDA035319FE321C0073B970 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FFDA035519FE321C0073B970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FFDA035719FE321C0073B970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFDA035819FE321C0073B970 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FFDA035919FE321C0073B970 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFDA035A19FE321C0073B970 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,7 +103,6 @@
 				FFDA035219FE321C0073B970 /* AppDelegate.h */,
 				FFDA035319FE321C0073B970 /* AppDelegate.m */,
 				FFDA035419FE321C0073B970 /* LaunchScreen.xib */,
-				FFDA035619FE321C0073B970 /* Main.storyboard */,
 				FFDA035819FE321C0073B970 /* Images.xcassets */,
 				FFDA035919FE321C0073B970 /* Info.plist */,
 				FFDA035A19FE321C0073B970 /* main.m */,
@@ -283,14 +281,6 @@
 				FFDA035519FE321C0073B970 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		FFDA035619FE321C0073B970 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FFDA035719FE321C0073B970 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
