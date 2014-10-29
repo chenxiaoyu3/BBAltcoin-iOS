@@ -17,6 +17,15 @@
 		FFDA038319FE356C0073B970 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA037F19FE356C0073B970 /* ViewController.m */; };
 		FFDA038619FE370F0073B970 /* coins.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDA038519FE370F0073B970 /* coins.json */; };
 		FFDA038A19FE65120073B970 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA038919FE65120073B970 /* DataCenter.m */; };
+		FFDDA6CE1A015907006C1217 /* triangle_down.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDDA6CB1A015907006C1217 /* triangle_down.png */; };
+		FFDDA6CF1A015907006C1217 /* triangle_m.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDDA6CC1A015907006C1217 /* triangle_m.png */; };
+		FFDDA6D01A015907006C1217 /* triangle_up.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDDA6CD1A015907006C1217 /* triangle_up.png */; };
+		FFDE33AA1A00ADB700EFBA5F /* str.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33AC1A00ADB700EFBA5F /* str.strings */; };
+		FFDE33B51A00B20E00EFBA5F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B31A00B20E00EFBA5F /* Info.plist */; };
+		FFDE33B61A00B20E00EFBA5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B41A00B20E00EFBA5F /* LaunchScreen.xib */; };
+		FFDE33B91A00D5DB00EFBA5F /* bg_main_4.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B71A00D5DB00EFBA5F /* bg_main_4.png */; };
+		FFDE33BA1A00D5DB00EFBA5F /* bg_main_5.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B81A00D5DB00EFBA5F /* bg_main_5.png */; };
+		FFDE33BD1A00D7A800EFBA5F /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDE33BC1A00D7A800EFBA5F /* Utils.m */; };
 		FFEE1CE819FA42E500BD45C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEE1CE719FA42E500BD45C9 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +35,7 @@
 		A5CB93DFDF84F0137C795EE9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FFDA035219FE321C0073B970 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FFDA035319FE321C0073B970 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FFDA035519FE321C0073B970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FFDA035819FE321C0073B970 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FFDA035919FE321C0073B970 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFDA035A19FE321C0073B970 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FFDA037619FE34D90073B970 /* BBAltcoin-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBAltcoin-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDA037819FE356C0073B970 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
@@ -42,6 +49,17 @@
 		FFDA038819FE65120073B970 /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
 		FFDA038919FE65120073B970 /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
 		FFDA038B19FE7B940073B970 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		FFDDA6CB1A015907006C1217 /* triangle_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_down.png; sourceTree = "<group>"; };
+		FFDDA6CC1A015907006C1217 /* triangle_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_m.png; sourceTree = "<group>"; };
+		FFDDA6CD1A015907006C1217 /* triangle_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_up.png; sourceTree = "<group>"; };
+		FFDE33AB1A00ADB700EFBA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/str.strings; sourceTree = "<group>"; };
+		FFDE33AF1A00AE7B00EFBA5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/str.strings"; sourceTree = "<group>"; };
+		FFDE33B31A00B20E00EFBA5F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDE33B41A00B20E00EFBA5F /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		FFDE33B71A00D5DB00EFBA5F /* bg_main_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_main_4.png; sourceTree = "<group>"; };
+		FFDE33B81A00D5DB00EFBA5F /* bg_main_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_main_5.png; sourceTree = "<group>"; };
+		FFDE33BB1A00D7A800EFBA5F /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		FFDE33BC1A00D7A800EFBA5F /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		FFEE1CE719FA42E500BD45C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -100,11 +118,11 @@
 		FFDA035119FE321C0073B970 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FFDE33B31A00B20E00EFBA5F /* Info.plist */,
+				FFDE33B41A00B20E00EFBA5F /* LaunchScreen.xib */,
 				FFDA035219FE321C0073B970 /* AppDelegate.h */,
 				FFDA035319FE321C0073B970 /* AppDelegate.m */,
-				FFDA035419FE321C0073B970 /* LaunchScreen.xib */,
 				FFDA035819FE321C0073B970 /* Images.xcassets */,
-				FFDA035919FE321C0073B970 /* Info.plist */,
 				FFDA035A19FE321C0073B970 /* main.m */,
 			);
 			path = App;
@@ -121,6 +139,7 @@
 		FFDA036819FE321C0073B970 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FFDE33A71A00AD5A00EFBA5F /* Localization */,
 				FFDA038419FE370F0073B970 /* Asset */,
 				FFDA036919FE321C0073B970 /* Image */,
 			);
@@ -130,6 +149,11 @@
 		FFDA036919FE321C0073B970 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				FFDDA6CB1A015907006C1217 /* triangle_down.png */,
+				FFDDA6CC1A015907006C1217 /* triangle_m.png */,
+				FFDDA6CD1A015907006C1217 /* triangle_up.png */,
+				FFDE33B71A00D5DB00EFBA5F /* bg_main_4.png */,
+				FFDE33B81A00D5DB00EFBA5F /* bg_main_5.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -146,6 +170,8 @@
 				FFDA037F19FE356C0073B970 /* ViewController.m */,
 				FFDA038819FE65120073B970 /* DataCenter.h */,
 				FFDA038919FE65120073B970 /* DataCenter.m */,
+				FFDE33BB1A00D7A800EFBA5F /* Utils.h */,
+				FFDE33BC1A00D7A800EFBA5F /* Utils.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -156,6 +182,14 @@
 				FFDA038519FE370F0073B970 /* coins.json */,
 			);
 			path = Asset;
+			sourceTree = "<group>";
+		};
+		FFDE33A71A00AD5A00EFBA5F /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE33AC1A00ADB700EFBA5F /* str.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +235,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = FF2CD2A419E66E1F0038D73D;
 			productRefGroup = FF2CD2A419E66E1F0038D73D;
@@ -217,6 +252,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDE33BA1A00D5DB00EFBA5F /* bg_main_5.png in Resources */,
+				FFDDA6CF1A015907006C1217 /* triangle_m.png in Resources */,
+				FFDDA6CE1A015907006C1217 /* triangle_down.png in Resources */,
+				FFDE33B91A00D5DB00EFBA5F /* bg_main_4.png in Resources */,
+				FFDDA6D01A015907006C1217 /* triangle_up.png in Resources */,
+				FFDE33B61A00B20E00EFBA5F /* LaunchScreen.xib in Resources */,
+				FFDE33B51A00B20E00EFBA5F /* Info.plist in Resources */,
+				FFDE33AA1A00ADB700EFBA5F /* str.strings in Resources */,
 				FFDA038619FE370F0073B970 /* coins.json in Resources */,
 				FFDA036D19FE321C0073B970 /* Images.xcassets in Resources */,
 			);
@@ -265,6 +308,7 @@
 				FFDA038319FE356C0073B970 /* ViewController.m in Sources */,
 				FFDA036F19FE321C0073B970 /* main.m in Sources */,
 				FFDA038219FE356C0073B970 /* CoinModel.xcdatamodeld in Sources */,
+				FFDE33BD1A00D7A800EFBA5F /* Utils.m in Sources */,
 				FFDA036A19FE321C0073B970 /* AppDelegate.m in Sources */,
 				FFDA038A19FE65120073B970 /* DataCenter.m in Sources */,
 				FFDA038119FE356C0073B970 /* CoinCell.m in Sources */,
@@ -275,12 +319,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FFDA035419FE321C0073B970 /* LaunchScreen.xib */ = {
+		FFDE33AC1A00ADB700EFBA5F /* str.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FFDA035519FE321C0073B970 /* Base */,
+				FFDE33AB1A00ADB700EFBA5F /* en */,
+				FFDE33AF1A00AE7B00EFBA5F /* zh-Hans */,
 			);
-			name = LaunchScreen.xib;
+			name = str.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

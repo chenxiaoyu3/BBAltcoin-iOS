@@ -11,39 +11,46 @@
 
 @implementation CoinCell
 
-- (id)initWithFrame:(CGRect)frame andCoin:(int)coinID
+
+- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.coinID = coinID;
         
-        self.abbrLabel = [[UILabel alloc] init];
-        self.abbrLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-        self.abbrLabel.text = [[DataCenter sharedInstance] coinAbbrOfID:coinID];
-        self.abbrLabel.textColor = [UIColor whiteColor];
-        self.nameLabel = [[UILabel alloc] init];
-        self.nameLabel.text = [[DataCenter sharedInstance] coinNameOfID:coinID];
+        int parWidth = frame.size.width;
+        int parHeight = frame.size.height;
+        int curY = 4;
+        self.backgroundColor = [UIColor colorWithWhite:255 alpha:0.3];
+        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, curY, parWidth, parHeight*0.2)];
         self.nameLabel.textColor = [UIColor whiteColor];
+        self.nameLabel.textAlignment = NSTextAlignmentCenter;
+        self.nameLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+//        self.nameLabel.backgroundColor = [UIColor yellowColor];
         
-        self.priceLabel = [[UILabel alloc] init];
-        self.priceLabel.text = @"-.---";
+        curY += parHeight*0.2 + 4;
+        self.priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, curY, parWidth, parHeight*0.4)];
+        self.priceLabel.text = @"122.32";
+        self.priceLabel.textAlignment = NSTextAlignmentCenter;
         self.priceLabel.textColor = [UIColor whiteColor];
-        [self.abbrLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.nameLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.priceLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self addSubview:self.abbrLabel];
+//        self.priceLabel.backgroundColor = [UIColor yellowColor];
+        curY += parHeight * 0.4 + 4;
+        self.increaseLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, curY, parWidth, parHeight*0.2)];
+        self.increaseLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+        self.increaseLabel.textColor = [UIColor whiteColor];
+        
+
+        [self addSubview:self.increaseLabel];
         [self addSubview:self.nameLabel];
         [self addSubview:self.priceLabel];
         
-        
-        NSDictionary* views = NSDictionaryOfVariableBindings(_abbrLabel, _nameLabel, _priceLabel);
-        [self addConstraints:
-         [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[_abbrLabel]-10-|" options:0 metrics:nil views:views]];
-        [self addConstraints:
-         [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_abbrLabel]-[_nameLabel]-[_priceLabel]" options:0 metrics:nil views:views]];
-        
     }
     return self;
+}
+
+-(void) setCoinID:(int)coinID{
+    _coinID = coinID;
+    self.nameLabel.text = [[DataCenter sharedInstance] coinNameOfID:coinID];
+    self.increaseLabel.text = [[DataCenter sharedInstance] coinAbbrOfID:coinID];
 }
 
 
