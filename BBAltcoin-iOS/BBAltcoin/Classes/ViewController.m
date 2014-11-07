@@ -11,9 +11,9 @@
 #import "DataCenter.h"
 #import "Macro.h"
 #import "Utils.h"
-
+#import "Masonry.h"
 @interface ViewController ()
-
+@property NSUInteger cellNumEachRow;
 @end
 
 @implementation ViewController
@@ -21,39 +21,118 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        self.cellNumEachRow = CELL_EACH_ROW_POR;
+    }else{
+        self.cellNumEachRow = CELL_EACH_ROW_LAND;
+    }
     [self.navigationController setNavigationBarHidden:NO];
     self.navigationController.navigationBar.translucent = false;
 
     self.title = NSLocalizedString(@"BBCoin", nil);
     UIImageView* imageView =
-    [[UIImageView alloc] initWithImage:[Utils imageWithImage:[UIImage imageNamed:@"bg_main_5.png"] scaledToSize:self.view.frame.size]];
+    [[UIImageView alloc] initWithImage:[Utils imageWithImage:[UIImage imageNamed:@"bg_main_5"] scaledToSize:self.view.frame.size]];
     ;
     CGRect allCoinViewFrame = self.view.frame;
     allCoinViewFrame.origin.y = self.navigationController.navigationBar.frame.size.height;
-    self.allCoinView = [[UIView alloc] initWithFrame:allCoinViewFrame];
-    int lrMargin = 15, cellLMargin = 10, cellTopMargin = 10;
-    int cellWidth = ((SCREEN_WIDTH - lrMargin*2) - cellLMargin* 2 * 4 ) / 4;
-    int cellHeight = cellWidth / 1;
+
+    self.coinCellsContainer = [[UIView alloc] init];
+    self.coinCellsContainer.translatesAutoresizingMaskIntoConstraints = NO;
+    self.coinCellsContainer.backgroundColor = [UIColor grayColor];
+
+    [self.view addSubview:imageView];
+    [self.view addSubview:self.coinCellsContainer];
     
+    
+    [self setupLayout];
+
+}
+
+- (void) setupLayout{
+    _coinCells = [[NSMutableArray alloc] initWithCapacity:[DataCenter center].coinNum];
+    for (int i = 0; i < [DataCenter center].coinNum; ++i) {
+        CoinCell * cell = [[CoinCell alloc] init];
+        [cell setCoinID:i];
+        [self.coinCells addObject:cell];
+        [self.coinCellsContainer addSubview:cell];
+    }
+    [self updateConstraints];
+}
+
+- (void)updateConstraints{
+    MASAttachKeys(self.coinCellsContainer);
     int curRow = -1, curCol = 0;
-    for (int iCoin = 0; iCoin < [[[DataCenter sharedInstance] coins] count]; ++iCoin) {
-        if(iCoin % 4 == 0){
+
+    CoinCell* lastCell = nil;
+    CoinCell* lastFloorCell = nil;
+    int hMargin = 4, vMargin = 4;
+    for (int i = 0; i < self.coinCells.count; ++i) {
+        if (i % self.cellNumEachRow == 0) {
             curRow++;
             curCol = 0;
+            if (i != 0) {
+                lastFloorCell = self.coinCells[i-1];
+            }
         }else{
             curCol++;
         }
+
+        ((UIView*)_coinCells[i]).mas_key = [NSString stringWithFormat:@"coinCells[%d,%@]", i, [[DataCenter center] coinAbbrOfID:i ]];
         
-        int begX = lrMargin + curCol * (cellLMargin*2 + cellWidth);
-        int begY = curRow * (cellHeight+cellTopMargin);
-        CoinCell * cell = [[CoinCell alloc] initWithFrame:CGRectMake(begX, begY, cellWidth, cellHeight)];
-        cell.coinID = iCoin;
-        [self.allCoinView addSubview:cell];
+         _constraintsArray = [_coinCells[i] mas_remakeConstraints:^(MASConstraintMaker *make) {
+            if (curCol == 0) {
+                make.left.equalTo(self.coinCellsContainer.mas_left);
+                if (i < [DataCenter center].coinNum - 1 ) {
+                    make.right.equalTo(((UIView*)self.coinCells[i+1]).mas_left).offset(-hMargin);
+                }
+            }else{
+                make.left.equalTo(((UIView*)self.coinCells[i-1]).mas_right).with.offset(hMargin);
+                if( (curCol + 1) % self.cellNumEachRow == 0 ){
+                    make.right.equalTo(self.coinCellsContainer.mas_right);
+                }else{
+                    if (i + 1 < [DataCenter center].coinNum ) {
+                        make.right.equalTo(((UIView*)self.coinCells[i+1]).mas_left).offset(-hMargin);
+                    }
+                }
+            }
+            if (curRow == 0){
+                make.top.equalTo(self.view.mas_top).offset(vMargin);
+            }else{
+                make.top.equalTo(lastFloorCell.mas_bottom).offset(vMargin);
+            }
+            make.width.equalTo(self.coinCells);
+        }];
+
+        
+        lastCell = self.coinCells[i];
         
     }
-    [self.view addSubview:imageView];
-    [self.view addSubview:self.allCoinView];
+//    UIEdgeInsets margin = UIEdgeInsetsMake(8, 8, 8, 8);
+    [self.coinCellsContainer mas_remakeConstraints:^(MASConstraintMaker *make){
+        make.left.equalTo(self.view.mas_left).offset(8);
+        make.right.equalTo(self.view.mas_right).offset(-8);
+        make.top.equalTo(self.view.mas_top);
+        //        make.bottom.le(self.view.mas_bottom);
+    }];
 
+}
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
+        self.cellNumEachRow = CELL_EACH_ROW_POR;
+    }else{
+        self.cellNumEachRow = CELL_EACH_ROW_LAND;
+    }
+}
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    // TODO: Warings!
+    // There would be lots warnings if these constraints hadn't been removed before new constraints added
+    // I don't know how to resolve it.
+    for (CoinCell* cell in self.coinCells)
+        for (MASConstraint *constraint in [MASViewConstraint installedConstraintsForView:cell]) {
+            [constraint uninstall];
+        }
+    [self updateConstraints];
+   
 }
 
 - (void)didReceiveMemoryWarning {

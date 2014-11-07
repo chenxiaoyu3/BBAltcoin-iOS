@@ -16,5 +16,8 @@
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
+#define CELL_EACH_ROW_POR 4
+#define CELL_EACH_ROW_LAND 6
 
+#define MAS_SHORTHAND  
 #endif

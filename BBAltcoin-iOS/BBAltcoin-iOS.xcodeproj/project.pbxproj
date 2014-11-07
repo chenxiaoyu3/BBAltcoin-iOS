@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B0E29119238B25A095208299 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B18DE758AD0F33FDFBB4205 /* libPods.a */; };
+		FF3290D71A06570200358D53 /* triangle_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3290D41A06570200358D53 /* triangle_down@2x.png */; };
+		FF3290D81A06570200358D53 /* triangle_m@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3290D51A06570200358D53 /* triangle_m@2x.png */; };
+		FF3290D91A06570200358D53 /* triangle_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3290D61A06570200358D53 /* triangle_up@2x.png */; };
 		FFDA036A19FE321C0073B970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA035319FE321C0073B970 /* AppDelegate.m */; };
 		FFDA036D19FE321C0073B970 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDA035819FE321C0073B970 /* Images.xcassets */; };
 		FFDA036F19FE321C0073B970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA035A19FE321C0073B970 /* main.m */; };
@@ -17,9 +20,6 @@
 		FFDA038319FE356C0073B970 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA037F19FE356C0073B970 /* ViewController.m */; };
 		FFDA038619FE370F0073B970 /* coins.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDA038519FE370F0073B970 /* coins.json */; };
 		FFDA038A19FE65120073B970 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA038919FE65120073B970 /* DataCenter.m */; };
-		FFDDA6CE1A015907006C1217 /* triangle_down.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDDA6CB1A015907006C1217 /* triangle_down.png */; };
-		FFDDA6CF1A015907006C1217 /* triangle_m.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDDA6CC1A015907006C1217 /* triangle_m.png */; };
-		FFDDA6D01A015907006C1217 /* triangle_up.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDDA6CD1A015907006C1217 /* triangle_up.png */; };
 		FFDE33AA1A00ADB700EFBA5F /* str.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33AC1A00ADB700EFBA5F /* str.strings */; };
 		FFDE33B51A00B20E00EFBA5F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B31A00B20E00EFBA5F /* Info.plist */; };
 		FFDE33B61A00B20E00EFBA5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B41A00B20E00EFBA5F /* LaunchScreen.xib */; };
@@ -33,6 +33,9 @@
 		224119CF7F6F2872CEAD1885 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6B18DE758AD0F33FDFBB4205 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CB93DFDF84F0137C795EE9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FF3290D41A06570200358D53 /* triangle_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triangle_down@2x.png"; sourceTree = "<group>"; };
+		FF3290D51A06570200358D53 /* triangle_m@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triangle_m@2x.png"; sourceTree = "<group>"; };
+		FF3290D61A06570200358D53 /* triangle_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triangle_up@2x.png"; sourceTree = "<group>"; };
 		FFDA035219FE321C0073B970 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FFDA035319FE321C0073B970 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FFDA035819FE321C0073B970 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -49,9 +52,6 @@
 		FFDA038819FE65120073B970 /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
 		FFDA038919FE65120073B970 /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
 		FFDA038B19FE7B940073B970 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
-		FFDDA6CB1A015907006C1217 /* triangle_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_down.png; sourceTree = "<group>"; };
-		FFDDA6CC1A015907006C1217 /* triangle_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_m.png; sourceTree = "<group>"; };
-		FFDDA6CD1A015907006C1217 /* triangle_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_up.png; sourceTree = "<group>"; };
 		FFDE33AB1A00ADB700EFBA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/str.strings; sourceTree = "<group>"; };
 		FFDE33AF1A00AE7B00EFBA5F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/str.strings"; sourceTree = "<group>"; };
 		FFDE33B31A00B20E00EFBA5F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +61,7 @@
 		FFDE33BB1A00D7A800EFBA5F /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		FFDE33BC1A00D7A800EFBA5F /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		FFEE1CE719FA42E500BD45C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FFFC08A91A0BA66C00479B36 /* BBAltcoin-iOS-pch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBAltcoin-iOS-pch.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				FFDA038B19FE7B940073B970 /* Macro.h */,
+				FFFC08A91A0BA66C00479B36 /* BBAltcoin-iOS-pch.pch */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -149,9 +151,9 @@
 		FFDA036919FE321C0073B970 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				FFDDA6CB1A015907006C1217 /* triangle_down.png */,
-				FFDDA6CC1A015907006C1217 /* triangle_m.png */,
-				FFDDA6CD1A015907006C1217 /* triangle_up.png */,
+				FF3290D41A06570200358D53 /* triangle_down@2x.png */,
+				FF3290D51A06570200358D53 /* triangle_m@2x.png */,
+				FF3290D61A06570200358D53 /* triangle_up@2x.png */,
 				FFDE33B71A00D5DB00EFBA5F /* bg_main_4.png */,
 				FFDE33B81A00D5DB00EFBA5F /* bg_main_5.png */,
 			);
@@ -253,15 +255,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFDE33BA1A00D5DB00EFBA5F /* bg_main_5.png in Resources */,
-				FFDDA6CF1A015907006C1217 /* triangle_m.png in Resources */,
-				FFDDA6CE1A015907006C1217 /* triangle_down.png in Resources */,
 				FFDE33B91A00D5DB00EFBA5F /* bg_main_4.png in Resources */,
-				FFDDA6D01A015907006C1217 /* triangle_up.png in Resources */,
 				FFDE33B61A00B20E00EFBA5F /* LaunchScreen.xib in Resources */,
 				FFDE33B51A00B20E00EFBA5F /* Info.plist in Resources */,
 				FFDE33AA1A00ADB700EFBA5F /* str.strings in Resources */,
+				FF3290D81A06570200358D53 /* triangle_m@2x.png in Resources */,
 				FFDA038619FE370F0073B970 /* coins.json in Resources */,
+				FF3290D71A06570200358D53 /* triangle_down@2x.png in Resources */,
 				FFDA036D19FE321C0073B970 /* Images.xcassets in Resources */,
+				FF3290D91A06570200358D53 /* triangle_up@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +356,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -394,6 +397,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -412,6 +416,7 @@
 			baseConfigurationReference = A5CB93DFDF84F0137C795EE9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/BBAltcoin/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -424,6 +429,7 @@
 			baseConfigurationReference = 224119CF7F6F2872CEAD1885 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/BBAltcoin/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    NSArray* _constraintsArray;
+}
 
-@property (nonatomic, strong) UIView* allCoinView;
+@property (nonatomic, strong) UIView* coinCellsContainer;
+@property (nonatomic, strong) NSMutableArray* coinCells;
 @end
 

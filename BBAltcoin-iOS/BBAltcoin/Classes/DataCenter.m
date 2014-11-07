@@ -31,6 +31,7 @@ DataCenter* dataCenter;
     for (Coin *c in self.coins) {
         NSLog(@"%@",[c toString]);
     }
+    self.coinNum = self.coins.count;
 }
 -(NSString*) coinAbbrOfID:(int)coinID{
     return [[self.coins objectAtIndex:coinID] name];
@@ -57,7 +58,7 @@ DataCenter* dataCenter;
    
 }
 
-+(DataCenter*) sharedInstance{
++(DataCenter*) center{
     if (!dataCenter) {
         dataCenter = [[DataCenter alloc] init];
     }

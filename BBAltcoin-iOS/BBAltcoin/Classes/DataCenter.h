@@ -11,9 +11,9 @@
 @interface DataCenter : NSObject
 
 @property (nonatomic, strong) NSArray* coins;
+@property (nonatomic) NSUInteger coinNum;
 
-
-+(DataCenter*) sharedInstance;
++(DataCenter*) center;
 +(void) firstLaunchAction;
 
 -(NSString*) coinNameOfID:(int)coinID;

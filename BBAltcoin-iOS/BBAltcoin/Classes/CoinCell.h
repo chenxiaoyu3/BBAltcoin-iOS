@@ -11,11 +11,14 @@
 
 @interface CoinCell : UIView
 
+
 @property (nonatomic) int coinID;
 @property (nonatomic, strong) UILabel *increaseLabel;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *priceLabel;
+@property (nonatomic, strong) UIImageView *triangleImageView;
 
++(UIImage*) triangleImageOfType:(int) type;
 
 @end
 
