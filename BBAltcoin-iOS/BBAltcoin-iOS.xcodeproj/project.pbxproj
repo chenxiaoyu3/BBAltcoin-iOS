@@ -21,7 +21,6 @@
 		FFDA038619FE370F0073B970 /* coins.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDA038519FE370F0073B970 /* coins.json */; };
 		FFDA038A19FE65120073B970 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA038919FE65120073B970 /* DataCenter.m */; };
 		FFDE33AA1A00ADB700EFBA5F /* str.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33AC1A00ADB700EFBA5F /* str.strings */; };
-		FFDE33B51A00B20E00EFBA5F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B31A00B20E00EFBA5F /* Info.plist */; };
 		FFDE33B61A00B20E00EFBA5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B41A00B20E00EFBA5F /* LaunchScreen.xib */; };
 		FFDE33B91A00D5DB00EFBA5F /* bg_main_4.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B71A00D5DB00EFBA5F /* bg_main_4.png */; };
 		FFDE33BA1A00D5DB00EFBA5F /* bg_main_5.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B81A00D5DB00EFBA5F /* bg_main_5.png */; };
@@ -222,7 +221,7 @@
 		FF2CD2A519E66E1F0038D73D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = ChenXiaoyu;
 				TargetAttributes = {
 					FF2CD2AC19E66E1F0038D73D = {
@@ -257,7 +256,6 @@
 				FFDE33BA1A00D5DB00EFBA5F /* bg_main_5.png in Resources */,
 				FFDE33B91A00D5DB00EFBA5F /* bg_main_4.png in Resources */,
 				FFDE33B61A00B20E00EFBA5F /* LaunchScreen.xib in Resources */,
-				FFDE33B51A00B20E00EFBA5F /* Info.plist in Resources */,
 				FFDE33AA1A00ADB700EFBA5F /* str.strings in Resources */,
 				FF3290D81A06570200358D53 /* triangle_m@2x.png in Resources */,
 				FFDA038619FE370F0073B970 /* coins.json in Resources */,

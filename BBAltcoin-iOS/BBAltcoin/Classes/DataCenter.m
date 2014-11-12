@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "DataCenter.h"
 #import "Macro.h"
+#import "AFNetworking.h"
 
 DataCenter* dataCenter;
+NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API/";
 @implementation DataCenter
 
 -(id) init{
     if(self = [super init]){
+        _delegates = [[NSMutableArray alloc] init];
         [self initData];
     }
     return self;
@@ -28,16 +31,57 @@ DataCenter* dataCenter;
     [fetchRequest setEntity:entity];
     NSError *error;
     self.coins = [context executeFetchRequest:fetchRequest error:&error];
+    
+    self.coinsDict = [[NSMutableDictionary alloc] init];
     for (Coin *c in self.coins) {
-        NSLog(@"%@",[c toString]);
+        self.coinsDict[c.name] = c;
     }
     self.coinNum = self.coins.count;
+    
 }
 -(NSString*) coinAbbrOfID:(int)coinID{
     return [[self.coins objectAtIndex:coinID] name];
 }
 -(NSString*) coinNameOfID:(int)coinID{
     return [[self.coins objectAtIndex:coinID] name_zh];
+}
+-(Coin *)coinOfID:(int)coinID{
+    return (Coin*)_coins[coinID];
+}
+
+
+- (void) requestPrice{
+    
+    NSMutableURLRequest* req = [[NSMutableURLRequest alloc] initWithURL:
+                                [NSURL URLWithString:[NSString stringWithFormat:@"%@/price/buy", SERVER_URL]]];
+    [req setValue:@"application/json" forHTTPHeaderField:@"accept"];
+    
+    AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary* prices = (NSDictionary*)responseObject;
+        [prices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            ((Coin*)self.coinsDict[key]).buyPrice = ((NSNumber*)obj).floatValue;
+        }];
+        for (id<DataCenterDelegate> observer in _delegates){
+            if ([observer respondsToSelector:@selector(priceRequestCompletedWithStatus:)]) {
+                [observer priceRequestCompletedWithStatus:0];
+            }
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Request price error %@", error);
+    }];
+    [[NSOperationQueue mainQueue] addOperation:op];
+    
+}
+
+-(void)addDataObserver:(id)delegate{
+    if( ![_delegates containsObject:delegate] ){
+        [_delegates addObject:delegate];
+    }
+}
+-(void)removeDataObserver:(id)delegate{
+    [_delegates removeObject:delegate];
 }
 
 +(void) firstLaunchAction {
@@ -53,7 +97,7 @@ DataCenter* dataCenter;
         c.name = [cur objectForKey:@"en"];
         c.name_zh = [cur objectForKey:@"zh"];
         NSLog(@"%@",[c toString]);
-         [context save:&err];
+        [context save:&err];
     }
    
 }

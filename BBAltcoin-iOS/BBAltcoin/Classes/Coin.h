@@ -16,5 +16,8 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * name_zh;
 
+@property (atomic) float buyPrice;
+@property (atomic) float cellPrice;
+
 -(NSString*) toString;
 @end

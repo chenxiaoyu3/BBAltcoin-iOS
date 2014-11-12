@@ -13,45 +13,6 @@
 
 @implementation CoinCell
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-      /*
-        int parWidth = frame.size.width;
-        int parHeight = frame.size.height;
-        int curY = 4;
-        self.backgroundColor = [UIColor colorWithWhite:255 alpha:0.3];
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, curY, parWidth, parHeight*0.2)];
-        self.nameLabel.textColor = [UIColor whiteColor];
-        self.nameLabel.textAlignment = NSTextAlignmentCenter;
-        self.nameLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-//        self.nameLabel.backgroundColor = [UIColor yellowColor];
-        
-        curY += self.nameLabel.frame.size.height + 4;
-        self.priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, curY, parWidth, parHeight*0.4)];
-        self.priceLabel.text = @"100";
-        self.priceLabel.textAlignment = NSTextAlignmentCenter;
-        self.priceLabel.textColor = [UIColor whiteColor];
-//        self.priceLabel.backgroundColor = [UIColor yellowColor];
-        curY += self.priceLabel.frame.size.height + 4;
-        self.triangleImageView = [[UIImageView alloc] initWithImage:[CoinCell triangleImageOfType:1]];
-        CGRect triRect = self.triangleImageView.frame;
-        triRect.origin =  CGPointMake(4, curY);
-        self.triangleImageView.frame = triRect;
-        
-        self.increaseLabel = [[UILabel alloc] initWithFrame:CGRectMake(4, curY, parWidth, parHeight*0.2)];
-        self.increaseLabel.font = [UIFont systemFontOfSize:10];
-        self.increaseLabel.textColor = [UIColor whiteColor];
-        
-        [self addSubview:self.triangleImageView];
-        [self addSubview:self.increaseLabel];
-        [self addSubview:self.nameLabel];
-        [self addSubview:self.priceLabel];
-        */
-    }
-    return self;
-}
 
 - (id) init{
     self = [super init];
@@ -151,6 +112,15 @@
         even = [UIImage imageNamed:@"triangle_m"];
     }
     return type == 1 ? up : type == 0 ? even : down;
+}
+
+# pragma mark - DataCenterDelegate
+-(void)priceRequestCompletedWithStatus:(int)st{
+    if (st == 0) {
+        self.priceLabel.text = [NSString stringWithFormat:@"%0.3f",
+                                    [[DataCenter center] coinOfID:self.coinID].buyPrice
+                                ];
+    }
 }
 
 @end

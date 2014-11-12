@@ -21,6 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    [self setupLayout];
+    [[DataCenter center] requestPrice];
+    for ( CoinCell* cell in self.coinCells){
+        [[DataCenter center] addDataObserver:cell];
+    }
+}
+
+- (void) setupLayout{
     if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
         self.cellNumEachRow = CELL_EACH_ROW_POR;
     }else{
@@ -28,27 +37,21 @@
     }
     [self.navigationController setNavigationBarHidden:NO];
     self.navigationController.navigationBar.translucent = false;
-
+    
     self.title = NSLocalizedString(@"BBCoin", nil);
     UIImageView* imageView =
     [[UIImageView alloc] initWithImage:[Utils imageWithImage:[UIImage imageNamed:@"bg_main_5"] scaledToSize:self.view.frame.size]];
     ;
     CGRect allCoinViewFrame = self.view.frame;
     allCoinViewFrame.origin.y = self.navigationController.navigationBar.frame.size.height;
-
+    
     self.coinCellsContainer = [[UIView alloc] init];
     self.coinCellsContainer.translatesAutoresizingMaskIntoConstraints = NO;
     self.coinCellsContainer.backgroundColor = [UIColor grayColor];
-
     [self.view addSubview:imageView];
     [self.view addSubview:self.coinCellsContainer];
-    
-    
-    [self setupLayout];
 
-}
-
-- (void) setupLayout{
+    
     _coinCells = [[NSMutableArray alloc] initWithCapacity:[DataCenter center].coinNum];
     for (int i = 0; i < [DataCenter center].coinNum; ++i) {
         CoinCell * cell = [[CoinCell alloc] init];

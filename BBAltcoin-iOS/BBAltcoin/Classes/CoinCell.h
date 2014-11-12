@@ -8,8 +8,9 @@
 
 
 #import <UIKit/UIKit.h>
+#import "DataCenter.h"
 
-@interface CoinCell : UIView
+@interface CoinCell : UIView <DataCenterDelegate>
 
 
 @property (nonatomic) int coinID;

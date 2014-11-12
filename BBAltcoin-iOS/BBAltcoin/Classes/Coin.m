@@ -15,6 +15,9 @@
 @dynamic name;
 @dynamic name_zh;
 
+@synthesize cellPrice;
+@synthesize buyPrice;
+
 -(NSString*) toString{
     return [NSString stringWithFormat:@"%d:%@,%@", self.id.intValue, self.name, self.name_zh];
 }
