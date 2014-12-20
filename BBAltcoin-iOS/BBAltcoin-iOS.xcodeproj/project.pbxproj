@@ -11,6 +11,10 @@
 		FF3290D71A06570200358D53 /* triangle_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3290D41A06570200358D53 /* triangle_down@2x.png */; };
 		FF3290D81A06570200358D53 /* triangle_m@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3290D51A06570200358D53 /* triangle_m@2x.png */; };
 		FF3290D91A06570200358D53 /* triangle_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3290D61A06570200358D53 /* triangle_up@2x.png */; };
+		FF9036861A441BD900227FE3 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9036851A441BD900227FE3 /* Theme.m */; };
+		FFBED2681A42CB5F00E1AED7 /* SingleCoinSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBED2671A42CB5F00E1AED7 /* SingleCoinSummary.m */; };
+		FFBED26F1A42E2EF00E1AED7 /* NumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBED26E1A42E2EF00E1AED7 /* NumberView.m */; };
+		FFBED2731A42E57B00E1AED7 /* CoinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBED2711A42E57B00E1AED7 /* CoinDetailViewController.m */; };
 		FFDA036A19FE321C0073B970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA035319FE321C0073B970 /* AppDelegate.m */; };
 		FFDA036D19FE321C0073B970 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDA035819FE321C0073B970 /* Images.xcassets */; };
 		FFDA036F19FE321C0073B970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA035A19FE321C0073B970 /* main.m */; };
@@ -25,6 +29,7 @@
 		FFDE33B91A00D5DB00EFBA5F /* bg_main_4.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B71A00D5DB00EFBA5F /* bg_main_4.png */; };
 		FFDE33BA1A00D5DB00EFBA5F /* bg_main_5.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B81A00D5DB00EFBA5F /* bg_main_5.png */; };
 		FFDE33BD1A00D7A800EFBA5F /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDE33BC1A00D7A800EFBA5F /* Utils.m */; };
+		FFE246151A454AE900875853 /* CoinListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE246141A454AE900875853 /* CoinListTableViewCell.m */; };
 		FFEE1CE819FA42E500BD45C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEE1CE719FA42E500BD45C9 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +40,14 @@
 		FF3290D41A06570200358D53 /* triangle_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triangle_down@2x.png"; sourceTree = "<group>"; };
 		FF3290D51A06570200358D53 /* triangle_m@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triangle_m@2x.png"; sourceTree = "<group>"; };
 		FF3290D61A06570200358D53 /* triangle_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triangle_up@2x.png"; sourceTree = "<group>"; };
+		FF9036841A441BD900227FE3 /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
+		FF9036851A441BD900227FE3 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
+		FFBED2661A42CB5F00E1AED7 /* SingleCoinSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCoinSummary.h; sourceTree = "<group>"; };
+		FFBED2671A42CB5F00E1AED7 /* SingleCoinSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCoinSummary.m; sourceTree = "<group>"; };
+		FFBED26D1A42E2EF00E1AED7 /* NumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberView.h; sourceTree = "<group>"; };
+		FFBED26E1A42E2EF00E1AED7 /* NumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberView.m; sourceTree = "<group>"; };
+		FFBED2701A42E57B00E1AED7 /* CoinDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetailViewController.h; sourceTree = "<group>"; };
+		FFBED2711A42E57B00E1AED7 /* CoinDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetailViewController.m; sourceTree = "<group>"; };
 		FFDA035219FE321C0073B970 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FFDA035319FE321C0073B970 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FFDA035819FE321C0073B970 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -59,6 +72,8 @@
 		FFDE33B81A00D5DB00EFBA5F /* bg_main_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_main_5.png; sourceTree = "<group>"; };
 		FFDE33BB1A00D7A800EFBA5F /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		FFDE33BC1A00D7A800EFBA5F /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		FFE246131A454AE900875853 /* CoinListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinListTableViewCell.h; sourceTree = "<group>"; };
+		FFE246141A454AE900875853 /* CoinListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinListTableViewCell.m; sourceTree = "<group>"; };
 		FFEE1CE719FA42E500BD45C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FFFC08A91A0BA66C00479B36 /* BBAltcoin-iOS-pch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBAltcoin-iOS-pch.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +188,16 @@
 				FFDA038919FE65120073B970 /* DataCenter.m */,
 				FFDE33BB1A00D7A800EFBA5F /* Utils.h */,
 				FFDE33BC1A00D7A800EFBA5F /* Utils.m */,
+				FFBED2661A42CB5F00E1AED7 /* SingleCoinSummary.h */,
+				FFBED2671A42CB5F00E1AED7 /* SingleCoinSummary.m */,
+				FFBED26D1A42E2EF00E1AED7 /* NumberView.h */,
+				FFBED26E1A42E2EF00E1AED7 /* NumberView.m */,
+				FFBED2701A42E57B00E1AED7 /* CoinDetailViewController.h */,
+				FFBED2711A42E57B00E1AED7 /* CoinDetailViewController.m */,
+				FF9036841A441BD900227FE3 /* Theme.h */,
+				FF9036851A441BD900227FE3 /* Theme.m */,
+				FFE246131A454AE900875853 /* CoinListTableViewCell.h */,
+				FFE246141A454AE900875853 /* CoinListTableViewCell.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -306,11 +331,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFDA038319FE356C0073B970 /* ViewController.m in Sources */,
+				FFBED26F1A42E2EF00E1AED7 /* NumberView.m in Sources */,
 				FFDA036F19FE321C0073B970 /* main.m in Sources */,
 				FFDA038219FE356C0073B970 /* CoinModel.xcdatamodeld in Sources */,
 				FFDE33BD1A00D7A800EFBA5F /* Utils.m in Sources */,
+				FFBED2681A42CB5F00E1AED7 /* SingleCoinSummary.m in Sources */,
+				FFE246151A454AE900875853 /* CoinListTableViewCell.m in Sources */,
 				FFDA036A19FE321C0073B970 /* AppDelegate.m in Sources */,
 				FFDA038A19FE65120073B970 /* DataCenter.m in Sources */,
+				FFBED2731A42E57B00E1AED7 /* CoinDetailViewController.m in Sources */,
+				FF9036861A441BD900227FE3 /* Theme.m in Sources */,
 				FFDA038119FE356C0073B970 /* CoinCell.m in Sources */,
 				FFDA038019FE356C0073B970 /* Coin.m in Sources */,
 			);
@@ -414,7 +444,9 @@
 			baseConfigurationReference = A5CB93DFDF84F0137C795EE9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBAltcoin/Macro/BBAltcoin-iOS-pch.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BBAltcoin/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -427,7 +459,9 @@
 			baseConfigurationReference = 224119CF7F6F2872CEAD1885 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBAltcoin/Macro/BBAltcoin-iOS-pch.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BBAltcoin/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

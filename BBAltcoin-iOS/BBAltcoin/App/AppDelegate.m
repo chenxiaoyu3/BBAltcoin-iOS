@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "DataCenter.h"
+#import "CoinDetailViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,10 +24,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self judgeFirstLaunch];
     [DataCenter center];
-    self.mainViewController = [[ViewController alloc] init];
     
+
+    self.mainViewController = [[CoinDetailViewController alloc ] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
+    self.window.rootViewController = self.mainViewController;
+//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
+    
     
 //    self.window.rootViewController
     [self.window makeKeyAndVisible];

@@ -86,6 +86,7 @@
         
 
     }
+    self.nameLabel.text = @"abc";
     return self;
 }
 

@@ -12,12 +12,13 @@
 #import "AFNetworking.h"
 
 DataCenter* dataCenter;
-NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API/";
+NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
 @implementation DataCenter
 
 -(id) init{
     if(self = [super init]){
         _delegates = [[NSMutableArray alloc] init];
+        _timer = [NSTimer timerWithTimeInterval:5 target:self selector:@selector(scheduleAction) userInfo:nil repeats:YES];
         [self initData];
     }
     return self;
@@ -39,7 +40,7 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API/";
     self.coinNum = self.coins.count;
     
 }
--(NSString*) coinAbbrOfID:(int)coinID{
+-(NSString*) coinAbbrOfID:(NSUInteger)coinID{
     return [[self.coins objectAtIndex:coinID] name];
 }
 -(NSString*) coinNameOfID:(int)coinID{
@@ -76,12 +77,23 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API/";
 }
 
 -(void)addDataObserver:(id)delegate{
+    if (_delegates.count == 0) {
+        [_timer setFireDate:[NSDate distantPast]];
+    }
     if( ![_delegates containsObject:delegate] ){
         [_delegates addObject:delegate];
     }
+    
 }
 -(void)removeDataObserver:(id)delegate{
     [_delegates removeObject:delegate];
+    if (_delegates.count == 0) {
+        [_timer setFireDate:[NSDate distantFuture]];
+    }
+}
+
+-(void)scheduleAction{
+    [self requestPrice];
 }
 
 +(void) firstLaunchAction {

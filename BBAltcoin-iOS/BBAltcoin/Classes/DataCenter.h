@@ -25,14 +25,14 @@
 @property (nonatomic, strong) NSArray* coins;
 @property (nonatomic, strong) NSMutableDictionary* coinsDict;
 @property (nonatomic) NSUInteger coinNum;
-@property (nonatomic, strong) AFHTTPRequestOperationManager* reqManager;
+@property (nonatomic, strong) NSTimer* timer;
 
 +(DataCenter*) center;
 +(void) firstLaunchAction;
 
--(NSString*) coinNameOfID:(int)coinID;
--(NSString*) coinAbbrOfID:(int)coinID;
--(Coin*) coinOfID:(int)coinID;
+-(NSString*) coinNameOfID:(NSUInteger)coinID;
+-(NSString*) coinAbbrOfID:(NSUInteger)coinID;
+-(Coin*) coinOfID:(NSUInteger)coinID;
 
 -(void)requestPrice;
 

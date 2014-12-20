@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController* mainViewController;
+@property (strong, nonatomic) UIViewController* mainViewController;
 
 @property (strong, nonatomic) NSManagedObjectModel* managedObjectModel;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

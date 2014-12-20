@@ -12,6 +12,7 @@
 #import "Macro.h"
 #import "Utils.h"
 #import "Masonry.h"
+
 @interface ViewController ()
 @property NSUInteger cellNumEachRow;
 @end
@@ -24,8 +25,18 @@
     
     [self setupLayout];
     [[DataCenter center] requestPrice];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     for ( CoinCell* cell in self.coinCells){
         [[DataCenter center] addDataObserver:cell];
+    }
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    for ( CoinCell* cell in self.coinCells){
+        [[DataCenter center] removeDataObserver:cell];
     }
 }
 

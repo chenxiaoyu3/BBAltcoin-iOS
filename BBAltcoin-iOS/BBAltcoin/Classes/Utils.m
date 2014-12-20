@@ -20,4 +20,9 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
++ (UIView *)viewOfFrame:(CGRect)frame andColor:(UIColor *)color{
+    UIView* ret = [[UIView alloc] initWithFrame:frame];
+    ret.backgroundColor = color;
+    return ret;
+}
 @end
