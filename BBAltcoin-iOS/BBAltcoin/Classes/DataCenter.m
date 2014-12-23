@@ -43,10 +43,10 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
 -(NSString*) coinAbbrOfID:(NSUInteger)coinID{
     return [[self.coins objectAtIndex:coinID] name];
 }
--(NSString*) coinNameOfID:(int)coinID{
+-(NSString*) coinNameOfID:(NSUInteger)coinID{
     return [[self.coins objectAtIndex:coinID] name_zh];
 }
--(Coin *)coinOfID:(int)coinID{
+-(Coin *)coinOfID:(NSUInteger)coinID{
     return (Coin*)_coins[coinID];
 }
 
@@ -76,6 +76,36 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
     
 }
 
+- (void)requestCoinDetail{
+    NSMutableURLRequest* req = [[NSMutableURLRequest alloc] initWithURL:
+                                [NSURL URLWithString:[NSString stringWithFormat:@"%@/trade_list", SERVER_URL]]];
+    [req setValue:@"application/json" forHTTPHeaderField:@"accept"];
+    
+    AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary* tradelist = (NSDictionary*)responseObject;
+        [[DataCenter center].coinsDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            NSLog(@"%@", key);
+            NSDictionary* oo = [tradelist objectForKey:key];
+            if (oo != nil && [oo isMemberOfClass:[NSDictionary class]]) {
+                ((Coin*)self.coinsDict[key]).detail  = [CoinDetail objFromDictionary:tradelist[key]];
+            }
+            
+//            Coin* x = ((Coin*)self.coinsDict[key]);
+            
+        }];
+        for (id<DataCenterDelegate> observer in _delegates){
+            if ([observer respondsToSelector:@selector(coinDetailRequestCompletedWithStatus:)]) {
+                [observer coinDetailRequestCompletedWithStatus:0];
+            }
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Request tradelist error %@", error);
+    }];
+    [[NSOperationQueue mainQueue] addOperation:op];
+
+}
 -(void)addDataObserver:(id)delegate{
     if (_delegates.count == 0) {
         [_timer setFireDate:[NSDate distantPast]];

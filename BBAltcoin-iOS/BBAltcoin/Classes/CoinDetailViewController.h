@@ -13,10 +13,13 @@
 
 @interface CoinDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong)  UILabel* testLabel;
-@property (nonatomic, strong)  SingleCoinSummary* mainCoinView;
+@property (nonatomic) NSUInteger selectedCoinID;
 
 @property (nonatomic, strong) UITableView* coinListTableView;
 @property (nonatomic, strong) UIView* leftView;
 @property (nonatomic, strong) UIView* rightView;
+
+@property (nonatomic, strong) UILabel* coinNameLabel;
+@property (nonatomic, strong) UILabel* coinPriceBuyLabel;
+@property (nonatomic, strong) UILabel* coinPriceSellLabel;
 @end

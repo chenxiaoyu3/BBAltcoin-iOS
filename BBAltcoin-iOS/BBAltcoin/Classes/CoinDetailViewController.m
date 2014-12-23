@@ -30,21 +30,15 @@
     self.coinListTableView.separatorInset = UIEdgeInsetsZero;
     self.coinListTableView.layoutMargins = UIEdgeInsetsZero;
     self.coinListTableView.separatorColor = [UIColor clearColor];
+    
+    self.coinNameLabel.textColor = [UIColor yellowColor];
+    self.coinNameLabel.font = [UIFont systemFontOfSize:22];
+    self.coinPriceBuyLabel.textColor = [[Theme curTheme] textColor1];
+    [self setSelectedCoinID:2];
 }
 
 -(void)setupLayout{
     self.view.backgroundColor = [[Theme curTheme] themeColor1];
-    self.mainCoinView = [[SingleCoinSummary alloc] init];
-//    [self.view addSubview:self.mainCoinView];
-////    self.navigationController.navigationBar.translucent = NO;
-//    
-//    [self.mainCoinView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.view.mas_left);
-//        make.right.equalTo(self.view.mas_right);
-//        make.top.equalTo(self.view.mas_top);
-////        make.bottom.equalTo(self.view.mas_bottom).offset(100);
-//        make.height.equalTo(@50);
-//    }];
     self.leftView = [[UIView alloc] init];
     [self.view addSubview:self.leftView];
     self.rightView = [[UIView alloc] init];
@@ -71,19 +65,44 @@
         make.edges.equalTo(self.leftView);
     }];
     
-   
+    // in right view
+    self.coinNameLabel = [[UILabel alloc] init];
+    [self.rightView addSubview:self.coinNameLabel];
+    self.coinPriceBuyLabel = [[UILabel alloc] init];
+    [self.rightView addSubview:self.coinPriceBuyLabel];
+    self.coinPriceSellLabel = [[UILabel alloc] init];
+    [self.rightView addSubview:self.coinPriceSellLabel];
+    [self.coinNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_rightView.mas_left).offset(10);
+        make.top.equalTo(_rightView.mas_top).offset(20);
+        make.right.equalTo(_coinPriceBuyLabel.left).offset(-8);
+        make.width.equalTo(_coinPriceBuyLabel.mas_width);
+        
+    }];
+    [self.coinPriceBuyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_coinNameLabel.right).offset(8);
+        make.top.equalTo(_rightView.mas_top).offset(8);
+        make.right.equalTo(_rightView.mas_right);
+    }];
 
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self _init];
-//    self.mainCoinView.coinID = 1;
+    
+    [[DataCenter center] requestCoinDetail];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setSelectedCoinID:(NSUInteger)selectedCoinID{
+    _selectedCoinID = selectedCoinID;
+    self.coinNameLabel.text = [[DataCenter center] coinAbbrOfID:selectedCoinID];
+    
 }
 
 #pragma mark - TableView

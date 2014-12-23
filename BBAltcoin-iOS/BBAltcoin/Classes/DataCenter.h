@@ -15,7 +15,7 @@
 
 @optional
 -(void)priceRequestCompletedWithStatus:(int)st;
-
+-(void)coinDetailRequestCompletedWithStatus:(int)st;
 @end
 
 @interface DataCenter : NSObject{
@@ -35,6 +35,7 @@
 -(Coin*) coinOfID:(NSUInteger)coinID;
 
 -(void)requestPrice;
+-(void)requestCoinDetail;
 
 -(void)addDataObserver:(id)delegate;
 -(void)removeDataObserver:(id)delegate;

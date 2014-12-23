@@ -16,6 +16,12 @@
 - (UIColor *)themeColor2{
     return [UIColor colorWithRed:0.157 green:0.184 blue:0.216 alpha:1] /*#282f37*/;
 }
+- (UIColor *)textColor1{
+    return [UIColor whiteColor];
+}
+- (UIColor *)textcolor2{
+    return [UIColor colorWithWhite:0.8 alpha:1];
+}
 +(Theme *)curTheme{
     return [[Theme alloc] init];
 }

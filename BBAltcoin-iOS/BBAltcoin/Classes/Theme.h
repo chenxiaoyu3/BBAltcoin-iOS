@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface Theme : NSObject
+@interface Theme : UIColor
 
 -(UIColor*) themeColor1;
 -(UIColor*) themeColor2;
+-(UIColor*) textColor1;
+-(UIColor*) textcolor2;
 
 +(Theme*) curTheme;
 @end

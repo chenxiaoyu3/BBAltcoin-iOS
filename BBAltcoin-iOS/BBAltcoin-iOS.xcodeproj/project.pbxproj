@@ -30,6 +30,8 @@
 		FFDE33BA1A00D5DB00EFBA5F /* bg_main_5.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDE33B81A00D5DB00EFBA5F /* bg_main_5.png */; };
 		FFDE33BD1A00D7A800EFBA5F /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDE33BC1A00D7A800EFBA5F /* Utils.m */; };
 		FFE246151A454AE900875853 /* CoinListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE246141A454AE900875853 /* CoinListTableViewCell.m */; };
+		FFE246181A45A70700875853 /* BTC_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE246161A45A70700875853 /* BTC_logo.png */; };
+		FFE246191A45A70700875853 /* LTC_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE246171A45A70700875853 /* LTC_logo.png */; };
 		FFEE1CE819FA42E500BD45C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEE1CE719FA42E500BD45C9 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		FFDE33BC1A00D7A800EFBA5F /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		FFE246131A454AE900875853 /* CoinListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinListTableViewCell.h; sourceTree = "<group>"; };
 		FFE246141A454AE900875853 /* CoinListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinListTableViewCell.m; sourceTree = "<group>"; };
+		FFE246161A45A70700875853 /* BTC_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BTC_logo.png; sourceTree = "<group>"; };
+		FFE246171A45A70700875853 /* LTC_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LTC_logo.png; sourceTree = "<group>"; };
 		FFEE1CE719FA42E500BD45C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FFFC08A91A0BA66C00479B36 /* BBAltcoin-iOS-pch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBAltcoin-iOS-pch.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +169,8 @@
 		FFDA036919FE321C0073B970 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				FFE246161A45A70700875853 /* BTC_logo.png */,
+				FFE246171A45A70700875853 /* LTC_logo.png */,
 				FF3290D41A06570200358D53 /* triangle_down@2x.png */,
 				FF3290D51A06570200358D53 /* triangle_m@2x.png */,
 				FF3290D61A06570200358D53 /* triangle_up@2x.png */,
@@ -278,12 +284,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE246181A45A70700875853 /* BTC_logo.png in Resources */,
 				FFDE33BA1A00D5DB00EFBA5F /* bg_main_5.png in Resources */,
 				FFDE33B91A00D5DB00EFBA5F /* bg_main_4.png in Resources */,
 				FFDE33B61A00B20E00EFBA5F /* LaunchScreen.xib in Resources */,
 				FFDE33AA1A00ADB700EFBA5F /* str.strings in Resources */,
 				FF3290D81A06570200358D53 /* triangle_m@2x.png in Resources */,
 				FFDA038619FE370F0073B970 /* coins.json in Resources */,
+				FFE246191A45A70700875853 /* LTC_logo.png in Resources */,
 				FF3290D71A06570200358D53 /* triangle_down@2x.png in Resources */,
 				FFDA036D19FE321C0073B970 /* Images.xcassets in Resources */,
 				FF3290D91A06570200358D53 /* triangle_up@2x.png in Resources */,

@@ -10,6 +10,10 @@
 
 @interface CoinListTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel* coinNameLabel;
+@property (nonatomic, strong) UILabel* coinPriceLabel;
+@property (nonatomic, strong) UIImageView* coinLogo;
+
 @property (nonatomic) NSUInteger coinID;
 
 @end
