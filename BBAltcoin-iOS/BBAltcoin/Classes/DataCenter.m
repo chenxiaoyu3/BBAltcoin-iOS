@@ -88,7 +88,8 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
         [[DataCenter center].coinsDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             NSLog(@"%@", key);
             NSDictionary* oo = [tradelist objectForKey:key];
-            if (oo != nil && [oo isMemberOfClass:[NSDictionary class]]) {
+            if (oo != nil && [oo isKindOfClass:[NSDictionary class]]) {
+
                 ((Coin*)self.coinsDict[key]).detail  = [CoinDetail objFromDictionary:tradelist[key]];
             }
             

@@ -10,8 +10,9 @@
 #import "SingleCoinSummary.h"
 #import "Masonry.h"
 #import "Theme.h"
+#import "OrderListView.h"
 
-@interface CoinDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface CoinDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, DataCenterDelegate>
 
 @property (nonatomic) NSUInteger selectedCoinID;
 
@@ -22,4 +23,8 @@
 @property (nonatomic, strong) UILabel* coinNameLabel;
 @property (nonatomic, strong) UILabel* coinPriceBuyLabel;
 @property (nonatomic, strong) UILabel* coinPriceSellLabel;
+
+@property (nonatomic, strong) OrderListView* buyOrdersView;
+@property (nonatomic, strong) OrderListView* sellOrdersView;
+
 @end

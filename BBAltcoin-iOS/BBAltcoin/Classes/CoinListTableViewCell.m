@@ -37,6 +37,7 @@
     }];
     
     self.coinNameLabel.textColor = [UIColor whiteColor];
+
     self.backgroundColor = [UIColor clearColor];
 }
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{

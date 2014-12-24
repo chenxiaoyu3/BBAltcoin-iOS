@@ -51,7 +51,7 @@
         make.top.equalTo(self.view.mas_top).offset(insets.top);
         make.left.equalTo(self.leftView.mas_right);
         make.bottom.equalTo(self.view.mas_bottom).offset(insets.bottom);
-        make.right.equalTo(self.view.mas_right).offset(insets.right);
+        make.right.equalTo(self.view.mas_right).offset(-insets.right);
 
     }];
     [self.leftView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -84,6 +84,27 @@
         make.top.equalTo(_rightView.mas_top).offset(8);
         make.right.equalTo(_rightView.mas_right);
     }];
+    
+    // two orders view
+    self.buyOrdersView = [[OrderListView alloc] init];
+    self.sellOrdersView = [[OrderListView alloc] init];
+    [self.rightView addSubview:self.buyOrdersView];
+    [self.rightView addSubview:self.sellOrdersView];
+    
+    [self.buyOrdersView makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_rightView.left);
+        make.right.equalTo(_sellOrdersView.left).offset(-10);
+        make.top.equalTo(_coinNameLabel.bottom).offset(50);
+        make.height.equalTo(@300);
+        make.width.equalTo(_sellOrdersView);
+    }];
+    [self.sellOrdersView makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_buyOrdersView.right).offset(10);
+        make.right.equalTo(_rightView.right);
+        make.top.equalTo(_buyOrdersView.top);
+        make.bottom.equalTo(_buyOrdersView.bottom);
+        make.width.equalTo(_buyOrdersView.width);
+    }];
 
 }
 - (void)viewDidLoad {
@@ -92,6 +113,14 @@
     [self _init];
     
     [[DataCenter center] requestCoinDetail];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [[DataCenter center] addDataObserver:self];
+    
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [[DataCenter center] removeDataObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,6 +157,15 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSUInteger ret = [[DataCenter center] coinNum];
     return ret;
+}
+
+#pragma mark - DataCenter
+
+-(void)coinDetailRequestCompletedWithStatus:(int)st{
+    if (st == 0) {
+        self.buyOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.buyOrder;
+        self.sellOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.sellOrder;
+    }
 }
 /*
 #pragma mark - Navigation

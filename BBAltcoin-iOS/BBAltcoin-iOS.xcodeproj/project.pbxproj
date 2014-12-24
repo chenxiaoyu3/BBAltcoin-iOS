@@ -15,6 +15,7 @@
 		FFBED2681A42CB5F00E1AED7 /* SingleCoinSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBED2671A42CB5F00E1AED7 /* SingleCoinSummary.m */; };
 		FFBED26F1A42E2EF00E1AED7 /* NumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBED26E1A42E2EF00E1AED7 /* NumberView.m */; };
 		FFBED2731A42E57B00E1AED7 /* CoinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBED2711A42E57B00E1AED7 /* CoinDetailViewController.m */; };
+		FFD8CD291A49A38600820FFE /* OrderListView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD8CD281A49A38600820FFE /* OrderListView.m */; };
 		FFDA036A19FE321C0073B970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA035319FE321C0073B970 /* AppDelegate.m */; };
 		FFDA036D19FE321C0073B970 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDA035819FE321C0073B970 /* Images.xcassets */; };
 		FFDA036F19FE321C0073B970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDA035A19FE321C0073B970 /* main.m */; };
@@ -50,6 +51,8 @@
 		FFBED26E1A42E2EF00E1AED7 /* NumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberView.m; sourceTree = "<group>"; };
 		FFBED2701A42E57B00E1AED7 /* CoinDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinDetailViewController.h; sourceTree = "<group>"; };
 		FFBED2711A42E57B00E1AED7 /* CoinDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinDetailViewController.m; sourceTree = "<group>"; };
+		FFD8CD271A49A38600820FFE /* OrderListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListView.h; sourceTree = "<group>"; };
+		FFD8CD281A49A38600820FFE /* OrderListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListView.m; sourceTree = "<group>"; };
 		FFDA035219FE321C0073B970 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FFDA035319FE321C0073B970 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FFDA035819FE321C0073B970 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				FF9036851A441BD900227FE3 /* Theme.m */,
 				FFE246131A454AE900875853 /* CoinListTableViewCell.h */,
 				FFE246141A454AE900875853 /* CoinListTableViewCell.m */,
+				FFD8CD271A49A38600820FFE /* OrderListView.h */,
+				FFD8CD281A49A38600820FFE /* OrderListView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				FF9036861A441BD900227FE3 /* Theme.m in Sources */,
 				FFDA038119FE356C0073B970 /* CoinCell.m in Sources */,
 				FFDA038019FE356C0073B970 /* Coin.m in Sources */,
+				FFD8CD291A49A38600820FFE /* OrderListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

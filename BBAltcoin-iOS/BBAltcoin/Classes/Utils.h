@@ -13,3 +13,5 @@
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 + (UIView *)viewOfFrame:(CGRect)frame andColor:(UIColor *)color;
 @end
+
+#define UIColorFromHex()
