@@ -100,6 +100,10 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
             if ([observer respondsToSelector:@selector(coinDetailRequestCompletedWithStatus:)]) {
                 [observer coinDetailRequestCompletedWithStatus:0];
             }
+            if ([observer respondsToSelector:@selector(priceRequestCompletedWithStatus:)]) {
+                [observer priceRequestCompletedWithStatus:0];
+            }
+            
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Request tradelist error %@", error);
@@ -107,7 +111,7 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
     [[NSOperationQueue mainQueue] addOperation:op];
 
 }
--(void)addDataObserver:(id)delegate{
+-(void)addDataObserver:(id<DataCenterDelegate>)delegate{
     if (_delegates.count == 0) {
         [_timer setFireDate:[NSDate distantPast]];
     }

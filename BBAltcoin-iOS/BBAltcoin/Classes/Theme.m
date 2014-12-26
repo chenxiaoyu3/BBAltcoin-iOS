@@ -22,6 +22,16 @@
 - (UIColor *)textcolor2{
     return [UIColor colorWithWhite:0.8 alpha:1];
 }
+
+- (UIColor *)bgColor1{
+    return UIColorFromHex(0x1F2229);
+}
+- (UIColor *)bgColor2{
+    return UIColorFromHex(0x282f37);
+}
+- (UIColor *)bgColor3{
+    return UIColorFromHex(0x39434f);
+}
 +(Theme *)curTheme{
     return [[Theme alloc] init];
 }

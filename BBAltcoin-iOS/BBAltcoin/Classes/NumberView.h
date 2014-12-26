@@ -10,4 +10,6 @@
 
 @interface NumberView : UILabel
 
+@property (nonatomic) float number;
+
 @end

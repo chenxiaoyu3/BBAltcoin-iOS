@@ -61,12 +61,23 @@
 @dynamic name;
 @dynamic name_zh;
 
-@synthesize detail;
+@synthesize detail = _detail;
 @synthesize buyPrice;
 @synthesize sellPrice;
+@synthesize price = _price;
+
 
 -(NSString*) toString{
     return [NSString stringWithFormat:@"%d:%@,%@", self.id.intValue, self.name, self.name_zh];
+}
+
+-(float) price{
+    return (self.buyPrice + self.sellPrice) / 2.0;
+}
+- (void)setDetail:(CoinDetail *)detail{
+    _detail = detail;
+    self.buyPrice = ((OrderItem*)detail.buyOrder[0]).price;
+    self.sellPrice = ((OrderItem*)detail.sellOrder[0]).price;
 }
 
 //- (float)buyPrice{

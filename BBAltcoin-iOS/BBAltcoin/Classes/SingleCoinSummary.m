@@ -13,43 +13,62 @@
 
 -(void)_init{
     [self setupLayout];
+    self.coinNameLabel.textColor = [UIColor yellowColor];
+    self.coinNameLabel.font = [UIFont systemFontOfSize:16];
+    self.coinPriceLabel.textColor = [[Theme curTheme] textColor1];
+    self.coinPriceLabel.font = [UIFont systemFontOfSize:20];
+    self.coinPriceBuyLabel.textColor = [[Theme curTheme] textcolor2];
+    self.coinPriceSellLabel.textColor = [[Theme curTheme] textcolor2];
 }
 
 -(void) setupLayout{
-    self.marketFrom = [[UILabel alloc] init];
-    self.marketFrom.text = @"BTC38";
-    self.coinName = [[UILabel alloc] init];
-    self.coinName.text = @"BTC";
-    self.price = [[NumberView alloc] init];
-    [self addSubview:self.marketFrom];
-    [self addSubview:self.coinName];
-    [self addSubview:self.price];
+    self.coinNameLabel = [[UILabel alloc] init];
+    [self addSubview:self.coinNameLabel];
+    self.coinPriceBuyLabel = [[NumberView alloc] init];
+    [self addSubview:self.coinPriceBuyLabel];
+    self.coinPriceSellLabel = [[NumberView alloc] init];
+    [self addSubview:self.coinPriceSellLabel];
+    self.coinPriceLabel = [[NumberView alloc] init];
+    [self addSubview:self.coinPriceLabel];
+    self.coinVolume = [[NumberView alloc] init];
+    [self addSubview:self.coinVolume];
     
+    NSArray* views = [NSArray arrayWithObjects:_coinPriceBuyLabel, _coinPriceSellLabel, _coinVolume, nil];
+    [self.coinNameLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.mas_left).offset(10);
+        make.top.equalTo(self.mas_top).offset(8);
+        make.right.equalTo(_coinPriceBuyLabel.left).offset(-8);
+        make.width.equalTo(@100);
+        make.height.equalTo(@20);
+    }];
     
-    [self.marketFrom mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.equalTo(self.mas_left).offset(8);
-        make.top.equalTo(self.mas_top);
-        make.width.equalTo(@70);
-        make.right.equalTo(self.coinName.mas_left).offset(-8);
-        make.height.equalTo(@25);
+    [self.coinPriceLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_coinNameLabel.left);
+        make.top.equalTo(_coinNameLabel.bottom).offset(8);
+        make.right.equalTo(_coinPriceBuyLabel.left);
+        make.height.equalTo(@20);
     }];
-    [self.coinName mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.marketFrom.mas_right).offset(8);
-        make.baseline.equalTo(self.marketFrom.mas_baseline);
-        make.width.equalTo(@70);
-        make.height.equalTo(@25);
-    }];
-    [self.price mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.marketFrom.mas_left);
-        make.top.equalTo(self.marketFrom.mas_bottom).offset(8);
-        make.bottom.equalTo(self.mas_bottom).offset(-8);
+    [self.coinPriceBuyLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_coinNameLabel.right).offset(8);
+        make.top.equalTo(self.mas_top).offset(8);
         make.right.equalTo(self.mas_right);
+        make.bottom.equalTo(_coinPriceSellLabel.top);
+        make.height.equalTo(views);
     }];
-    
-    self.backgroundColor = [[Theme curTheme] themeColor2];
-    self.marketFrom.textColor = [UIColor whiteColor];
-    self.price.textColor = [UIColor whiteColor];
+    [self.coinPriceSellLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_coinPriceBuyLabel.left);
+        make.top.equalTo(_coinPriceBuyLabel.bottom);
+        make.right.equalTo(self.mas_right);
+        make.bottom.equalTo(self.coinVolume.top);
+        make.height.equalTo(views);
+    }];
+    [self.coinVolume makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_coinPriceSellLabel.left);
+        make.right.equalTo(self.right);
+        make.bottom.equalTo(self.bottom);
+        make.top.equalTo(self.coinPriceSellLabel.bottom);
+        make.height.equalTo(views);
+    }];
     
 }
 -(id)init{
@@ -68,10 +87,23 @@
 }
 
 
--(void)setCoinID:(int)coinID{
+-(void)setCoinID:(NSUInteger)coinID{
     _coinID = coinID;
-    self.coinName.text = [[DataCenter center] coinNameOfID:2];
-    self.price.text = @"111111.1";
+    self.coinNameLabel.text = [[DataCenter center] coinNameOfID:coinID];
+    Coin* c = [[DataCenter center] coinOfID:_coinID];
+    self.coinPriceLabel.number = c.price;
+    self.coinPriceBuyLabel.number = c.buyPrice;
+    self.coinPriceSellLabel.number = c.sellPrice;
 }
 
+#pragma mark - DataCenter
+
+- (void)priceRequestCompletedWithStatus:(int)st{
+    if (st == 0) {
+        Coin* c = [[DataCenter center] coinOfID:_coinID];
+        self.coinPriceLabel.number = c.price;
+        self.coinPriceBuyLabel.number = c.buyPrice;
+        self.coinPriceSellLabel.number = c.sellPrice;
+    }
+}
 @end

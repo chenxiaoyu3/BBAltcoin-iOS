@@ -11,15 +11,14 @@
 #import "DataCenter.h"
 #import "Masonry.h"
 
-@interface SingleCoinSummary : UIView
+@interface SingleCoinSummary : UIView<DataCenterDelegate>
 
-@property (nonatomic, strong) UIView* view;
+@property (nonatomic, strong) UILabel* coinNameLabel;
+@property (nonatomic, strong) NumberView* coinPriceBuyLabel;
+@property (nonatomic, strong) NumberView* coinPriceSellLabel;
+@property (nonatomic, strong) NumberView* coinPriceLabel;
+@property (nonatomic, strong) NumberView* coinVolume;
 
-@property (nonatomic, strong) UILabel* testLabel;
-@property (nonatomic, strong) UILabel* marketFrom;
-@property (nonatomic, strong) UILabel* coinName;
-@property (nonatomic, strong) NumberView* price;
-
-@property (nonatomic) int coinID;
+@property (nonatomic) NSUInteger coinID;
 
 @end

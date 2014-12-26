@@ -27,6 +27,9 @@
 @property (nonatomic) NSUInteger coinNum;
 @property (nonatomic, strong) NSTimer* timer;
 
+//@property (nonatomic, strong) NSDate* lastPriceRequestDate;
+//@property (nonatomic, strong) NSDate* lastDetaiRequestDate;
+
 +(DataCenter*) center;
 +(void) firstLaunchAction;
 

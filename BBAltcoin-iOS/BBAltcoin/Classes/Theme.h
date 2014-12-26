@@ -15,6 +15,8 @@
 -(UIColor*) themeColor2;
 -(UIColor*) textColor1;
 -(UIColor*) textcolor2;
-
+-(UIColor*) bgColor1;
+-(UIColor*) bgColor2;
+-(UIColor*) bgColor3;
 +(Theme*) curTheme;
 @end

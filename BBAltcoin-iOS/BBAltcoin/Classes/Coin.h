@@ -39,9 +39,10 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * name_zh;
 
-@property (atomic, strong) CoinDetail* detail;
-@property (atomic) float buyPrice;
-@property (atomic) float sellPrice;
+@property (nonatomic, strong) CoinDetail* detail;
+@property (nonatomic) float buyPrice;
+@property (nonatomic) float sellPrice;
+@property (nonatomic,readonly) float price;
 
 -(NSString*) toString;
 //-(float) buyPrice;

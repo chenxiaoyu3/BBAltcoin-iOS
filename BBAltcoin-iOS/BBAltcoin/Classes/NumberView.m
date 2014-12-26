@@ -10,6 +10,15 @@
 
 @implementation NumberView
 
+-(void)setNumber:(float)number{
+    _number = number;
+    if (number > 1000) {
+        self.text = [NSString stringWithFormat:@"%.1f", number];
+    }else{
+        self.text = [NSString stringWithFormat:@"%.3f", number];
+    }
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -18,15 +27,6 @@
 }
 */
 
-
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.backgroundColor = [UIColor redColor];
-    }
-    return self;
-}
 
 
 @end
