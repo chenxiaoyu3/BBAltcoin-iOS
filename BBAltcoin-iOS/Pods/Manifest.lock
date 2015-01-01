@@ -23,7 +23,7 @@ PODS:
   - Masonry (0.5.3)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 2.0)
   - Masonry
 
 SPEC CHECKSUMS:

@@ -17,8 +17,11 @@
     self.coinNameLabel.font = [UIFont systemFontOfSize:16];
     self.coinPriceLabel.textColor = [[Theme curTheme] textColor1];
     self.coinPriceLabel.font = [UIFont systemFontOfSize:20];
+    self.coinPriceLabel.showSymbol = YES;
     self.coinPriceBuyLabel.textColor = [[Theme curTheme] textcolor2];
+    self.coinPriceBuyLabel.showSymbol = YES;
     self.coinPriceSellLabel.textColor = [[Theme curTheme] textcolor2];
+    self.coinPriceSellLabel.showSymbol = YES;
 }
 
 -(void) setupLayout{
@@ -26,6 +29,7 @@
     [self addSubview:self.coinNameLabel];
     self.coinPriceBuyLabel = [[NumberView alloc] init];
     [self addSubview:self.coinPriceBuyLabel];
+    
     self.coinPriceSellLabel = [[NumberView alloc] init];
     [self addSubview:self.coinPriceSellLabel];
     self.coinPriceLabel = [[NumberView alloc] init];
@@ -33,11 +37,24 @@
     self.coinVolume = [[NumberView alloc] init];
     [self addSubview:self.coinVolume];
     
+    UILabel* buyText = [[UILabel alloc] init];
+    buyText.textColor = [[Theme curTheme] textColor1];
+    [self addSubview:buyText];
+    UILabel* sellText = [[UILabel alloc] init];
+    [self addSubview:sellText];
+    buyText.text = NSLocalizedString(@"FirstBuy", "");
+    buyText.font = [UIFont systemFontOfSize:12];
+    sellText.text = NSLocalizedString(@"FirstSell", nil);
+//    NSLog(NSLocalizedStringWithDefaultValue(@"a", nil, nil, nil, nil)(@"a", nil));
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
+    NSLog(path);
     NSArray* views = [NSArray arrayWithObjects:_coinPriceBuyLabel, _coinPriceSellLabel, _coinVolume, nil];
+    
     [self.coinNameLabel makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(10);
         make.top.equalTo(self.mas_top).offset(8);
-        make.right.equalTo(_coinPriceBuyLabel.left).offset(-8);
+        make.right.equalTo(buyText.left);
         make.width.equalTo(@100);
         make.height.equalTo(@20);
     }];
@@ -48,12 +65,21 @@
         make.right.equalTo(_coinPriceBuyLabel.left);
         make.height.equalTo(@20);
     }];
+    
     [self.coinPriceBuyLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_coinNameLabel.right).offset(8);
+        make.left.equalTo(buyText.right);
         make.top.equalTo(self.mas_top).offset(8);
         make.right.equalTo(self.mas_right);
         make.bottom.equalTo(_coinPriceSellLabel.top);
         make.height.equalTo(views);
+    }];
+    MASAttachKeys(buyText, self.coinNameLabel, self.coinPriceBuyLabel);
+    [buyText makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_coinNameLabel.right);
+        make.top.equalTo(self.coinPriceBuyLabel.top);
+        make.right.equalTo(self.coinPriceBuyLabel.left);
+        make.bottom.equalTo(self.coinPriceBuyLabel.bottom);
+//                make.width.equalTo(@80);
     }];
     [self.coinPriceSellLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_coinPriceBuyLabel.left);
