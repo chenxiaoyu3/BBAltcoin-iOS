@@ -19,6 +19,11 @@
 -(UIColor*) bgColor2;
 -(UIColor*) bgColor3;
 
+-(UIColor*) greenForText1;
+-(UIColor*) greenForNumber;
+-(UIColor*) redForText1;
+-(UIColor*) redForNumber;
+
 -(UIColor*) debugColor1;
 +(Theme*) curTheme;
 @end

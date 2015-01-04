@@ -41,14 +41,15 @@
     buyText.textColor = [[Theme curTheme] textColor1];
     [self addSubview:buyText];
     UILabel* sellText = [[UILabel alloc] init];
+    sellText.textColor = [[Theme curTheme] textColor1];
     [self addSubview:sellText];
-    buyText.text = NSLocalizedString(@"a", nil);
-    buyText.font = [UIFont systemFontOfSize:12];
-    sellText.text = NSLocalizedString(@"FirstSell", nil);
-//    NSLog(NSLocalizedStringWithDefaultValue(@"a", nil, nil, nil, nil)(@"a", nil));
+    buyText.text = NSLocalizedString(@"TopAsk", nil);
+    buyText.font = [UIFont systemFontOfSize:11];
+    sellText.text = NSLocalizedString(@"TopBid", nil);
+    sellText.font = [UIFont systemFontOfSize:11];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
-    NSLog(path);
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
+//    NSLog(path);
     NSArray* views = [NSArray arrayWithObjects:_coinPriceBuyLabel, _coinPriceSellLabel, _coinVolume, nil];
     
     [self.coinNameLabel makeConstraints:^(MASConstraintMaker *make) {
@@ -67,7 +68,7 @@
     }];
     
     [self.coinPriceBuyLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(buyText.right);
+        make.left.equalTo(buyText.right).offset(4);
         make.top.equalTo(self.mas_top).offset(8);
         make.right.equalTo(self.mas_right);
         make.bottom.equalTo(_coinPriceSellLabel.top);
@@ -77,9 +78,12 @@
     [buyText makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_coinNameLabel.right);
         make.top.equalTo(self.coinPriceBuyLabel.top);
-        make.right.equalTo(self.coinPriceBuyLabel.left);
-        make.bottom.equalTo(self.coinPriceBuyLabel.bottom);
-//                make.width.equalTo(@80);
+//        make.right.equalTo(self.coinPriceBuyLabel.left);
+        make.centerY.equalTo(self.coinPriceBuyLabel).offset(2);
+    }];
+    [sellText makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.coinPriceSellLabel).offset(2);
+        make.left.and.right.equalTo(buyText);
     }];
     [self.coinPriceSellLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_coinPriceBuyLabel.left);

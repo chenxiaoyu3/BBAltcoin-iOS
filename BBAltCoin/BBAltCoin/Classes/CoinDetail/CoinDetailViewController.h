@@ -23,13 +23,9 @@
 @property (nonatomic, strong) UIView* rightView;
 
 @property (nonatomic, strong) SingleCoinSummary* coinSummary;
-//@property (nonatomic, strong) UILabel* coinNameLabel;
-//@property (nonatomic, strong) UILabel* coinPriceBuyLabel;
-//@property (nonatomic, strong) UILabel* coinPriceSellLabel;
-//@property (nonatomic, strong) UILabel* coinPriceLabel;
-//@property (nonatomic, strong) UILabel* coinVolume;
 
 @property (nonatomic, strong) UIView* orderSectionView;
+
 @property (nonatomic, strong) OrderListView* buyOrdersView;
 @property (nonatomic, strong) OrderListView* sellOrdersView;
 

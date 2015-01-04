@@ -33,6 +33,19 @@
     return UIColorFromHex(0x39434f);
 }
 
+- (UIColor *)greenForText1{
+    return UIColorFromHex(0x42902e);
+}
+
+- (UIColor *)greenForNumber{
+    return UIColorFromHex(0x46e940);
+}
+-(UIColor *)redForNumber{
+    return UIColorFromHex(0xdc323b);
+}
+- (UIColor *)redForText1{
+    return UIColorFromHex(0xbb221f);
+}
 - (UIColor *)debugColor1{
     return [UIColor redColor];
 }

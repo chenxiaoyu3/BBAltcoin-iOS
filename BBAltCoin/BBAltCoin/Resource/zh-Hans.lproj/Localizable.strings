@@ -6,3 +6,9 @@
   Copyright (c) 2015年 ChenXiaoyu. All rights reserved.
 */
 "a" = "hao";
+
+"TopBid" = "卖一";
+"TopAsk" = "买一";
+
+"Bid" = "卖";
+"Ask" = "买";

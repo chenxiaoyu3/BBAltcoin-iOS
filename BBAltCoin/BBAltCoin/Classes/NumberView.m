@@ -22,15 +22,15 @@
     self.mainLabel = [[UILabel alloc] init];
     [self addSubview:self.mainLabel];
 //    self.mainLabel.backgroundColor = [Theme redColor];
-    
+    	
 
     [self.leftLabel makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.left);
-        make.right.equalTo(_mainLabel.left);
+        //make.right.equalTo(_mainLabel.left);
         make.bottom.equalTo(_mainLabel.bottom);
     }];
     [self.mainLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_leftLabel.right);
+        make.left.equalTo(_leftLabel.right).offset(-3);
         make.right.equalTo(self.right);
         make.centerY.equalTo(self.centerY);
 // Tip: I did not use bottom align to make the leftLabel's bottom align working properly

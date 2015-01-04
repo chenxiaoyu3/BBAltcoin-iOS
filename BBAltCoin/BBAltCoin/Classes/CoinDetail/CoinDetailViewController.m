@@ -31,7 +31,7 @@
 //    self.coinListTableView.layoutMargins = UIEdgeInsetsZero;
     self.coinListTableView.separatorColor = [UIColor clearColor];
     
-    self.orderSectionView.backgroundColor = [[Theme curTheme] bgColor2];
+//    self.orderSectionView.backgroundColor = [[Theme curTheme] bgColor2];
     
     self.selectedCoinID = 0;
 }
@@ -78,9 +78,30 @@
     self.orderSectionView = [[UIView alloc] init];
     self.buyOrdersView = [[OrderListView alloc] init];
     self.sellOrdersView = [[OrderListView alloc] init];
+    
+    UILabel* askLabel = [[UILabel alloc] init];
+    askLabel.textColor = [[Theme curTheme] greenForText1];
+    askLabel.font = [UIFont systemFontOfSize:13];
+    askLabel.text = NSLocalizedString(@"Ask", nil);
+    UIView* askLabelLine = [[UIView alloc] init];
+    askLabelLine.backgroundColor = [[Theme curTheme] greenForText1];
+    
+    UILabel* bidLabel = [[UILabel alloc] init];
+    bidLabel.textColor = [[Theme curTheme] redForText1];
+    bidLabel.font = [UIFont systemFontOfSize:13];
+    bidLabel.text = NSLocalizedString(@"Bid", nil);
+    UIView* bidLabelLine = [[UIView alloc] init];
+    bidLabelLine.backgroundColor = [[Theme curTheme] redForText1];
+    
+    
     [self.rightView addSubview:self.orderSectionView];
     [self.orderSectionView addSubview:self.buyOrdersView];
     [self.orderSectionView addSubview:self.sellOrdersView];
+    [self.orderSectionView addSubview:askLabel];
+    [self.orderSectionView addSubview:askLabelLine];
+    [self.orderSectionView addSubview:bidLabel];
+    [self.orderSectionView addSubview:bidLabelLine];
+    
     
     [self.orderSectionView makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_rightView.left).offset(8);
@@ -88,17 +109,34 @@
         make.top.equalTo(self.coinSummary.bottom).offset(50);
         make.height.equalTo(@250);
     }];
+    [askLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.top.equalTo(_orderSectionView).offset(2);
+    }];
+    [askLabelLine makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(_buyOrdersView);
+        make.top.equalTo(askLabel.bottom).offset(2);
+        make.height.equalTo(@1);
+    }];
+    [bidLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_orderSectionView).offset(2);
+        make.left.equalTo(_sellOrdersView).offset(2);
+    }];
+    [bidLabelLine makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(_sellOrdersView);
+        make.top.equalTo(bidLabel.bottom).offset(2);
+        make.height.equalTo(@1);
+    }];
     [self.buyOrdersView makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_orderSectionView.left);
         make.right.equalTo(_sellOrdersView.left).offset(-10);
-        make.top.equalTo(_orderSectionView.top);
+        make.top.equalTo(askLabelLine.bottom).offset(2);
         make.bottom.equalTo(_orderSectionView.bottom);
         make.width.equalTo(_sellOrdersView);
     }];
     [self.sellOrdersView makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_buyOrdersView.right).offset(10);
         make.right.equalTo(_orderSectionView.right);
-        make.top.equalTo(_buyOrdersView.top);
+        make.top.equalTo(_buyOrdersView.top).offset(2);
         make.bottom.equalTo(_buyOrdersView.bottom);
         make.width.equalTo(_buyOrdersView.width);
     }];

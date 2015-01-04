@@ -7,3 +7,8 @@
 */
 "a" = "Good";
 
+"TopBid" = "Bid";
+"TopAsk" = "Ask";
+
+"Bid" = "BID";
+"Ask" = "ASK";
