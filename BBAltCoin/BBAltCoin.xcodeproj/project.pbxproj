@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF455DE3FA1140CE71C3E726 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DAE1FAAF8E3F69027A3CCD /* libPods.a */; };
+		FF1AD4CD1A63BB340066EA39 /* libBBStockChartLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */; };
 		FF8143EE1A553B26003F4983 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8143ED1A553B26003F4983 /* main.m */; };
 		FF81440B1A553B26003F4983 /* BBAltcoinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81440A1A553B26003F4983 /* BBAltcoinTests.m */; };
 		FF8144471A553BA6003F4983 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144161A553BA6003F4983 /* AppDelegate.m */; };
@@ -51,6 +52,7 @@
 		6ED40E55D1EE37DA40BC7AAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		76DAE1FAAF8E3F69027A3CCD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE91BBD364E929EC5F9664D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBBStockChartLib.a; path = "../../BBStockChart/BBStockChartLib/build/Debug-iphoneos/libBBStockChartLib.a"; sourceTree = "<group>"; };
 		FF8143E81A553B25003F4983 /* BBAltcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAltcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8143EC1A553B26003F4983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF8143ED1A553B26003F4983 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1AD4CD1A63BB340066EA39 /* libBBStockChartLib.a in Frameworks */,
 				BF455DE3FA1140CE71C3E726 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +133,7 @@
 		3B6DF724720AA59D520EADE3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */,
 				76DAE1FAAF8E3F69027A3CCD /* libPods.a */,
 			);
 			name = Frameworks;
@@ -558,11 +562,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FAE91BBD364E929EC5F9664D /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = BBAltcoin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/**";
 			};
 			name = Debug;
 		};
@@ -570,11 +577,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6ED40E55D1EE37DA40BC7AAF /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = BBAltcoin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/**";
 			};
 			name = Release;
 		};

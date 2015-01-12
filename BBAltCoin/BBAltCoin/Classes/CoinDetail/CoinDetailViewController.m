@@ -9,6 +9,7 @@
 #import "CoinDetailViewController.h"
 #import "Utils.h"
 #import "CoinListTableViewCell.h"
+#import "BBStockChart.h"
 
 @interface CoinDetailViewController ()
 
@@ -140,6 +141,17 @@
         make.bottom.equalTo(_buyOrdersView.bottom);
         make.width.equalTo(_buyOrdersView.width);
     }];
+    
+//    CALayer
+    BBChartView* view = [[BBChartView alloc] init];
+//
+    [self.view  addSubview:view];
+    [view makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.orderSectionView.bottom);
+        make.height.equalTo(@200);
+        make.left.and.right.equalTo(_rightView);
+    }];
+    
 
 }
 - (void)viewDidLoad {
