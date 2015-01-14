@@ -11,6 +11,7 @@
 #import "Masonry.h"
 #import "Theme.h"
 #import "OrderListView.h"
+#import "BBChartView.h"
 
 @interface CoinDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, DataCenterDelegate>
 
@@ -21,6 +22,9 @@
 
 // right view
 @property (nonatomic, strong) UIView* rightView;
+@property (nonatomic, strong) UIScrollView* rightDownScorllView;
+@property (nonatomic, strong) UIView* rightDownScrollContentView;
+
 
 @property (nonatomic, strong) SingleCoinSummary* coinSummary;
 
@@ -28,5 +32,7 @@
 
 @property (nonatomic, strong) OrderListView* buyOrdersView;
 @property (nonatomic, strong) OrderListView* sellOrdersView;
+
+@property (nonatomic, strong) BBChartView* chartView;
 
 @end

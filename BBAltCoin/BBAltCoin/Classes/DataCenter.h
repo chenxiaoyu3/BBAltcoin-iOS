@@ -10,12 +10,16 @@
 #import "AFNetworking.h"
 #import "Coin.h"
 
+typedef enum {
+    ChartTime, ChartMin, ChartDay
+} CoinChartType;
 
 @protocol DataCenterDelegate <NSObject>
 
 @optional
 -(void)priceRequestCompletedWithStatus:(int)st;
 -(void)coinDetailRequestCompletedWithStatus:(int)st;
+-(void)chartDataRequestCompleted:(NSArray*)data status:(int)st;
 @end
 
 @interface DataCenter : NSObject{
@@ -39,8 +43,10 @@
 
 -(void)requestPrice;
 -(void)requestCoinDetail;
+-(void)requestChartDataOfCoin:(NSUInteger)coinID andType:(CoinChartType)type;
 
 -(void)addDataObserver:(id)delegate;
 -(void)removeDataObserver:(id)delegate;
 
 @end
+

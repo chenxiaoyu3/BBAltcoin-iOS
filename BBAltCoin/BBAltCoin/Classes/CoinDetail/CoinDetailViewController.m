@@ -11,6 +11,8 @@
 #import "CoinListTableViewCell.h"
 #import "BBStockChart.h"
 
+
+
 @interface CoinDetailViewController ()
 
 @end
@@ -39,21 +41,24 @@
 
 -(void)setupLayout{
     self.view.backgroundColor = [[Theme curTheme] themeColor1];
-    self.leftView = [[UIView alloc] init];
+    self.leftView = UIView.new;
     [self.view addSubview:self.leftView];
+    
     self.rightView = [[UIView alloc] init];
     [self.view addSubview:self.rightView];
+    
+    
     self.coinListTableView = [[UITableView alloc] init];
     [self.leftView addSubview:self.coinListTableView];
 
     UIEdgeInsets insets = UIEdgeInsetsMake(8, 8, 8, 8);
     [self.rightView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(insets.top);
+        make.top.equalTo(self.view.top).offset(insets.top);
         make.left.equalTo(self.leftView.mas_right);
-        make.bottom.equalTo(self.view.mas_bottom).offset(insets.bottom);
+        make.bottom.equalTo(self.view.bottom).offset(insets.bottom);
         make.right.equalTo(self.view.mas_right).offset(-insets.right);
-
     }];
+    
     [self.leftView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(insets.top);
         make.left.equalTo(self.view.mas_left).offset(insets.left);
@@ -66,15 +71,29 @@
     }];
     
     // in right view
+    
     self.coinSummary = [[SingleCoinSummary alloc] init];
+    self.rightDownScorllView = UIScrollView.new;
+    [self.rightView addSubview:self.rightDownScorllView];
     [self.rightView addSubview:self.coinSummary];
+    
     [self.coinSummary makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_rightView.mas_left).offset(10);
         make.top.equalTo(_rightView.mas_top).offset(20);
         make.right.equalTo(_rightView.right);
         make.height.equalTo(@100);
     }];
-    
+    [self.rightDownScorllView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.and.bottom.equalTo(_rightView);
+        make.top.equalTo(self.coinSummary.bottom).offset(30);
+    }];
+    self.rightDownScrollContentView = UIView.new;
+    [self.rightDownScorllView addSubview:self.rightDownScrollContentView];
+    [self.rightDownScrollContentView makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.rightDownScorllView);
+        //这个不添加，rightView 与它的父 的右边 会有一点padding， why?
+        make.width.equalTo(self.rightDownScorllView).offset(-5);
+    }];
     // two orders view
     self.orderSectionView = [[UIView alloc] init];
     self.buyOrdersView = [[OrderListView alloc] init];
@@ -95,7 +114,7 @@
     bidLabelLine.backgroundColor = [[Theme curTheme] redForText1];
     
     
-    [self.rightView addSubview:self.orderSectionView];
+    [self.rightDownScrollContentView addSubview:self.orderSectionView];
     [self.orderSectionView addSubview:self.buyOrdersView];
     [self.orderSectionView addSubview:self.sellOrdersView];
     [self.orderSectionView addSubview:askLabel];
@@ -105,9 +124,9 @@
     
     
     [self.orderSectionView makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_rightView.left).offset(8);
-        make.right.equalTo(_rightView.right).offset(8);
-        make.top.equalTo(self.coinSummary.bottom).offset(50);
+        make.left.equalTo(_rightDownScrollContentView.left).offset(8);
+        make.right.equalTo(_rightDownScrollContentView.right).offset(8);
+        make.top.equalTo(_rightDownScrollContentView.top);
         make.height.equalTo(@250);
     }];
     [askLabel makeConstraints:^(MASConstraintMaker *make) {
@@ -142,15 +161,21 @@
         make.width.equalTo(_buyOrdersView.width);
     }];
     
-//    CALayer
-    BBChartView* view = [[BBChartView alloc] init];
-//
-    [self.view  addSubview:view];
-    [view makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.orderSectionView.bottom);
+//    Chart
+    self.chartView = [[BBChartView alloc] init];
+    [self.view  addSubview:self.chartView];
+    [self.chartView makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.orderSectionView.bottom).offset(14);
         make.height.equalTo(@200);
-        make.left.and.right.equalTo(_rightView);
+        make.left.and.right.equalTo(_rightDownScrollContentView);
     }];
+    
+    // 必须添加bottom ，否则内部view的height 对不上（scrollView会一直以为内部view的height是0）
+    [self.rightDownScrollContentView makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.chartView.bottom);
+    }];
+
+
     
 
 }
@@ -160,6 +185,7 @@
     [self _init];
     
     [[DataCenter center] requestCoinDetail];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -182,6 +208,8 @@
     self.coinSummary.coinID = selectedCoinID;
     self.buyOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.buyOrder;
     self.sellOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.sellOrder;
+    
+    [[DataCenter center] requestChartDataOfCoin:_selectedCoinID andType:ChartTime];
     
 }
 
@@ -220,6 +248,36 @@
     if (st == 0) {
         self.buyOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.buyOrder;
         self.sellOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.sellOrder;
+    }
+}
+
+
+- (void)chartDataRequestCompleted:(NSArray *)data status:(int)st{
+    [self.chartView reset];
+    if (st == 0) {
+        
+        Area* areaup = [[Area alloc] init];
+        Area* areadown = [[Area alloc] init];
+        BarSeries* bar = [[BarSeries alloc] init];
+        StockSeries* stock = [[StockSeries alloc] init];
+        [areaup addSeries:stock];
+        [areadown addSeries:bar];
+        int maxDataNum = 20;
+        int cnt = 0;
+        for (NSArray* arr in data) {
+//            NSLog(@"%f", Float(arr[0]));
+            [bar addPoint:Float(arr[1])];
+            [stock addPointOpen:Float(arr[2]) close:Float(arr[5]) low:Float(arr[4]) high:Float(arr[3])];
+            if (cnt++ > maxDataNum) {
+                break;
+            }
+        }
+        
+        [self.chartView addArea:areaup];
+        [self.chartView addArea:areadown];
+        [self.chartView setHeighRatio:0.3 forArea:areadown];
+        
+        [self.chartView drawAnimated:YES];
     }
 }
 /*

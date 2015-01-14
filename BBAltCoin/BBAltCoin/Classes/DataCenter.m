@@ -13,6 +13,10 @@
 
 DataCenter* dataCenter;
 NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
+NSString* const BTC38_K_1H = @"http://www.btc38.com/trade/getTradeTimeLine.php?coinname=";
+NSString* const BTC38_K_5M = @"http://www.btc38.com/trade/getTrade5minLine.php?coinname=";
+NSString* const BTC38_K_1D = @"http://www.btc38.com/trade/getTradeDayLine.php?coinname=";
+
 @implementation DataCenter
 
 -(id) init{
@@ -86,7 +90,7 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary* tradelist = (NSDictionary*)responseObject;
         [[DataCenter center].coinsDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            NSLog(@"%@", key);
+//            NSLog(@"%@", key);
             NSDictionary* oo = [tradelist objectForKey:key];
             if (oo != nil && [oo isKindOfClass:[NSDictionary class]]) {
 
@@ -109,6 +113,38 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
         NSLog(@"Request tradelist error %@", error);
     }];
     [[NSOperationQueue mainQueue] addOperation:op];
+
+}
+
+- (void)requestChartDataOfCoin:(NSUInteger)coinID andType:(CoinChartType)type{
+    NSString* url = nil;
+    switch (type) {
+        case ChartTime:
+            url = [NSString stringWithFormat:@"%@%@", BTC38_K_1H, [self coinAbbrOfID:coinID]];
+            break;
+        case ChartDay:
+            url = [NSString stringWithFormat:@"%@%@", BTC38_K_1D, [self coinAbbrOfID:coinID]];
+            break;
+        case ChartMin:
+            url = [NSString stringWithFormat:@"%@%@", BTC38_K_5M, [self coinAbbrOfID:coinID]];
+            break;
+        default:
+            break;
+    }
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray* array = [NSJSONSerialization JSONObjectWithData:[operation.responseString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+        for (id<DataCenterDelegate> observer in _delegates){
+            if ([observer respondsToSelector:@selector(chartDataRequestCompleted:status:)]) {
+                [observer chartDataRequestCompleted:array status:0];
+            }
+        }
+
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Request chartData error %@", error);
+    }];
 
 }
 -(void)addDataObserver:(id<DataCenterDelegate>)delegate{
@@ -143,7 +179,7 @@ NSString* const SERVER_URL = @"http://ggcoin.sinaapp.com/API";
         c.id = [NSNumber numberWithInt:i++];
         c.name = [cur objectForKey:@"en"];
         c.name_zh = [cur objectForKey:@"zh"];
-        NSLog(@"%@",[c toString]);
+        NSLog(@"First launch%@",[c toString]);
         [context save:&err];
     }
    

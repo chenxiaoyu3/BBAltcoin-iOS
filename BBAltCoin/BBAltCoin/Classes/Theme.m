@@ -34,7 +34,7 @@
 }
 
 - (UIColor *)greenForText1{
-    return UIColorFromHex(0x42902e);
+    return [UIColor greenColor];
 }
 
 - (UIColor *)greenForNumber{
@@ -44,7 +44,7 @@
     return UIColorFromHex(0xdc323b);
 }
 - (UIColor *)redForText1{
-    return UIColorFromHex(0xbb221f);
+    return [UIColor redColor];
 }
 - (UIColor *)debugColor1{
     return [UIColor redColor];

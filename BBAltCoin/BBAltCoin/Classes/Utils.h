@@ -19,3 +19,5 @@
                 green:((float)((hex & 0x00FF00) >> 8)) / 255.0 \
                  blue:((float)((hex & 0x0000FF) )) / 255.0 \
                 alpha:1.0]
+
+#define Float(obj) (((NSNumber*)(obj)).floatValue)

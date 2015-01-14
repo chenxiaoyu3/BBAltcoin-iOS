@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
 @interface Theme : UIColor
 
 -(UIColor*) themeColor1;
