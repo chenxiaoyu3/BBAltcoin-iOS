@@ -13,15 +13,23 @@
 
 -(void)_init{
     [self setupLayout];
+    self.backgroundColor = [UIColor clearColor];
     self.coinNameLabel.textColor = [UIColor yellowColor];
-    self.coinNameLabel.font = [UIFont systemFontOfSize:16];
+    self.coinNameLabel.font = [UIFont systemFontOfSize:14];
     self.coinPriceLabel.textColor = [[Theme curTheme] textColor1];
-    self.coinPriceLabel.font = [UIFont systemFontOfSize:20];
+    self.coinPriceLabel.font = [UIFont systemFontOfSize:22];
     self.coinPriceLabel.showSymbol = YES;
     self.coinPriceBuyLabel.textColor = [[Theme curTheme] textcolor2];
+    self.coinPriceBuyLabel.font = [UIFont systemFontOfSize:12];
     self.coinPriceBuyLabel.showSymbol = YES;
     self.coinPriceSellLabel.textColor = [[Theme curTheme] textcolor2];
+    self.coinPriceSellLabel.font = [UIFont systemFontOfSize:12];
     self.coinPriceSellLabel.showSymbol = YES;
+    self.coinVolume.textColor = [Theme curTheme].textcolor2;
+    self.coinVolume.font = [UIFont systemFontOfSize:12];
+    self.coinVolume.leaveSymbolSpace = YES;
+
+    
 }
 
 -(void) setupLayout{
@@ -43,11 +51,15 @@
     UILabel* sellText = [[UILabel alloc] init];
     sellText.textColor = [[Theme curTheme] textColor1];
     [self addSubview:sellText];
+    UILabel* volText = UILabel.new;
+    volText.textColor = [[Theme curTheme] textColor1];
+    [self addSubview:volText];
     buyText.text = NSLocalizedString(@"TopAsk", nil);
     buyText.font = [UIFont systemFontOfSize:11];
     sellText.text = NSLocalizedString(@"TopBid", nil);
     sellText.font = [UIFont systemFontOfSize:11];
-    
+    volText.text = NSLocalizedString(@"Volume", nil);
+    volText.font = [UIFont systemFontOfSize:11];
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"en" ofType:@"lproj"];
 //    NSLog(path);
     NSArray* views = [NSArray arrayWithObjects:_coinPriceBuyLabel, _coinPriceSellLabel, _coinVolume, nil];
@@ -55,7 +67,7 @@
     [self.coinNameLabel makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(10);
         make.top.equalTo(self.mas_top).offset(8);
-        make.right.equalTo(buyText.left);
+//        make.right.equalTo(buyText.left);
         make.width.equalTo(@100);
         make.height.equalTo(@20);
     }];
@@ -63,41 +75,46 @@
     [self.coinPriceLabel makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_coinNameLabel.left);
         make.top.equalTo(_coinNameLabel.bottom).offset(8);
-        make.right.equalTo(_coinPriceBuyLabel.left);
+//        make.right.equalTo(_coinPriceBuyLabel.left);
         make.height.equalTo(@20);
     }];
     
+    //右边并排三个 price 靠右对齐
     [self.coinPriceBuyLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(buyText.right).offset(4);
-        make.top.equalTo(self.mas_top).offset(8);
-        make.right.equalTo(self.mas_right);
+        make.width.equalTo(@50);
+        make.top.equalTo(self.mas_top).offset(4);
+        make.right.equalTo(self.mas_right).offset(-14);
         make.bottom.equalTo(_coinPriceSellLabel.top);
         make.height.equalTo(views);
     }];
+    [self.coinPriceSellLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_coinPriceBuyLabel.bottom);
+        make.right.equalTo(self.coinPriceBuyLabel.right);
+        make.bottom.equalTo(self.coinVolume.top);
+        make.height.equalTo(views);
+    }];
+    [self.coinVolume makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.coinPriceBuyLabel);
+        make.bottom.equalTo(self.bottom).offset(-4);
+        make.top.equalTo(self.coinPriceSellLabel.bottom);
+        make.height.equalTo(views);
+    }];
+    
+    
     MASAttachKeys(buyText, self.coinNameLabel, self.coinPriceBuyLabel);
     [buyText makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_coinNameLabel.right);
+//        make.left.equalTo(_coinNameLabel.right);
         make.top.equalTo(self.coinPriceBuyLabel.top);
-//        make.right.equalTo(self.coinPriceBuyLabel.left);
+        make.right.equalTo(self.coinPriceBuyLabel.left).offset(-4);
         make.centerY.equalTo(self.coinPriceBuyLabel).offset(2);
     }];
     [sellText makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.coinPriceSellLabel).offset(2);
         make.left.and.right.equalTo(buyText);
     }];
-    [self.coinPriceSellLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_coinPriceBuyLabel.left);
-        make.top.equalTo(_coinPriceBuyLabel.bottom);
-        make.right.equalTo(self.mas_right);
-        make.bottom.equalTo(self.coinVolume.top);
-        make.height.equalTo(views);
-    }];
-    [self.coinVolume makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_coinPriceSellLabel.left);
-        make.right.equalTo(self.right);
-        make.bottom.equalTo(self.bottom);
-        make.top.equalTo(self.coinPriceSellLabel.bottom);
-        make.height.equalTo(views);
+    [volText makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.coinVolume).offset(2);
+        make.left.and.right.equalTo(buyText);
     }];
     
 }
@@ -108,18 +125,9 @@
 }
 
 
-
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-    
-}
-
-
 -(void)setCoinID:(NSUInteger)coinID{
     _coinID = coinID;
-    self.coinNameLabel.text = [[DataCenter center] coinNameOfID:coinID];
+    self.coinNameLabel.text = [[DataCenter center] coinAbbrOfID:coinID];
     Coin* c = [[DataCenter center] coinOfID:_coinID];
     self.coinPriceLabel.number = c.price;
     self.coinPriceBuyLabel.number = c.buyPrice;
@@ -135,5 +143,15 @@
         self.coinPriceBuyLabel.number = c.buyPrice;
         self.coinPriceSellLabel.number = c.sellPrice;
     }
+}
+
+- (void)chartDataRequestCompleted:(NSArray *)data andType:(CoinChartType)type status:(int)st{
+    CGFloat vol = 0;
+    if (st == 0 && type == ChartTime) {
+        for (NSArray* arr in data){
+            vol += Float(arr[1]);
+        }
+    }
+    self.coinVolume.number = vol;
 }
 @end

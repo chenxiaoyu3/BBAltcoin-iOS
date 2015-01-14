@@ -13,16 +13,13 @@
 -(void) _init{
 
     self.leftLabel = [[UILabel alloc] init];
-    self.leftLabel.text = @"￥";
+    self.leftLabel.text = NSLocalizedString(@"MoneyMark", nil);
     self.leftLabel.font = [UIFont systemFontOfSize:self.mainLabel.font.pointSize-5];
-//    self.leftLabel.backgroundColor = [Theme whiteColor];
     
     [self addSubview:self.leftLabel];
     
     self.mainLabel = [[UILabel alloc] init];
     [self addSubview:self.mainLabel];
-//    self.mainLabel.backgroundColor = [Theme redColor];
-    	
 
     [self.leftLabel makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.left);
@@ -40,6 +37,8 @@
         make.width.equalTo(@0);
     }];
     
+    self.leaveSymbolSpace = NO;
+    
 }
 
 - (void)updateConstraints{
@@ -48,10 +47,17 @@
             make.width.equalTo(@15);
         }];
     }else{
-        [self.leftLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(@0);
-        }];
-
+        if (self.leaveSymbolSpace) {
+            [self.leftLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.width.equalTo(@15);
+            }];
+            self.leftLabel.text = @" ";
+        }else{
+            [self.leftLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.width.equalTo(@0);
+            }];
+        }
+        
     }
     [super updateConstraints];
 }
@@ -73,6 +79,11 @@
 
 - (void)setShowSymbol:(BOOL)showSymbol{
     _showSymbol = showSymbol;
+    [self updateConstraints];
+}
+
+- (void)setLeaveSymbolSpace:(BOOL)leaveSymbolSpace{
+    _leaveSymbolSpace = leaveSymbolSpace;
     [self updateConstraints];
 }
 

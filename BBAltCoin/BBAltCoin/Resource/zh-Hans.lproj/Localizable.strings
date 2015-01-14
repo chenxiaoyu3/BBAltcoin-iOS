@@ -6,9 +6,13 @@
   Copyright (c) 2015年 ChenXiaoyu. All rights reserved.
 */
 "a" = "hao";
+"BBAltcoin" = "BB看盘";
 
 "TopBid" = "卖一";
 "TopAsk" = "买一";
+"Volume" = "成交";
 
 "Bid" = "卖";
 "Ask" = "买";
+
+"MoneyMark" = "￥";

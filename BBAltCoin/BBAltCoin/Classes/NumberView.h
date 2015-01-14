@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UILabel* mainLabel;
 @property (nonatomic, strong) UILabel* leftLabel;
 @property (nonatomic) BOOL showSymbol;
+@property (nonatomic) BOOL leaveSymbolSpace;
 
 #pragma mark - Fake to be a UILabel
 @property (nonatomic, strong) UIFont* font;

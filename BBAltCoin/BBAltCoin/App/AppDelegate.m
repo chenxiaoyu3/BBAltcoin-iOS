@@ -28,9 +28,12 @@
 
     self.mainViewController = [[CoinDetailViewController alloc ] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.mainViewController;
-//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
-    
+//    self.window.rootViewController = self.mainViewController;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.
+                                      mainViewController];
+    [UINavigationBar appearance].barTintColor = UIColorFromHex(0x8c1c1c);
+    [UINavigationBar appearance].translucent = YES;
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
 //    self.window.rootViewController
     [self.window makeKeyAndVisible];

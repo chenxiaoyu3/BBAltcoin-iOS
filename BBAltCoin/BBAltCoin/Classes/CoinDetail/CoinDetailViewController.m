@@ -23,10 +23,10 @@
     
     [self setupLayout];
     
+    self.title = NSLocalizedString(@"BBAltcoin", nil);
     self.coinListTableView.delegate = self;
     self.coinListTableView.dataSource = self;
     
-//    self.leftView.backgroundColor = [UIColor redColor];
     self.view.backgroundColor = [[Theme curTheme] themeColor1];
     self.coinListTableView.backgroundView = nil;
     self.coinListTableView.backgroundColor = [UIColor clearColor];
@@ -34,8 +34,12 @@
 //    self.coinListTableView.layoutMargins = UIEdgeInsetsZero;
     self.coinListTableView.separatorColor = [UIColor clearColor];
     
-//    self.orderSectionView.backgroundColor = [[Theme curTheme] bgColor2];
-    
+    self.rightDownScorllView.canCancelContentTouches = YES;
+    self.rightDownScorllView.delaysContentTouches = YES;
+    self.chartView.userInteractionEnabled = YES;
+    UITapGestureRecognizer* chartViewTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chartViewTaped:)];
+    [self.chartView addGestureRecognizer:chartViewTapRecognizer];
+
     self.selectedCoinID = 0;
 }
 
@@ -51,7 +55,7 @@
     self.coinListTableView = [[UITableView alloc] init];
     [self.leftView addSubview:self.coinListTableView];
 
-    UIEdgeInsets insets = UIEdgeInsetsMake(8, 8, 8, 8);
+    UIEdgeInsets insets = UIEdgeInsetsMake(48, 8, 8, 8);
     [self.rightView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.top).offset(insets.top);
         make.left.equalTo(self.leftView.mas_right);
@@ -60,7 +64,7 @@
     }];
     
     [self.leftView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(insets.top);
+        make.top.equalTo(self.view.mas_top);
         make.left.equalTo(self.view.mas_left).offset(insets.left);
         make.bottom.equalTo(self.view.mas_bottom).offset(insets.bottom);
         make.right.equalTo(self.rightView.mas_left);
@@ -81,11 +85,11 @@
         make.left.equalTo(_rightView.mas_left).offset(10);
         make.top.equalTo(_rightView.mas_top).offset(20);
         make.right.equalTo(_rightView.right);
-        make.height.equalTo(@100);
+        make.height.equalTo(@80);
     }];
     [self.rightDownScorllView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.and.bottom.equalTo(_rightView);
-        make.top.equalTo(self.coinSummary.bottom).offset(30);
+        make.top.equalTo(self.coinSummary.bottom).offset(8);
     }];
     self.rightDownScrollContentView = UIView.new;
     [self.rightDownScorllView addSubview:self.rightDownScrollContentView];
@@ -163,16 +167,15 @@
     
 //    Chart
     self.chartView = [[BBChartView alloc] init];
-    [self.view  addSubview:self.chartView];
+    [self.rightDownScrollContentView  addSubview:self.chartView];
     [self.chartView makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.orderSectionView.bottom).offset(14);
         make.height.equalTo(@200);
         make.left.and.right.equalTo(_rightDownScrollContentView);
     }];
-    
     // 必须添加bottom ，否则内部view的height 对不上（scrollView会一直以为内部view的height是0）
     [self.rightDownScrollContentView makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.chartView.bottom);
+        make.bottom.equalTo(self.chartView.bottom).offset(500);
     }];
 
 
@@ -211,6 +214,10 @@
     
     [[DataCenter center] requestChartDataOfCoin:_selectedCoinID andType:ChartTime];
     
+}
+
+- (void)chartViewTaped:(UITapGestureRecognizer*)recognizer{
+    NSLog(@"Tap");
 }
 
 #pragma mark - TableView
@@ -252,7 +259,7 @@
 }
 
 
-- (void)chartDataRequestCompleted:(NSArray *)data status:(int)st{
+- (void)chartDataRequestCompleted:(NSArray *)data andType:(CoinChartType)type status:(int)st{
     [self.chartView reset];
     if (st == 0) {
         

@@ -136,8 +136,8 @@ NSString* const BTC38_K_1D = @"http://www.btc38.com/trade/getTradeDayLine.php?co
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray* array = [NSJSONSerialization JSONObjectWithData:[operation.responseString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
         for (id<DataCenterDelegate> observer in _delegates){
-            if ([observer respondsToSelector:@selector(chartDataRequestCompleted:status:)]) {
-                [observer chartDataRequestCompleted:array status:0];
+            if ([observer respondsToSelector:@selector(chartDataRequestCompleted:andType:status:)]) {
+                [observer chartDataRequestCompleted:array andType:type status:0];
             }
         }
 
