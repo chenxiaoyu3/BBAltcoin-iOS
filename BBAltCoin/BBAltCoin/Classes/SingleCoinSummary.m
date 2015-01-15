@@ -81,7 +81,7 @@
     
     //右边并排三个 price 靠右对齐
     [self.coinPriceBuyLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@50);
+        make.width.equalTo(@70);
         make.top.equalTo(self.mas_top).offset(4);
         make.right.equalTo(self.mas_right).offset(-14);
         make.bottom.equalTo(_coinPriceSellLabel.top);
@@ -89,7 +89,7 @@
     }];
     [self.coinPriceSellLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_coinPriceBuyLabel.bottom);
-        make.right.equalTo(self.coinPriceBuyLabel.right);
+        make.left.right.equalTo(self.coinPriceBuyLabel);
         make.bottom.equalTo(self.coinVolume.top);
         make.height.equalTo(views);
     }];

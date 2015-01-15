@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BF455DE3FA1140CE71C3E726 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DAE1FAAF8E3F69027A3CCD /* libPods.a */; };
+		FF06C58B1A67A2F4002C0ADA /* BBImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF06C58A1A67A2F4002C0ADA /* BBImageManager.m */; };
+		FF06C5911A67D7AD002C0ADA /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF06C5901A67D7AD002C0ADA /* splash@2x.png */; };
+		FF06C5931A67DA1B002C0ADA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF06C5921A67DA1B002C0ADA /* Images.xcassets */; };
 		FF1AD4CD1A63BB340066EA39 /* libBBStockChartLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */; };
 		FF8143EE1A553B26003F4983 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8143ED1A553B26003F4983 /* main.m */; };
 		FF81440B1A553B26003F4983 /* BBAltcoinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81440A1A553B26003F4983 /* BBAltcoinTests.m */; };
 		FF8144471A553BA6003F4983 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144161A553BA6003F4983 /* AppDelegate.m */; };
-		FF8144481A553BA6003F4983 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF8144171A553BA6003F4983 /* Images.xcassets */; };
 		FF81444A1A553BA6003F4983 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8144191A553BA6003F4983 /* LaunchScreen.xib */; };
 		FF81444C1A553BA6003F4983 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81441E1A553BA6003F4983 /* Coin.m */; };
 		FF81444D1A553BA6003F4983 /* CoinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144201A553BA6003F4983 /* CoinCell.m */; };
@@ -52,6 +54,10 @@
 		6ED40E55D1EE37DA40BC7AAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		76DAE1FAAF8E3F69027A3CCD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE91BBD364E929EC5F9664D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FF06C5891A67A2F4002C0ADA /* BBImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBImageManager.h; sourceTree = "<group>"; };
+		FF06C58A1A67A2F4002C0ADA /* BBImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBImageManager.m; sourceTree = "<group>"; };
+		FF06C5901A67D7AD002C0ADA /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@2x.png"; path = "BBAltCoin/Resource/Image/splash@2x.png"; sourceTree = SOURCE_ROOT; };
+		FF06C5921A67DA1B002C0ADA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BBAltCoin/Resource/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBBStockChartLib.a; path = "../../BBStockChart/BBStockChartLib/build/Debug-iphoneos/libBBStockChartLib.a"; sourceTree = "<group>"; };
 		FF8143E81A553B25003F4983 /* BBAltcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAltcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8143EC1A553B26003F4983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +67,6 @@
 		FF81440A1A553B26003F4983 /* BBAltcoinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAltcoinTests.m; sourceTree = "<group>"; };
 		FF8144151A553BA6003F4983 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FF8144161A553BA6003F4983 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FF8144171A553BA6003F4983 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FF8144191A553BA6003F4983 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		FF81441D1A553BA6003F4983 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
 		FF81441E1A553BA6003F4983 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
@@ -139,6 +144,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF06C5881A67A2DB002C0ADA /* BBImage */ = {
+			isa = PBXGroup;
+			children = (
+				FF06C5891A67A2F4002C0ADA /* BBImageManager.h */,
+				FF06C58A1A67A2F4002C0ADA /* BBImageManager.m */,
+			);
+			name = BBImage;
+			path = BBAltCoin/Classes/BBImage;
+			sourceTree = SOURCE_ROOT;
+		};
 		FF8143DF1A553B25003F4983 = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +217,6 @@
 			children = (
 				FF8144151A553BA6003F4983 /* AppDelegate.h */,
 				FF8144161A553BA6003F4983 /* AppDelegate.m */,
-				FF8144171A553BA6003F4983 /* Images.xcassets */,
 				FF8144191A553BA6003F4983 /* LaunchScreen.xib */,
 			);
 			path = App;
@@ -211,6 +225,7 @@
 		FF81441C1A553BA6003F4983 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FF06C5881A67A2DB002C0ADA /* BBImage */,
 				FF81441D1A553BA6003F4983 /* Coin.h */,
 				FF81441E1A553BA6003F4983 /* Coin.m */,
 				FF81441F1A553BA6003F4983 /* CoinCell.h */,
@@ -258,6 +273,7 @@
 		FF8144391A553BA6003F4983 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FF06C5921A67DA1B002C0ADA /* Images.xcassets */,
 				FF81443A1A553BA6003F4983 /* Asset */,
 				FF81443E1A553BA6003F4983 /* Image */,
 				FFC04E941A5542E9001803A1 /* Localizable.strings */,
@@ -276,6 +292,7 @@
 		FF81443E1A553BA6003F4983 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				FF06C5901A67D7AD002C0ADA /* splash@2x.png */,
 				FF81443F1A553BA6003F4983 /* bg_main_4.png */,
 				FF8144401A553BA6003F4983 /* bg_main_5.png */,
 				FF8144411A553BA6003F4983 /* BTC_logo.png */,
@@ -338,6 +355,7 @@
 				TargetAttributes = {
 					FF8143E71A553B25003F4983 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = JT5K9NWG8Q;
 					};
 					FF8144031A553B26003F4983 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -370,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF81445C1A553BA6003F4983 /* BTC_logo.png in Resources */,
+				FF06C5911A67D7AD002C0ADA /* splash@2x.png in Resources */,
 				FF81445B1A553BA6003F4983 /* bg_main_5.png in Resources */,
 				FFC04E921A5542E9001803A1 /* Localizable.strings in Resources */,
 				FF81445A1A553BA6003F4983 /* bg_main_4.png in Resources */,
@@ -377,9 +396,9 @@
 				FF81445D1A553BA6003F4983 /* LTC_logo.png in Resources */,
 				FF81444A1A553BA6003F4983 /* LaunchScreen.xib in Resources */,
 				FF81445F1A553BA6003F4983 /* triangle_m@2x.png in Resources */,
+				FF06C5931A67DA1B002C0ADA /* Images.xcassets in Resources */,
 				FF8144581A553BA6003F4983 /* coins.json in Resources */,
 				FF81445E1A553BA6003F4983 /* triangle_down@2x.png in Resources */,
-				FF8144481A553BA6003F4983 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +457,7 @@
 				FF8144531A553BA6003F4983 /* NumberView.m in Sources */,
 				FF81444C1A553BA6003F4983 /* Coin.m in Sources */,
 				FF8144541A553BA6003F4983 /* SingleCoinSummary.m in Sources */,
+				FF06C58B1A67A2F4002C0ADA /* BBImageManager.m in Sources */,
 				FF8144571A553BA6003F4983 /* ViewController.m in Sources */,
 				FF8144521A553BA6003F4983 /* DataCenter.m in Sources */,
 				FF8144551A553BA6003F4983 /* Theme.m in Sources */,
@@ -514,7 +534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -551,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -564,6 +584,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = BBAltcoin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -579,6 +601,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = BBAltcoin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

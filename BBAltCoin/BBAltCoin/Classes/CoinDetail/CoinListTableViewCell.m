@@ -9,10 +9,13 @@
 #import "CoinListTableViewCell.h"
 #import "DataCenter.h"
 #import "Utils.h"
+#import "BBImageManager.h"
 
 @implementation CoinListTableViewCell
 -(void)setupLayout{
     self.coinLogo = [[UIImageView alloc] initWithImage:[Utils imageWithImage:[UIImage imageNamed:@"BTC_logo"] scaledToSize:CGSizeMake(15, 15)]];
+//    self.coinLogo.layer.borderColor = [UIColor whiteColor].CGColor;
+//    self.coinLogo.layer.borderWidth = 2;
     self.coinNameLabel = [[UILabel alloc] init];
     self.coinPriceLabel = [[UILabel alloc] init];
     
@@ -57,7 +60,9 @@
     }
 - (void)setCoinID:(NSUInteger)coinID{
     self.coinNameLabel.text = [[DataCenter center] coinAbbrOfID:coinID];
-
+    [[BBImageManager manager] requestLOGO:[[DataCenter center] coinAbbrOfID:coinID] success:^(NSString *coin, UIImage *image) {
+        self.coinLogo.image = [Utils imageWithImage:image scaledToSize:CGSizeMake(15, 15)];
+    }];
 }
 
 - (void)layoutSubviews{

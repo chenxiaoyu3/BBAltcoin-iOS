@@ -175,7 +175,7 @@
     }];
     // 必须添加bottom ，否则内部view的height 对不上（scrollView会一直以为内部view的height是0）
     [self.rightDownScrollContentView makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.chartView.bottom).offset(500);
+        make.bottom.equalTo(self.chartView.bottom).offset(50);
     }];
 
 
