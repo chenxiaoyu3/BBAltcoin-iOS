@@ -16,3 +16,6 @@
 "Ask" = "买";
 
 "MoneyMark" = "￥";
+
+"CoinOverall" = "币种一览";
+"CoinDetail" = "市场详情";

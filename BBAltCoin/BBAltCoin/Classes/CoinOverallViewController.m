@@ -6,18 +6,18 @@
 //  Copyright (c) 2014年 ChenXiaoyu. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CoinOverallViewController.h"
 #import "CoinCell.h"
 #import "DataCenter.h"
 #import "Macro.h"
 #import "Utils.h"
 #import "Masonry.h"
 
-@interface ViewController ()
+@interface CoinOverallViewController ()
 @property NSUInteger cellNumEachRow;
 @end
 
-@implementation ViewController
+@implementation CoinOverallViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,15 +46,14 @@
     }else{
         self.cellNumEachRow = CELL_EACH_ROW_LAND;
     }
-    [self.navigationController setNavigationBarHidden:NO];
-    self.navigationController.navigationBar.translucent = false;
+//    [self.navigationController setNavigationBarHidden:NO];
     
     self.title = NSLocalizedString(@"BBCoin", nil);
     UIImageView* imageView =
     [[UIImageView alloc] initWithImage:[Utils imageWithImage:[UIImage imageNamed:@"bg_main_5"] scaledToSize:self.view.frame.size]];
     ;
-    CGRect allCoinViewFrame = self.view.frame;
-    allCoinViewFrame.origin.y = self.navigationController.navigationBar.frame.size.height;
+//    CGRect allCoinViewFrame = self.view.frame;
+//    allCoinViewFrame.origin.y = self.navigationController.navigationBar.frame.size.height;
     
     self.coinCellsContainer = [[UIView alloc] init];
     self.coinCellsContainer.translatesAutoresizingMaskIntoConstraints = NO;
@@ -110,7 +109,7 @@
                 }
             }
             if (curRow == 0){
-                make.top.equalTo(self.view.mas_top).offset(vMargin);
+                make.top.equalTo(self.coinCellsContainer.mas_top).offset(vMargin);
             }else{
                 make.top.equalTo(lastFloorCell.mas_bottom).offset(vMargin);
             }
@@ -125,7 +124,7 @@
     [self.coinCellsContainer mas_remakeConstraints:^(MASConstraintMaker *make){
         make.left.equalTo(self.view.mas_left).offset(8);
         make.right.equalTo(self.view.mas_right).offset(-8);
-        make.top.equalTo(self.view.mas_top);
+        make.top.equalTo(self.view.mas_top).offset(88);
         //        make.bottom.le(self.view.mas_bottom);
     }];
 

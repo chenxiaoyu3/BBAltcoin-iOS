@@ -11,6 +11,8 @@
 		FF06C58B1A67A2F4002C0ADA /* BBImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF06C58A1A67A2F4002C0ADA /* BBImageManager.m */; };
 		FF06C5911A67D7AD002C0ADA /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF06C5901A67D7AD002C0ADA /* splash@2x.png */; };
 		FF06C5931A67DA1B002C0ADA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF06C5921A67DA1B002C0ADA /* Images.xcassets */; };
+		FF06C5961A67E88B002C0ADA /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF06C5951A67E88B002C0ADA /* LeftMenuViewController.m */; };
+		FF06C5991A67FC1F002C0ADA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF06C5981A67FC1F002C0ADA /* MainViewController.m */; };
 		FF1AD4CD1A63BB340066EA39 /* libBBStockChartLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */; };
 		FF8143EE1A553B26003F4983 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8143ED1A553B26003F4983 /* main.m */; };
 		FF81440B1A553B26003F4983 /* BBAltcoinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81440A1A553B26003F4983 /* BBAltcoinTests.m */; };
@@ -27,7 +29,7 @@
 		FF8144541A553BA6003F4983 /* SingleCoinSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81442F1A553BA6003F4983 /* SingleCoinSummary.m */; };
 		FF8144551A553BA6003F4983 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144311A553BA6003F4983 /* Theme.m */; };
 		FF8144561A553BA6003F4983 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144331A553BA6003F4983 /* Utils.m */; };
-		FF8144571A553BA6003F4983 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144351A553BA6003F4983 /* ViewController.m */; };
+		FF8144571A553BA6003F4983 /* CoinOverallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144351A553BA6003F4983 /* CoinOverallViewController.m */; };
 		FF8144581A553BA6003F4983 /* coins.json in Resources */ = {isa = PBXBuildFile; fileRef = FF81443B1A553BA6003F4983 /* coins.json */; };
 		FF81445A1A553BA6003F4983 /* bg_main_4.png in Resources */ = {isa = PBXBuildFile; fileRef = FF81443F1A553BA6003F4983 /* bg_main_4.png */; };
 		FF81445B1A553BA6003F4983 /* bg_main_5.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8144401A553BA6003F4983 /* bg_main_5.png */; };
@@ -58,6 +60,10 @@
 		FF06C58A1A67A2F4002C0ADA /* BBImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBImageManager.m; sourceTree = "<group>"; };
 		FF06C5901A67D7AD002C0ADA /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@2x.png"; path = "BBAltCoin/Resource/Image/splash@2x.png"; sourceTree = SOURCE_ROOT; };
 		FF06C5921A67DA1B002C0ADA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BBAltCoin/Resource/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		FF06C5941A67E88B002C0ADA /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuViewController.h; path = BBAltCoin/Classes/LeftMenuViewController.h; sourceTree = SOURCE_ROOT; };
+		FF06C5951A67E88B002C0ADA /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuViewController.m; path = BBAltCoin/Classes/LeftMenuViewController.m; sourceTree = SOURCE_ROOT; };
+		FF06C5971A67FC1F002C0ADA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = BBAltCoin/Classes/MainViewController.h; sourceTree = SOURCE_ROOT; };
+		FF06C5981A67FC1F002C0ADA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = BBAltCoin/Classes/MainViewController.m; sourceTree = SOURCE_ROOT; };
 		FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBBStockChartLib.a; path = "../../BBStockChart/BBStockChartLib/build/Debug-iphoneos/libBBStockChartLib.a"; sourceTree = "<group>"; };
 		FF8143E81A553B25003F4983 /* BBAltcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAltcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8143EC1A553B26003F4983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,8 +95,8 @@
 		FF8144311A553BA6003F4983 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
 		FF8144321A553BA6003F4983 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		FF8144331A553BA6003F4983 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		FF8144341A553BA6003F4983 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FF8144351A553BA6003F4983 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FF8144341A553BA6003F4983 /* CoinOverallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinOverallViewController.h; sourceTree = "<group>"; };
+		FF8144351A553BA6003F4983 /* CoinOverallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinOverallViewController.m; sourceTree = "<group>"; };
 		FF8144381A553BA6003F4983 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		FF81443B1A553BA6003F4983 /* coins.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coins.json; sourceTree = "<group>"; };
 		FF81443F1A553BA6003F4983 /* bg_main_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_main_4.png; sourceTree = "<group>"; };
@@ -225,6 +231,8 @@
 		FF81441C1A553BA6003F4983 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FF06C5971A67FC1F002C0ADA /* MainViewController.h */,
+				FF06C5981A67FC1F002C0ADA /* MainViewController.m */,
 				FF06C5881A67A2DB002C0ADA /* BBImage */,
 				FF81441D1A553BA6003F4983 /* Coin.h */,
 				FF81441E1A553BA6003F4983 /* Coin.m */,
@@ -242,8 +250,10 @@
 				FF8144311A553BA6003F4983 /* Theme.m */,
 				FF8144321A553BA6003F4983 /* Utils.h */,
 				FF8144331A553BA6003F4983 /* Utils.m */,
-				FF8144341A553BA6003F4983 /* ViewController.h */,
-				FF8144351A553BA6003F4983 /* ViewController.m */,
+				FF8144341A553BA6003F4983 /* CoinOverallViewController.h */,
+				FF8144351A553BA6003F4983 /* CoinOverallViewController.m */,
+				FF06C5941A67E88B002C0ADA /* LeftMenuViewController.h */,
+				FF06C5951A67E88B002C0ADA /* LeftMenuViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -451,14 +461,16 @@
 			files = (
 				FF81444E1A553BA6003F4983 /* CoinDetailViewController.m in Sources */,
 				FF8144471A553BA6003F4983 /* AppDelegate.m in Sources */,
+				FF06C5961A67E88B002C0ADA /* LeftMenuViewController.m in Sources */,
 				FF81444F1A553BA6003F4983 /* CoinListTableViewCell.m in Sources */,
 				FF8144511A553BA6003F4983 /* CoinModel.xcdatamodeld in Sources */,
 				FF8144561A553BA6003F4983 /* Utils.m in Sources */,
 				FF8144531A553BA6003F4983 /* NumberView.m in Sources */,
+				FF06C5991A67FC1F002C0ADA /* MainViewController.m in Sources */,
 				FF81444C1A553BA6003F4983 /* Coin.m in Sources */,
 				FF8144541A553BA6003F4983 /* SingleCoinSummary.m in Sources */,
 				FF06C58B1A67A2F4002C0ADA /* BBImageManager.m in Sources */,
-				FF8144571A553BA6003F4983 /* ViewController.m in Sources */,
+				FF8144571A553BA6003F4983 /* CoinOverallViewController.m in Sources */,
 				FF8144521A553BA6003F4983 /* DataCenter.m in Sources */,
 				FF8144551A553BA6003F4983 /* Theme.m in Sources */,
 				FF8144501A553BA6003F4983 /* OrderListView.m in Sources */,

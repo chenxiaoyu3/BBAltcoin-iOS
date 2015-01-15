@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "ViewController.h"
+#import "CoinOverallViewController.h"
 #import "Coin.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

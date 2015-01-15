@@ -15,3 +15,6 @@
 "Ask" = "ASK";
 
 "MoneyMark" = "$";
+
+"CoinOverall" = "Home";
+"CoinDetail" = "Coin Market";

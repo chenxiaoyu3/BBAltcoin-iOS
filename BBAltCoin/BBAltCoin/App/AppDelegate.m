@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "CoinOverallViewController.h"
 #import "DataCenter.h"
 #import "CoinDetailViewController.h"
+#import "LeftMenuViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,14 +28,20 @@
     [DataCenter center];
     
 
-    self.mainViewController = [[CoinDetailViewController alloc ] init];
+    self.mainViewController = [[MainViewController alloc ] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.window.rootViewController = self.mainViewController;
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
+    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
+    self.window.rootViewController = navController;
+    
     [UINavigationBar appearance].barTintColor = UIColorFromHex(0x8c1c1c);
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
     [self.window makeKeyAndVisible];
+    
+//    LeftMenuViewController* menuViewController = [[LeftMenuViewController alloc] init];
+//    [navController pushViewController:menuViewController animated:YES];
+    
     return YES;
 }
 
