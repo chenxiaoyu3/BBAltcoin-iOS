@@ -10,8 +10,8 @@
 #import "Utils.h"
 #import "CoinListTableViewCell.h"
 #import "BBStockChart.h"
-
-
+#import "ChartViewController.h"
+#import "NavController.h"
 
 @interface CoinDetailViewController ()
 
@@ -55,7 +55,7 @@
     self.coinListTableView = [[UITableView alloc] init];
     [self.leftView addSubview:self.coinListTableView];
 
-    UIEdgeInsets insets = UIEdgeInsetsMake(48, 8, 8, 8);
+    UIEdgeInsets insets = UIEdgeInsetsMake(kNavigationBarHeight, 8, 8, 8);
     [self.rightView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.top).offset(insets.top);
         make.left.equalTo(self.leftView.mas_right);
@@ -188,6 +188,7 @@
     [self _init];
     
     [[DataCenter center] requestCoinDetail];
+    self.title = NSLocalizedString(@"BBAltcoin", nil);
 
 }
 
@@ -217,7 +218,10 @@
 }
 
 - (void)chartViewTaped:(UITapGestureRecognizer*)recognizer{
-    NSLog(@"Tap");
+    ChartViewController *chartViewController = [[ChartViewController alloc] initWithCoin:self.selectedCoinID];
+    UINavigationController* nav = [[NavController alloc] initWithRootViewController:chartViewController];
+//    [self.navigationController pushViewController:nav animated:YES];
+    [self.navigationController presentViewController:nav animated:NO completion:nil];
 }
 
 #pragma mark - TableView
@@ -258,8 +262,7 @@
     }
 }
 
-
-- (void)chartDataRequestCompleted:(NSArray *)data andType:(CoinChartType)type status:(int)st{
+- (void)chartDataRequestCompleted:(NSUInteger)coinID chartType:(CoinChartType)type withStatus:(int)st andData:(NSArray *)data{
     [self.chartView reset];
     if (st == 0) {
         
@@ -279,7 +282,6 @@
                 break;
             }
         }
-        
         [self.chartView addArea:areaup];
         [self.chartView addArea:areadown];
         [self.chartView setHeighRatio:0.3 forArea:areadown];

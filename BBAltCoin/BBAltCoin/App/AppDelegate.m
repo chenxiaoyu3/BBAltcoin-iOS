@@ -12,6 +12,7 @@
 #import "CoinDetailViewController.h"
 #import "LeftMenuViewController.h"
 #import "MainViewController.h"
+#import "NavController.h"
 
 @interface AppDelegate ()
 

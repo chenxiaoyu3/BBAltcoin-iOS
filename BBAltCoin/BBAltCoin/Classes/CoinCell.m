@@ -17,7 +17,7 @@
 - (id) init{
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor colorWithWhite:255 alpha:0.4];
+        self.backgroundColor = [UIColor colorWithWhite:255 alpha:0.2];
         self.nameLabel = [[UILabel alloc] init];
         self.nameLabel.textColor = [UIColor whiteColor];
         self.nameLabel.textAlignment = NSTextAlignmentCenter;

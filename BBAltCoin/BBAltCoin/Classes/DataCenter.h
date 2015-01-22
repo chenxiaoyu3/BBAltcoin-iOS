@@ -19,7 +19,10 @@ typedef enum {
 @optional
 -(void)priceRequestCompletedWithStatus:(int)st;
 -(void)coinDetailRequestCompletedWithStatus:(int)st;
--(void)chartDataRequestCompleted:(NSArray*)data andType:(CoinChartType)type status:(int)st;
+-(void)chartDataRequestCompleted:(NSUInteger)coinID
+                       chartType:(CoinChartType)type
+                      withStatus:(int)st
+                         andData:(NSArray*)data;
 @end
 
 @interface DataCenter : NSObject{

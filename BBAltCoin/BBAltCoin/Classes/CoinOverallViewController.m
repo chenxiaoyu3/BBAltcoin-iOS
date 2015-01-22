@@ -24,6 +24,7 @@
     
     
     [self setupLayout];
+    self.title = NSLocalizedString(@"BBAltcoin", nil);
     [[DataCenter center] requestPrice];
 }
 
@@ -70,6 +71,7 @@
         [self.coinCellsContainer addSubview:cell];
     }
     [self updateConstraints];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)updateConstraints{
@@ -124,7 +126,7 @@
     [self.coinCellsContainer mas_remakeConstraints:^(MASConstraintMaker *make){
         make.left.equalTo(self.view.mas_left).offset(8);
         make.right.equalTo(self.view.mas_right).offset(-8);
-        make.top.equalTo(self.view.mas_top).offset(88);
+        make.top.equalTo(self.view.mas_top).offset(0);
         //        make.bottom.le(self.view.mas_bottom);
     }];
 

@@ -19,8 +19,7 @@
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:text forState:UIControlStateNormal];
     btn.titleLabel.textColor = [Theme curTheme].textColor1;
-    [btn setBackgroundImage:[Utils imageWithColor:[UIColor yellowColor]] forState:UIControlStateHighlighted];
-//    btn.backgroundColor = [UIColor yellowColor];
+    [btn setBackgroundImage:[Utils imageWithColor:[UIColor grayColor]] forState:UIControlStateHighlighted];
     return btn;
 }
 - (void)setupLayout{

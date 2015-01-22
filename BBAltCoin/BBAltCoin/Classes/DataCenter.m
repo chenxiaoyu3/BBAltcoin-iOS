@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DataCenter.h"
-#import "Macro.h"
+
 #import "AFNetworking.h"
 
 DataCenter* dataCenter;
@@ -30,7 +30,7 @@ NSString* const BTC38_K_1D = @"http://www.btc38.com/trade/getTradeDayLine.php?co
 
 
 -(void) initData{
-    NSManagedObjectContext *context = [AppDelegate managedObjectContext];
+    NSManagedObjectContext *context = [APPDelegate managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Coin" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
@@ -136,8 +136,8 @@ NSString* const BTC38_K_1D = @"http://www.btc38.com/trade/getTradeDayLine.php?co
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray* array = [NSJSONSerialization JSONObjectWithData:[operation.responseString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
         for (id<DataCenterDelegate> observer in _delegates){
-            if ([observer respondsToSelector:@selector(chartDataRequestCompleted:andType:status:)]) {
-                [observer chartDataRequestCompleted:array andType:type status:0];
+            if ([observer respondsToSelector:@selector(chartDataRequestCompleted:chartType:withStatus:andData:)]) {
+                [observer chartDataRequestCompleted:coinID chartType:type withStatus:0 andData:array];
             }
         }
 
@@ -168,7 +168,7 @@ NSString* const BTC38_K_1D = @"http://www.btc38.com/trade/getTradeDayLine.php?co
 }
 
 +(void) firstLaunchAction {
-    NSManagedObjectContext* context = [AppDelegate managedObjectContext];
+    NSManagedObjectContext* context = [APPDelegate managedObjectContext];
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"coins" ofType:@"json"]];
     NSError* err = nil;
     NSArray* coins = (NSArray*)[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&err];

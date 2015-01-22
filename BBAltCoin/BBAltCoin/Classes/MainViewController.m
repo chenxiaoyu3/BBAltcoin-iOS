@@ -21,7 +21,7 @@
         self.coinDetailViewController = [[CoinDetailViewController alloc] init];
         self.coinOverallViewController = [[CoinOverallViewController alloc] init];
         
-        self.topViewController = self.coinDetailViewController;
+        self.topViewController = self.coinOverallViewController;
         
     }
     return self;
@@ -29,12 +29,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.anchorRightRevealAmount = 180;
+    self.anchorRightRevealAmount = 170;
     self.leftMenuViewController = [[LeftMenuViewController alloc] init];;
     self.underLeftViewController = self.leftMenuViewController;
     
     [self.view addGestureRecognizer:self.panGesture];
     self.leftMenuViewController.delegate = self;
+    self.title = NSLocalizedString(@"BBAltcoin", nil);
 }
 
 - (void)didReceiveMemoryWarning {

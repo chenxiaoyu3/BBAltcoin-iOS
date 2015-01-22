@@ -11,6 +11,7 @@
 #import "CoinDetailViewController.h"
 #import "CoinOverallViewController.h"
 #import "ECSlidingViewController.h"
+#import "NavController.h"
 
 @interface MainViewController : ECSlidingViewController<MenuDelegate>
 

@@ -9,9 +9,9 @@
 #ifndef BBAltcoin_Macro_h
 #define BBAltcoin_Macro_h
 
-#include "AppDelegate.h"
+#import "AppDelegate.h"
 
-#define AppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+#define APPDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
@@ -20,8 +20,7 @@
 #define CELL_EACH_ROW_LAND 6
 #define TOP_ORDER_NUM 10
 
-#define MAS_SHORTHAND
 
-
+#define kNavigationBarHeight 44
 
 #endif

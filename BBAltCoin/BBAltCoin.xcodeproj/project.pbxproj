@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BF455DE3FA1140CE71C3E726 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DAE1FAAF8E3F69027A3CCD /* libPods.a */; };
+		FF0554BA1A710AFA0054D648 /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0554B91A710AFA0054D648 /* ChartViewController.m */; };
+		FF0554BD1A71101E0054D648 /* NavController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0554BC1A71101E0054D648 /* NavController.m */; };
 		FF06C58B1A67A2F4002C0ADA /* BBImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF06C58A1A67A2F4002C0ADA /* BBImageManager.m */; };
 		FF06C5911A67D7AD002C0ADA /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF06C5901A67D7AD002C0ADA /* splash@2x.png */; };
 		FF06C5931A67DA1B002C0ADA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF06C5921A67DA1B002C0ADA /* Images.xcassets */; };
@@ -56,6 +58,10 @@
 		6ED40E55D1EE37DA40BC7AAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		76DAE1FAAF8E3F69027A3CCD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE91BBD364E929EC5F9664D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FF0554B81A710AFA0054D648 /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChartViewController.h; path = BBAltCoin/Classes/ChartViewController.h; sourceTree = SOURCE_ROOT; };
+		FF0554B91A710AFA0054D648 /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChartViewController.m; path = BBAltCoin/Classes/ChartViewController.m; sourceTree = SOURCE_ROOT; };
+		FF0554BB1A71101E0054D648 /* NavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavController.h; path = BBAltCoin/Classes/NavController.h; sourceTree = SOURCE_ROOT; };
+		FF0554BC1A71101E0054D648 /* NavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavController.m; path = BBAltCoin/Classes/NavController.m; sourceTree = SOURCE_ROOT; };
 		FF06C5891A67A2F4002C0ADA /* BBImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBImageManager.h; sourceTree = "<group>"; };
 		FF06C58A1A67A2F4002C0ADA /* BBImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBImageManager.m; sourceTree = "<group>"; };
 		FF06C5901A67D7AD002C0ADA /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@2x.png"; path = "BBAltCoin/Resource/Image/splash@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -254,6 +260,10 @@
 				FF8144351A553BA6003F4983 /* CoinOverallViewController.m */,
 				FF06C5941A67E88B002C0ADA /* LeftMenuViewController.h */,
 				FF06C5951A67E88B002C0ADA /* LeftMenuViewController.m */,
+				FF0554B81A710AFA0054D648 /* ChartViewController.h */,
+				FF0554B91A710AFA0054D648 /* ChartViewController.m */,
+				FF0554BB1A71101E0054D648 /* NavController.h */,
+				FF0554BC1A71101E0054D648 /* NavController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -466,11 +476,13 @@
 				FF8144511A553BA6003F4983 /* CoinModel.xcdatamodeld in Sources */,
 				FF8144561A553BA6003F4983 /* Utils.m in Sources */,
 				FF8144531A553BA6003F4983 /* NumberView.m in Sources */,
+				FF0554BA1A710AFA0054D648 /* ChartViewController.m in Sources */,
 				FF06C5991A67FC1F002C0ADA /* MainViewController.m in Sources */,
 				FF81444C1A553BA6003F4983 /* Coin.m in Sources */,
 				FF8144541A553BA6003F4983 /* SingleCoinSummary.m in Sources */,
 				FF06C58B1A67A2F4002C0ADA /* BBImageManager.m in Sources */,
 				FF8144571A553BA6003F4983 /* CoinOverallViewController.m in Sources */,
+				FF0554BD1A71101E0054D648 /* NavController.m in Sources */,
 				FF8144521A553BA6003F4983 /* DataCenter.m in Sources */,
 				FF8144551A553BA6003F4983 /* Theme.m in Sources */,
 				FF8144501A553BA6003F4983 /* OrderListView.m in Sources */,
