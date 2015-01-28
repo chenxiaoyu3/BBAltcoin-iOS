@@ -24,7 +24,7 @@
 @property (nonatomic, strong) UIView* rightView;
 @property (nonatomic, strong) UIScrollView* rightDownScorllView;
 @property (nonatomic, strong) UIView* rightDownScrollContentView;
-
+@property (nonatomic, strong) AAPullToRefresh* pullToRefresh;
 
 @property (nonatomic, strong) SingleCoinSummary* coinSummary;
 
@@ -34,5 +34,6 @@
 @property (nonatomic, strong) OrderListView* sellOrdersView;
 
 @property (nonatomic, strong) BBChartView* chartView;
+@property (nonatomic, strong) UIImageView* refreshImageView;
 
 @end

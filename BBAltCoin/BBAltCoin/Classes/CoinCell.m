@@ -8,8 +8,11 @@
 
 #import "CoinCell.h"
 #import "DataCenter.h"
-#import "Masonry.h"
+#import "BBTheme.h"
 
+@interface CoinCell()
+@property (nonatomic) CGFloat lastNumber;
+@end
 
 @implementation CoinCell
 
@@ -25,26 +28,22 @@
         [self.nameLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
         //        self.nameLabel.backgroundColor = [UIColor yellowColor];
         
-        self.priceLabel = [[UILabel alloc] init];
-        self.priceLabel.text = @"100";
-        self.priceLabel.textAlignment = NSTextAlignmentCenter;
+        self.priceLabel = [[NumberView alloc] init];
+//        self.priceLabel.text = @"100";
+//        self.priceLabel.textAlignment = NSTextAlignmentCenter;
         self.priceLabel.textColor = [UIColor whiteColor];
-        [self.priceLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        [self.priceLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
 //                self.priceLabel.backgroundColor = [UIColor yellowColor];
 
         self.triangleImageView = [[UIImageView alloc] initWithImage:[CoinCell triangleImageOfType:0]];
-        [self.triangleImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
         
         self.increaseLabel = [[UILabel alloc] init];
         self.increaseLabel.font = [UIFont systemFontOfSize:10];
         self.increaseLabel.textColor = [UIColor whiteColor];
-        [self.increaseLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
         
         UIView * bottomView = [[UIView alloc] init];
-        [bottomView setTranslatesAutoresizingMaskIntoConstraints:NO];
         [bottomView addSubview:self.triangleImageView];
         [bottomView addSubview:self.increaseLabel];
-//        [bottomView setBackgroundColor:[UIColor yellowColor]];
         
         [self addSubview:bottomView];
         [self addSubview:self.nameLabel];
@@ -60,6 +59,7 @@
             make.top.equalTo(self.nameLabel.mas_bottom).offset(4);
             make.centerX.equalTo(self.mas_centerX);
             make.bottom.equalTo(bottomView.mas_top).offset(-2);
+            make.height.greaterThanOrEqualTo(@20);
         }];
         
 
@@ -76,6 +76,7 @@
             make.right.equalTo(self.increaseLabel.mas_left).offset(-4);
             make.top.equalTo(bottomView);
             make.bottom.equalTo(bottomView);
+            make.height.width.equalTo(@7);
         }];
         [self.increaseLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.triangleImageView.mas_right).offset(4);
@@ -86,6 +87,7 @@
         
 
     }
+    self.lastNumber = -1;
     self.nameLabel.text = @"abc";
     return self;
 }
@@ -118,9 +120,21 @@
 # pragma mark - DataCenterDelegate
 -(void)priceRequestCompletedWithStatus:(int)st{
     if (st == 0) {
-        self.priceLabel.text = [NSString stringWithFormat:@"%0.3f",
-                                    [[DataCenter center] coinOfID:self.coinID].buyPrice
-                                ];
+        CGFloat number = [[DataCenter center] coinOfID:self.coinID].buyPrice;
+        self.priceLabel.number = number;
+        if (self.lastNumber >= 0) {
+            if (self.lastNumber > number) {
+                self.triangleImageView.image = [CoinCell triangleImageOfType:-1];
+                self.increaseLabel.textColor = [BBTheme defTheme].fallColor;
+            }else if(self.lastNumber < number){
+                self.triangleImageView.image = [CoinCell triangleImageOfType:1];
+                self.increaseLabel.textColor = [BBTheme defTheme].riseColor;
+            }else{
+                self.triangleImageView.image = [CoinCell triangleImageOfType:0];
+                self.increaseLabel.textColor = [BBTheme whiteColor];
+            }
+        }
+        self.lastNumber = number;
     }
 }
 

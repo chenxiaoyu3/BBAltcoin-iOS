@@ -68,6 +68,27 @@ NSString* const BTC38_K_1D = @"http://www.btc38.com/trade/getTradeDayLine.php?co
         [prices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             ((Coin*)self.coinsDict[key]).buyPrice = ((NSNumber*)obj).floatValue;
         }];
+//        for (id<DataCenterDelegate> observer in _delegates){
+//            if ([observer respondsToSelector:@selector(priceRequestCompletedWithStatus:)]) {
+//                [observer priceRequestCompletedWithStatus:0];
+//            }
+//        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Request price error %@", error);
+    }];
+    [[NSOperationQueue mainQueue] addOperation:op];
+    
+    // request sell
+    NSMutableURLRequest* req2 = [[NSMutableURLRequest alloc] initWithURL:
+                                [NSURL URLWithString:[NSString stringWithFormat:@"%@/price/sell", SERVER_URL]]];
+    [req2 setValue:@"application/json" forHTTPHeaderField:@"accept"];
+    AFHTTPRequestOperation* op2 = [[AFHTTPRequestOperation alloc] initWithRequest:req2];
+    op2.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op2 setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary* prices = (NSDictionary*)responseObject;
+        [prices enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            ((Coin*)self.coinsDict[key]).sellPrice = ((NSNumber*)obj).floatValue;
+        }];
         for (id<DataCenterDelegate> observer in _delegates){
             if ([observer respondsToSelector:@selector(priceRequestCompletedWithStatus:)]) {
                 [observer priceRequestCompletedWithStatus:0];
@@ -76,7 +97,8 @@ NSString* const BTC38_K_1D = @"http://www.btc38.com/trade/getTradeDayLine.php?co
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Request price error %@", error);
     }];
-    [[NSOperationQueue mainQueue] addOperation:op];
+    [[NSOperationQueue mainQueue] addOperation:op2];
+
     
 }
 

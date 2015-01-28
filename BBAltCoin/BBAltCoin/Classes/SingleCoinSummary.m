@@ -16,18 +16,18 @@
     self.backgroundColor = [UIColor clearColor];
     self.coinNameLabel.textColor = [UIColor yellowColor];
     self.coinNameLabel.font = [UIFont systemFontOfSize:14];
-    self.coinPriceLabel.textColor = [[Theme curTheme] textColor1];
+
     self.coinPriceLabel.font = [UIFont systemFontOfSize:22];
     self.coinPriceLabel.showSymbol = YES;
-    self.coinPriceBuyLabel.textColor = [[Theme curTheme] textcolor2];
+
     self.coinPriceBuyLabel.font = [UIFont systemFontOfSize:12];
     self.coinPriceBuyLabel.showSymbol = YES;
-    self.coinPriceSellLabel.textColor = [[Theme curTheme] textcolor2];
     self.coinPriceSellLabel.font = [UIFont systemFontOfSize:12];
     self.coinPriceSellLabel.showSymbol = YES;
-    self.coinVolume.textColor = [Theme curTheme].textcolor2;
+    
     self.coinVolume.font = [UIFont systemFontOfSize:12];
     self.coinVolume.leaveSymbolSpace = YES;
+    self.coinVolume.changeColorAutomatically = NO;
 
     
 }
@@ -129,9 +129,9 @@
     _coinID = coinID;
     self.coinNameLabel.text = [[DataCenter center] coinAbbrOfID:coinID];
     Coin* c = [[DataCenter center] coinOfID:_coinID];
-    self.coinPriceLabel.number = c.price;
-    self.coinPriceBuyLabel.number = c.buyPrice;
-    self.coinPriceSellLabel.number = c.sellPrice;
+    [self.coinPriceLabel setNumber:c.price andChangeColorAuto:NO];
+    [self.coinPriceBuyLabel setNumber:c.buyPrice andChangeColorAuto:NO];
+    [self.coinPriceSellLabel setNumber:c.sellPrice andChangeColorAuto:NO];
 }
 
 #pragma mark - DataCenter
@@ -145,9 +145,9 @@
     }
 }
 
-- (void)chartDataRequestCompleted:(NSArray *)data andType:(CoinChartType)type status:(int)st{
+- (void)chartDataRequestCompleted:(NSUInteger)coinID chartType:(CoinChartType)type withStatus:(int)st andData:(NSArray *)data{
     CGFloat vol = 0;
-    if (st == 0 && type == ChartTime) {
+    if (st == 0 && type == ChartTime && coinID == self.coinID) {
         for (NSArray* arr in data){
             vol += Float(arr[1]);
         }

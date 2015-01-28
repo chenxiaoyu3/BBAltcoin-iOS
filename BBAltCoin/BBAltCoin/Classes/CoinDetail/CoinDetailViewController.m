@@ -12,6 +12,7 @@
 #import "BBStockChart.h"
 #import "ChartViewController.h"
 #import "NavController.h"
+#import "BBImageManager.h"
 
 @interface CoinDetailViewController ()
 
@@ -30,8 +31,6 @@
     self.view.backgroundColor = [[Theme curTheme] themeColor1];
     self.coinListTableView.backgroundView = nil;
     self.coinListTableView.backgroundColor = [UIColor clearColor];
-//    self.coinListTableView.separatorInset = UIEdgeInsetsZero;
-//    self.coinListTableView.layoutMargins = UIEdgeInsetsZero;
     self.coinListTableView.separatorColor = [UIColor clearColor];
     
     self.rightDownScorllView.canCancelContentTouches = YES;
@@ -40,7 +39,8 @@
     UITapGestureRecognizer* chartViewTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chartViewTaped:)];
     [self.chartView addGestureRecognizer:chartViewTapRecognizer];
 
-    self.selectedCoinID = 0;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
 }
 
 -(void)setupLayout{
@@ -55,7 +55,7 @@
     self.coinListTableView = [[UITableView alloc] init];
     [self.leftView addSubview:self.coinListTableView];
 
-    UIEdgeInsets insets = UIEdgeInsetsMake(kNavigationBarHeight, 8, 8, 8);
+    UIEdgeInsets insets = UIEdgeInsetsMake(8, 8, 8, 8);
     [self.rightView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.top).offset(insets.top);
         make.left.equalTo(self.leftView.mas_right);
@@ -83,7 +83,7 @@
     
     [self.coinSummary makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_rightView.mas_left).offset(10);
-        make.top.equalTo(_rightView.mas_top).offset(20);
+        make.top.equalTo(_rightView.mas_top).offset(0);
         make.right.equalTo(_rightView.right);
         make.height.equalTo(@80);
     }];
@@ -95,7 +95,8 @@
     [self.rightDownScorllView addSubview:self.rightDownScrollContentView];
     [self.rightDownScrollContentView makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.rightDownScorllView);
-        //这个不添加，rightView 与它的父 的右边 会有一点padding， why?
+        //width 首先要添加
+        //offset，rightView 与它的父 的右边 会有一点padding， why?
         make.width.equalTo(self.rightDownScorllView).offset(-5);
     }];
     // two orders view
@@ -129,7 +130,7 @@
     
     [self.orderSectionView makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_rightDownScrollContentView.left).offset(8);
-        make.right.equalTo(_rightDownScrollContentView.right).offset(8);
+        make.right.equalTo(_rightDownScrollContentView.right).offset(-2);
         make.top.equalTo(_rightDownScrollContentView.top);
         make.height.equalTo(@250);
     }];
@@ -171,12 +172,20 @@
     [self.chartView makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.orderSectionView.bottom).offset(14);
         make.height.equalTo(@200);
-        make.left.and.right.equalTo(_rightDownScrollContentView);
+        make.left.and.right.equalTo(_orderSectionView);
     }];
     // 必须添加bottom ，否则内部view的height 对不上（scrollView会一直以为内部view的height是0）
     [self.rightDownScrollContentView makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.chartView.bottom).offset(50);
     }];
+    
+//    self.refreshImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refresh"]];
+//    [self.rightView addSubview:self.refreshImageView];
+//    [self.refreshImageView makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.and.bottom.equalTo(self.rightView).offset(-20);
+//        make.width.equalTo(@40);
+//        make.height.equalTo(@40);
+//    }];
 
 
     
@@ -189,7 +198,15 @@
     
     [[DataCenter center] requestCoinDetail];
     self.title = NSLocalizedString(@"BBAltcoin", nil);
-
+    self.pullToRefresh = [self.rightDownScorllView addPullToRefreshPosition:AAPullToRefreshPositionTop ActionHandler:^(AAPullToRefresh *v) {
+        [[DataCenter center] requestCoinDetail];
+        [[DataCenter center] requestChartDataOfCoin:_selectedCoinID andType:ChartTime];
+    }];
+    
+    self.pullToRefresh.borderColor = [UIColor whiteColor];
+    self.pullToRefresh.borderWidth = 1;
+    self.pullToRefresh.activityIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    self.selectedCoinID = 0;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -214,7 +231,9 @@
     self.sellOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.sellOrder;
     
     [[DataCenter center] requestChartDataOfCoin:_selectedCoinID andType:ChartTime];
-    
+    [[BBImageManager manager] requestLOGO:[[DataCenter center] coinAbbrOfID:self.selectedCoinID] success:^(NSString *coin, UIImage *image) {
+        self.pullToRefresh.imageIcon = [Utils imageWithImage:image scaledToSize:CGSizeMake(15, 15)];
+    }];
 }
 
 - (void)chartViewTaped:(UITapGestureRecognizer*)recognizer{
@@ -260,6 +279,7 @@
         self.buyOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.buyOrder;
         self.sellOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.sellOrder;
     }
+    [self.pullToRefresh stopIndicatorAnimation];
 }
 
 - (void)chartDataRequestCompleted:(NSUInteger)coinID chartType:(CoinChartType)type withStatus:(int)st andData:(NSArray *)data{

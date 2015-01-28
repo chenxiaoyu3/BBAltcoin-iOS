@@ -12,6 +12,8 @@
 #import "Macro.h"
 #import "Utils.h"
 #import "Masonry.h"
+#import "AAPullToRefresh.h"
+#import "BBImageManager.h"
 
 @interface CoinOverallViewController ()
 @property NSUInteger cellNumEachRow;
@@ -22,9 +24,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [self setupLayout];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.title = NSLocalizedString(@"BBAltcoin", nil);
+    
+    self.pullToRefresh = [self.scrollView addPullToRefreshPosition:AAPullToRefreshPositionTop ActionHandler:^(AAPullToRefresh *v) {
+        [[DataCenter center] requestPrice];
+    }];
+//    [self.scrollView triggerPullToRefresh];
+    self.pullToRefresh.borderColor = [UIColor whiteColor];
+    self.pullToRefresh.borderWidth = 1.5;
+    self.pullToRefresh.activityIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    
+    [[BBImageManager manager] requestLOGO:[[DataCenter center] coinAbbrOfID:0] success:^(NSString *coin, UIImage *image) {
+        self.pullToRefresh.imageIcon = [Utils imageWithImage:image scaledToSize:CGSizeMake(30, 30)];
+    }];
+    
+    
     [[DataCenter center] requestPrice];
 }
 
@@ -32,13 +48,14 @@
     for ( CoinCell* cell in self.coinCells){
         [[DataCenter center] addDataObserver:cell];
     }
-
+    [[DataCenter center] addDataObserver:self];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     for ( CoinCell* cell in self.coinCells){
         [[DataCenter center] removeDataObserver:cell];
     }
+    [[DataCenter center] removeDataObserver:self];
 }
 
 - (void) setupLayout{
@@ -47,20 +64,15 @@
     }else{
         self.cellNumEachRow = CELL_EACH_ROW_LAND;
     }
-//    [self.navigationController setNavigationBarHidden:NO];
     
     self.title = NSLocalizedString(@"BBCoin", nil);
     UIImageView* imageView =
     [[UIImageView alloc] initWithImage:[Utils imageWithImage:[UIImage imageNamed:@"bg_main_5"] scaledToSize:self.view.frame.size]];
     ;
-//    CGRect allCoinViewFrame = self.view.frame;
-//    allCoinViewFrame.origin.y = self.navigationController.navigationBar.frame.size.height;
-    
     self.coinCellsContainer = [[UIView alloc] init];
     self.coinCellsContainer.translatesAutoresizingMaskIntoConstraints = NO;
-    self.coinCellsContainer.backgroundColor = [UIColor grayColor];
     [self.view addSubview:imageView];
-    [self.view addSubview:self.coinCellsContainer];
+    
 
     
     _coinCells = [[NSMutableArray alloc] initWithCapacity:[DataCenter center].coinNum];
@@ -70,8 +82,16 @@
         [self.coinCells addObject:cell];
         [self.coinCellsContainer addSubview:cell];
     }
+    
+    self.scrollView = [[UIScrollView alloc] init];
+    self.scrollViewContainer = [[UIView alloc] init];
+    [self.scrollViewContainer addSubview:self.coinCellsContainer];
+    
+    [self.scrollView addSubview:self.scrollViewContainer];
+    
+    
+    [self.view addSubview:self.scrollView];
     [self updateConstraints];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)updateConstraints{
@@ -122,12 +142,23 @@
         lastCell = self.coinCells[i];
         
     }
+    [self.scrollViewContainer makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.scrollView);
+        make.height.equalTo(@(SCREEN_HEIGHT));
+        make.width.equalTo(self.scrollView.width);
+    }];
+    
 //    UIEdgeInsets margin = UIEdgeInsetsMake(8, 8, 8, 8);
     [self.coinCellsContainer mas_remakeConstraints:^(MASConstraintMaker *make){
-        make.left.equalTo(self.view.mas_left).offset(8);
-        make.right.equalTo(self.view.mas_right).offset(-8);
-        make.top.equalTo(self.view.mas_top).offset(0);
-        //        make.bottom.le(self.view.mas_bottom);
+        make.left.equalTo(self.scrollViewContainer.left).offset(8);
+        make.right.equalTo(self.scrollViewContainer.right).offset(-8);
+        make.top.equalTo(self.scrollViewContainer.top).offset(0);
+        make.height.equalTo(@300);
+    }];
+//
+    [self.scrollView makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.and.right.equalTo(self.view);
+        make.height.equalTo(@(400));
     }];
 
 }
@@ -154,5 +185,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma mark - DataCenterDelegate
+- (void)priceRequestCompletedWithStatus:(int)st{
+    [self.pullToRefresh stopIndicatorAnimation];
+}
 @end

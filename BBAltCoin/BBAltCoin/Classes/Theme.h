@@ -26,5 +26,9 @@
 -(UIColor*) redForNumber;
 
 -(UIColor*) debugColor1;
+
+-(UIColor*) riseColor;
+-(UIColor*) fallColor;
+-(UIColor*) defTextColor;
 +(Theme*) curTheme;
 @end

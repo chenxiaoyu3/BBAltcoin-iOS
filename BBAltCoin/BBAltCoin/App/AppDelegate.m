@@ -36,6 +36,7 @@
     self.window.rootViewController = navController;
     
     [UINavigationBar appearance].barTintColor = UIColorFromHex(0x8c1c1c);
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
     [self.window makeKeyAndVisible];

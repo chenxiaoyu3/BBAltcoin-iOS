@@ -36,13 +36,22 @@
     [self.view addGestureRecognizer:self.panGesture];
     self.leftMenuViewController.delegate = self;
     self.title = NSLocalizedString(@"BBAltcoin", nil);
+    
+    UIBarButtonItem *menuBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_list"] style:UIBarButtonItemStylePlain target:self action:@selector(barLeftItemClicked:)];
+
+    self.navigationItem.leftBarButtonItem = menuBtn;
+
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)barLeftItemClicked:(id)sender{
 
+    [self anchorTopViewToRightAnimated:YES];
+}
 #pragma mark MenuDelegate
 - (void)onCoinOverallBtnClicked{
     self.topViewController = self.coinOverallViewController;

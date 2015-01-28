@@ -49,6 +49,15 @@
 - (UIColor *)debugColor1{
     return [UIColor redColor];
 }
+- (UIColor *)fallColor{
+    return [UIColor redColor];
+}
+- (UIColor *)riseColor{
+    return [UIColor greenColor];
+}
+- (UIColor *)defTextColor{
+    return self.textColor1;
+}
 +(Theme *)curTheme{
     return [[Theme alloc] init];
 }

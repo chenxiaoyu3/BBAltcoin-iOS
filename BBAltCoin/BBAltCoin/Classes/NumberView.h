@@ -15,9 +15,11 @@
 @property (nonatomic, strong) UILabel* leftLabel;
 @property (nonatomic) BOOL showSymbol;
 @property (nonatomic) BOOL leaveSymbolSpace;
-
+@property (nonatomic) BOOL changeColorAutomatically;
 #pragma mark - Fake to be a UILabel
 @property (nonatomic, strong) UIFont* font;
 @property (nonatomic) NSTextAlignment   textAlignment;
 @property (nonatomic, strong) UIColor* textColor;
+
+-(void)setNumber:(float)number andChangeColorAuto:(BOOL)changeColorAuto;
 @end

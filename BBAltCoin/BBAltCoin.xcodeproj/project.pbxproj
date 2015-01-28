@@ -42,6 +42,9 @@
 		FF8144601A553BA6003F4983 /* triangle_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8144451A553BA6003F4983 /* triangle_up@2x.png */; };
 		FF8144621A553F81003F4983 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DAE1FAAF8E3F69027A3CCD /* libPods.a */; };
 		FFC04E921A5542E9001803A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFC04E941A5542E9001803A1 /* Localizable.strings */; };
+		FFDFABAE1A78A1F4001E4839 /* AAPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDFABAD1A78A1F4001E4839 /* AAPullToRefresh.m */; };
+		FFF11EA71A78BE1C003D42E7 /* ic_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFF11EA61A78BE1C003D42E7 /* ic_list@2x.png */; };
+		FFF11EA91A78C271003D42E7 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFF11EA81A78C271003D42E7 /* refresh@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,10 @@
 		FF8144611A553D63003F4983 /* BBAltcoin.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAltcoin.pch; sourceTree = "<group>"; };
 		FFC04E951A5542F2001803A1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FFC04E961A55434A001803A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FFDFABAC1A78A1F4001E4839 /* AAPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPullToRefresh.h; sourceTree = "<group>"; };
+		FFDFABAD1A78A1F4001E4839 /* AAPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPullToRefresh.m; sourceTree = "<group>"; };
+		FFF11EA61A78BE1C003D42E7 /* ic_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_list@2x.png"; sourceTree = "<group>"; };
+		FFF11EA81A78C271003D42E7 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +244,8 @@
 		FF81441C1A553BA6003F4983 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FFDFABAC1A78A1F4001E4839 /* AAPullToRefresh.h */,
+				FFDFABAD1A78A1F4001E4839 /* AAPullToRefresh.m */,
 				FF06C5971A67FC1F002C0ADA /* MainViewController.h */,
 				FF06C5981A67FC1F002C0ADA /* MainViewController.m */,
 				FF06C5881A67A2DB002C0ADA /* BBImage */,
@@ -312,6 +321,8 @@
 		FF81443E1A553BA6003F4983 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				FFF11EA81A78C271003D42E7 /* refresh@2x.png */,
+				FFF11EA61A78BE1C003D42E7 /* ic_list@2x.png */,
 				FF06C5901A67D7AD002C0ADA /* splash@2x.png */,
 				FF81443F1A553BA6003F4983 /* bg_main_4.png */,
 				FF8144401A553BA6003F4983 /* bg_main_5.png */,
@@ -415,10 +426,12 @@
 				FF8144601A553BA6003F4983 /* triangle_up@2x.png in Resources */,
 				FF81445D1A553BA6003F4983 /* LTC_logo.png in Resources */,
 				FF81444A1A553BA6003F4983 /* LaunchScreen.xib in Resources */,
+				FFF11EA91A78C271003D42E7 /* refresh@2x.png in Resources */,
 				FF81445F1A553BA6003F4983 /* triangle_m@2x.png in Resources */,
 				FF06C5931A67DA1B002C0ADA /* Images.xcassets in Resources */,
 				FF8144581A553BA6003F4983 /* coins.json in Resources */,
 				FF81445E1A553BA6003F4983 /* triangle_down@2x.png in Resources */,
+				FFF11EA71A78BE1C003D42E7 /* ic_list@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +491,7 @@
 				FF8144531A553BA6003F4983 /* NumberView.m in Sources */,
 				FF0554BA1A710AFA0054D648 /* ChartViewController.m in Sources */,
 				FF06C5991A67FC1F002C0ADA /* MainViewController.m in Sources */,
+				FFDFABAE1A78A1F4001E4839 /* AAPullToRefresh.m in Sources */,
 				FF81444C1A553BA6003F4983 /* Coin.m in Sources */,
 				FF8144541A553BA6003F4983 /* SingleCoinSummary.m in Sources */,
 				FF06C58B1A67A2F4002C0ADA /* BBImageManager.m in Sources */,

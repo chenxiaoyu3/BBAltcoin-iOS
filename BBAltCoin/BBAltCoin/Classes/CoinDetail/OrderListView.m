@@ -35,6 +35,8 @@
     _totalPriceLabel.textColor = [[Theme curTheme] textColor1];
     _priceLabel.font = [UIFont systemFontOfSize:13];
     _totalPriceLabel.font = [UIFont systemFontOfSize:13];
+    _priceLabel.changeColorAutomatically = NO;
+    _totalPriceLabel.changeColorAutomatically = NO;
     self.backgroundColor = [UIColor clearColor];
 }
 -(void)setupLayout{

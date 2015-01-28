@@ -7,6 +7,12 @@
 //
 
 #import "NumberView.h"
+#import "Theme.h"
+
+@interface NumberView()
+@property (nonatomic) CGFloat lastNumber;
+
+@end
 
 @implementation NumberView
 
@@ -37,8 +43,11 @@
         make.width.equalTo(@0);
     }];
     
+    self.mainLabel.textColor = [[Theme curTheme] defTextColor];
+    self.leftLabel.textColor = [[Theme curTheme] defTextColor];
     self.leaveSymbolSpace = NO;
-    
+    self.lastNumber = -1;
+    self.changeColorAutomatically = YES;
 }
 
 - (void)updateConstraints{
@@ -69,12 +78,42 @@
     return self;
 }
 -(void)setNumber:(float)number{
+    
     _number = number;
     if (number > 1000) {
         self.mainLabel.text = [NSString stringWithFormat:@"%.1f", number];
     }else{
         self.mainLabel.text = [NSString stringWithFormat:@"%.3f", number];
     }
+    if(self.changeColorAutomatically && self.lastNumber >= 0){
+        if(self.lastNumber > number){
+            self.mainLabel.textColor = [[Theme curTheme] fallColor];;
+        }else if(self.lastNumber < number){
+            self.mainLabel.textColor = [[Theme curTheme] riseColor];
+        }else{
+            self.mainLabel.textColor = [[Theme curTheme] defTextColor];
+        }
+    }
+    self.lastNumber = number;
+}
+
+- (void)setNumber:(float)number andChangeColorAuto:(BOOL)changeColorAuto{
+    _number = number;
+    if (number > 1000) {
+        self.mainLabel.text = [NSString stringWithFormat:@"%.1f", number];
+    }else{
+        self.mainLabel.text = [NSString stringWithFormat:@"%.3f", number];
+    }
+    if(changeColorAuto && self.lastNumber >= 0){
+        if(self.lastNumber > number){
+            self.mainLabel.textColor = [[Theme curTheme] fallColor];;
+        }else if(self.lastNumber < number){
+            self.mainLabel.textColor = [[Theme curTheme] riseColor];
+        }else{
+            self.mainLabel.textColor = [[Theme curTheme] defTextColor];
+        }
+    }
+    self.lastNumber = number;
 }
 
 - (void)setShowSymbol:(BOOL)showSymbol{
@@ -110,14 +149,6 @@
 - (UIColor *)textColor{
     return self.mainLabel.textColor;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 
 
 @end
