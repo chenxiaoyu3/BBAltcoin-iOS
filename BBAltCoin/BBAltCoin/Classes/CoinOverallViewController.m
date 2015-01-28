@@ -36,15 +36,25 @@
     self.pullToRefresh.borderWidth = 1.5;
     self.pullToRefresh.activityIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     
+    
+
+    
+    
     [[BBImageManager manager] requestLOGO:[[DataCenter center] coinAbbrOfID:0] success:^(NSString *coin, UIImage *image) {
         self.pullToRefresh.imageIcon = [Utils imageWithImage:image scaledToSize:CGSizeMake(30, 30)];
     }];
     
+    for (CoinCell* cell in self.coinCells) {
+        UITapGestureRecognizer* cellTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTaped:)];
+        cell.userInteractionEnabled = YES;
+        [cell addGestureRecognizer:cellTap];
+    }
     
     [[DataCenter center] requestPrice];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [self judgeFirstLaunch];
     for ( CoinCell* cell in self.coinCells){
         [[DataCenter center] addDataObserver:cell];
     }
@@ -70,11 +80,8 @@
     [[UIImageView alloc] initWithImage:[Utils imageWithImage:[UIImage imageNamed:@"bg_main_5"] scaledToSize:self.view.frame.size]];
     ;
     self.coinCellsContainer = [[UIView alloc] init];
-    self.coinCellsContainer.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:imageView];
-    
 
-    
     _coinCells = [[NSMutableArray alloc] initWithCapacity:[DataCenter center].coinNum];
     for (int i = 0; i < [DataCenter center].coinNum; ++i) {
         CoinCell * cell = [[CoinCell alloc] init];
@@ -115,6 +122,7 @@
         ((UIView*)_coinCells[i]).mas_key = [NSString stringWithFormat:@"coinCells[%d,%@]", i, [[DataCenter center] coinAbbrOfID:i ]];
         
          _constraintsArray = [_coinCells[i] mas_remakeConstraints:^(MASConstraintMaker *make) {
+             make.height.equalTo(self.coinCells);
             if (curCol == 0) {
                 make.left.equalTo(self.coinCellsContainer.mas_left);
                 if (i < [DataCenter center].coinNum - 1 ) {
@@ -137,11 +145,15 @@
             }
             make.width.equalTo(self.coinCells);
         }];
-
+        
         
         lastCell = self.coinCells[i];
         
+        
     }
+    [lastCell makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.coinCellsContainer.bottom);
+    }];
     [self.scrollViewContainer makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.scrollView);
         make.height.equalTo(@(SCREEN_HEIGHT));
@@ -153,12 +165,12 @@
         make.left.equalTo(self.scrollViewContainer.left).offset(8);
         make.right.equalTo(self.scrollViewContainer.right).offset(-8);
         make.top.equalTo(self.scrollViewContainer.top).offset(0);
-        make.height.equalTo(@300);
+        make.height.equalTo(@250);
     }];
 //
     [self.scrollView makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.and.right.equalTo(self.view);
-        make.height.equalTo(@(400));
+        make.height.equalTo(@500);
     }];
 
 }
@@ -181,10 +193,41 @@
    
 }
 
+-(IBAction)cellTaped:(UITapGestureRecognizer*)sender{
+    CoinCell* cell = (CoinCell*)(sender.view);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(onCoinCellTaped:)]) {
+        [self.delegate onCoinCellTaped:cell.coinID];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) firstLaunchGuide{
+    UIImageView* v = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide"]];
+    [self.view addSubview:v];
+    [v makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    v.userInteractionEnabled = YES;
+    UIGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeGuide:)];
+    [v addGestureRecognizer:tap];
+}
+-(void) removeGuide:(UIGestureRecognizer*)sender{
+    [sender.view removeFromSuperview];
+}
+-(void) judgeFirstLaunch{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasGuided"]) {
+        // app already launched
+    }else{
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasGuided"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self firstLaunchGuide];
+    }
+}
+
 #pragma mark - DataCenterDelegate
 - (void)priceRequestCompletedWithStatus:(int)st{
     [self.pullToRefresh stopIndicatorAnimation];

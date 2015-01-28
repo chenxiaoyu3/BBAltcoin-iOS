@@ -21,3 +21,7 @@
 "CoinDetail" = "市场详情";
 
 "Back" = "返回";
+
+"ChartTime" = "小时线";
+"ChartMin" = "5分钟线";
+"ChartDay" = "日线";

@@ -25,15 +25,9 @@
         self.nameLabel.textColor = [UIColor whiteColor];
         self.nameLabel.textAlignment = NSTextAlignmentCenter;
         self.nameLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-        [self.nameLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-        //        self.nameLabel.backgroundColor = [UIColor yellowColor];
         
         self.priceLabel = [[NumberView alloc] init];
-//        self.priceLabel.text = @"100";
-//        self.priceLabel.textAlignment = NSTextAlignmentCenter;
         self.priceLabel.textColor = [UIColor whiteColor];
-//        [self.priceLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-//                self.priceLabel.backgroundColor = [UIColor yellowColor];
 
         self.triangleImageView = [[UIImageView alloc] initWithImage:[CoinCell triangleImageOfType:0]];
         
@@ -76,7 +70,7 @@
             make.right.equalTo(self.increaseLabel.mas_left).offset(-4);
             make.top.equalTo(bottomView);
             make.bottom.equalTo(bottomView);
-            make.height.width.equalTo(@7);
+            make.height.width.equalTo(@10);
         }];
         [self.increaseLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.triangleImageView.mas_right).offset(4);
@@ -95,7 +89,7 @@
 -(void) setCoinID:(int)coinID{
     _coinID = coinID;
     self.nameLabel.text = [[DataCenter center] coinNameOfID:coinID];
-    self.increaseLabel.text = [[DataCenter center] coinAbbrOfID:coinID];
+    self.increaseLabel.text = @"0.00%";
 }
 
 -(void)updateConstraints{
@@ -126,12 +120,15 @@
             if (self.lastNumber > number) {
                 self.triangleImageView.image = [CoinCell triangleImageOfType:-1];
                 self.increaseLabel.textColor = [BBTheme defTheme].fallColor;
+                self.increaseLabel.text = [NSString stringWithFormat:@"%.2f%%",100*(self.lastNumber - number)/self.lastNumber];
             }else if(self.lastNumber < number){
                 self.triangleImageView.image = [CoinCell triangleImageOfType:1];
                 self.increaseLabel.textColor = [BBTheme defTheme].riseColor;
+                self.increaseLabel.text = [NSString stringWithFormat:@"%.2f%%",100*(number - self.lastNumber)/self.lastNumber];
             }else{
                 self.triangleImageView.image = [CoinCell triangleImageOfType:0];
                 self.increaseLabel.textColor = [BBTheme whiteColor];
+                self.increaseLabel.text = @"0.00%";
             }
         }
         self.lastNumber = number;

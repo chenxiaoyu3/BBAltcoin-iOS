@@ -16,10 +16,10 @@
 		FF06C5961A67E88B002C0ADA /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF06C5951A67E88B002C0ADA /* LeftMenuViewController.m */; };
 		FF06C5991A67FC1F002C0ADA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF06C5981A67FC1F002C0ADA /* MainViewController.m */; };
 		FF1AD4CD1A63BB340066EA39 /* libBBStockChartLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */; };
+		FF6C27CC1A791195004F3EE1 /* guide.png in Resources */ = {isa = PBXBuildFile; fileRef = FF6C27CB1A791195004F3EE1 /* guide.png */; };
 		FF8143EE1A553B26003F4983 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8143ED1A553B26003F4983 /* main.m */; };
 		FF81440B1A553B26003F4983 /* BBAltcoinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81440A1A553B26003F4983 /* BBAltcoinTests.m */; };
 		FF8144471A553BA6003F4983 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144161A553BA6003F4983 /* AppDelegate.m */; };
-		FF81444A1A553BA6003F4983 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8144191A553BA6003F4983 /* LaunchScreen.xib */; };
 		FF81444C1A553BA6003F4983 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81441E1A553BA6003F4983 /* Coin.m */; };
 		FF81444D1A553BA6003F4983 /* CoinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144201A553BA6003F4983 /* CoinCell.m */; };
 		FF81444E1A553BA6003F4983 /* CoinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144231A553BA6003F4983 /* CoinDetailViewController.m */; };
@@ -74,6 +74,7 @@
 		FF06C5971A67FC1F002C0ADA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = BBAltCoin/Classes/MainViewController.h; sourceTree = SOURCE_ROOT; };
 		FF06C5981A67FC1F002C0ADA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = BBAltCoin/Classes/MainViewController.m; sourceTree = SOURCE_ROOT; };
 		FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBBStockChartLib.a; path = "../../BBStockChart/BBStockChartLib/build/Debug-iphoneos/libBBStockChartLib.a"; sourceTree = "<group>"; };
+		FF6C27CB1A791195004F3EE1 /* guide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide.png; sourceTree = "<group>"; };
 		FF8143E81A553B25003F4983 /* BBAltcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAltcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8143EC1A553B26003F4983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF8143ED1A553B26003F4983 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		FF81440A1A553B26003F4983 /* BBAltcoinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAltcoinTests.m; sourceTree = "<group>"; };
 		FF8144151A553BA6003F4983 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FF8144161A553BA6003F4983 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FF8144191A553BA6003F4983 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		FF81441D1A553BA6003F4983 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
 		FF81441E1A553BA6003F4983 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
 		FF81441F1A553BA6003F4983 /* CoinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinCell.h; sourceTree = "<group>"; };
@@ -236,7 +236,6 @@
 			children = (
 				FF8144151A553BA6003F4983 /* AppDelegate.h */,
 				FF8144161A553BA6003F4983 /* AppDelegate.m */,
-				FF8144191A553BA6003F4983 /* LaunchScreen.xib */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -321,6 +320,7 @@
 		FF81443E1A553BA6003F4983 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				FF6C27CB1A791195004F3EE1 /* guide.png */,
 				FFF11EA81A78C271003D42E7 /* refresh@2x.png */,
 				FFF11EA61A78BE1C003D42E7 /* ic_list@2x.png */,
 				FF06C5901A67D7AD002C0ADA /* splash@2x.png */,
@@ -420,12 +420,12 @@
 			files = (
 				FF81445C1A553BA6003F4983 /* BTC_logo.png in Resources */,
 				FF06C5911A67D7AD002C0ADA /* splash@2x.png in Resources */,
+				FF6C27CC1A791195004F3EE1 /* guide.png in Resources */,
 				FF81445B1A553BA6003F4983 /* bg_main_5.png in Resources */,
 				FFC04E921A5542E9001803A1 /* Localizable.strings in Resources */,
 				FF81445A1A553BA6003F4983 /* bg_main_4.png in Resources */,
 				FF8144601A553BA6003F4983 /* triangle_up@2x.png in Resources */,
 				FF81445D1A553BA6003F4983 /* LTC_logo.png in Resources */,
-				FF81444A1A553BA6003F4983 /* LaunchScreen.xib in Resources */,
 				FFF11EA91A78C271003D42E7 /* refresh@2x.png in Resources */,
 				FF81445F1A553BA6003F4983 /* triangle_m@2x.png in Resources */,
 				FF06C5931A67DA1B002C0ADA /* Images.xcassets in Resources */,
@@ -629,7 +629,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/**";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/** $(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/** $(BUILT_PRODUCTS_DIR)/**";
 			};
 			name = Debug;
 		};
@@ -646,7 +647,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/**";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/** $(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/** $(BUILT_PRODUCTS_DIR)/**";
 			};
 			name = Release;
 		};

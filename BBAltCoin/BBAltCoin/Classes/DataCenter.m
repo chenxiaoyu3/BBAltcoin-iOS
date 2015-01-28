@@ -141,7 +141,7 @@ NSString* const BTC38_K_1D = @"http://www.btc38.com/trade/getTradeDayLine.php?co
 - (void)requestChartDataOfCoin:(NSUInteger)coinID andType:(CoinChartType)type{
     NSString* url = nil;
     switch (type) {
-        case ChartTime:
+        case ChartHour:
             url = [NSString stringWithFormat:@"%@%@", BTC38_K_1H, [self coinAbbrOfID:coinID]];
             break;
         case ChartDay:

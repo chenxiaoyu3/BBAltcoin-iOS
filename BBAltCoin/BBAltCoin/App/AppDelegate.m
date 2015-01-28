@@ -31,7 +31,6 @@
 
     self.mainViewController = [[MainViewController alloc ] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    self.window.rootViewController = self.mainViewController;
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
     self.window.rootViewController = navController;
     
@@ -40,9 +39,6 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
     [self.window makeKeyAndVisible];
-    
-//    LeftMenuViewController* menuViewController = [[LeftMenuViewController alloc] init];
-//    [navController pushViewController:menuViewController animated:YES];
     
     return YES;
 }

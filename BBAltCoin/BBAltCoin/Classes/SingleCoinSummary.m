@@ -147,7 +147,7 @@
 
 - (void)chartDataRequestCompleted:(NSUInteger)coinID chartType:(CoinChartType)type withStatus:(int)st andData:(NSArray *)data{
     CGFloat vol = 0;
-    if (st == 0 && type == ChartTime && coinID == self.coinID) {
+    if (st == 0 && type == ChartHour && coinID == self.coinID) {
         for (NSArray* arr in data){
             vol += Float(arr[1]);
         }

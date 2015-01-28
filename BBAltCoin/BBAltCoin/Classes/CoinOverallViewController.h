@@ -10,6 +10,11 @@
 #import "AAPullToRefresh.h"
 #import "DataCenter.h"
 
+
+@protocol CoinOverallViewControllerDelegate <NSObject>
+-(void) onCoinCellTaped:(NSUInteger)coinID;
+@end
+
 @interface CoinOverallViewController : UIViewController<DataCenterDelegate>{
     NSArray* _constraintsArray;
 }
@@ -22,5 +27,6 @@
 @property (nonatomic, strong) UIView* scrollViewContainer;
 
 @property (nonatomic, strong) AAPullToRefresh* pullToRefresh;
+@property (nonatomic, strong) id<CoinOverallViewControllerDelegate> delegate;
 @end
 

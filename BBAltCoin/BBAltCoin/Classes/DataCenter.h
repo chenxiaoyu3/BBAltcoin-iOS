@@ -11,7 +11,7 @@
 #import "Coin.h"
 
 typedef enum {
-    ChartTime, ChartMin, ChartDay
+    ChartHour, ChartMin, ChartDay
 } CoinChartType;
 
 @protocol DataCenterDelegate <NSObject>

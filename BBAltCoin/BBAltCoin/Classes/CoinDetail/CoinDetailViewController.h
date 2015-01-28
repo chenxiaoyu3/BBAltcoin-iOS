@@ -12,8 +12,9 @@
 #import "Theme.h"
 #import "OrderListView.h"
 #import "BBChartView.h"
+#import "AAPullToRefresh.h"
 
-@interface CoinDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, DataCenterDelegate>
+@interface CoinDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, DataCenterDelegate, AxisXLabelProvider>
 
 @property (nonatomic) NSUInteger selectedCoinID;
 

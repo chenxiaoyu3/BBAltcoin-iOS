@@ -8,6 +8,7 @@
 
 #import "ChartViewController.h"
 #import "NavController.h"
+#import <Foundation/Foundation.h>
 
 @interface ChartViewController ()
 
@@ -26,16 +27,64 @@
     return self;
 }
 
+- (UIBarButtonItem*)btnForChartType:(CoinChartType)type{
+
+    NSString* ss = nil;
+    switch (type) {
+        case ChartDay:
+            ss = NSLocalizedString(@"ChartDay", nil);
+            break;
+        case ChartMin:
+            ss = NSLocalizedString(@"ChartMin", nil);
+            break;
+        case ChartHour:
+            ss = NSLocalizedString(@"ChartTime", nil);
+            break;
+        default:
+            break;
+    }
+    
+    UIBarButtonItem* ret = [[UIBarButtonItem alloc] initWithTitle:ss style:UIBarButtonItemStylePlain target:self action:@selector(chartTypeSelected:)];
+    ret.tag = type;
+    [ret setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} forState:UIControlStateNormal];
+    return ret;
+    
+}
+
+- (void)_initButtons{
+    UIBarButtonItem* btnTime = [self btnForChartType:ChartHour];
+    UIBarButtonItem* btnMin = [self btnForChartType:ChartMin];
+    UIBarButtonItem* btnDay = [self btnForChartType:ChartDay];
+    NSArray* array = [NSArray arrayWithObjects:btnTime, btnMin, btnDay, nil];
+    self.navigationItem.rightBarButtonItems = array;
+}
+
+- (IBAction)chartTypeSelected:(id)sender{
+    CoinChartType tt = (CoinChartType) ((UIBarButtonItem*)sender).tag;
+    self.chartType = tt;
+    [[DataCenter center] requestChartDataOfCoin:self.coinID andType:tt];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CGRect frame = self.view.frame;
-    self.chartView = [[BBChartView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-kNavigationBarHeight)];
+    self.chartView = [[BBChartView alloc] init];
     [self.view addSubview:self.chartView];
     
     self.title = [[DataCenter center] coinAbbrOfID:self.coinID];
+    [self _initButtons];
+    
+    [self.chartView makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+        make.width.equalTo(self.view.width);
+        make.height.equalTo(self.view.height);
+    }];
     
     [[DataCenter center] addDataObserver:self];
-    [[DataCenter center] requestChartDataOfCoin:self.coinID andType:ChartTime];
+    [[DataCenter center] requestChartDataOfCoin:self.coinID andType:ChartHour];
+}
+
+- (void)updateViewConstraints{
+    [super updateViewConstraints];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [[DataCenter center] removeDataObserver:self];
@@ -58,7 +107,9 @@
     [self.chartView reset];
     if (st == 0) {
         Area* areaup = [[Area alloc] init];
+        areaup.bottomAxis.labelProvider = self;
         Area* areadown = [[Area alloc] init];
+        areadown.bottomAxis.labelProvider = self;
         BarSeries* bar = [[BarSeries alloc] init];
         StockSeries* stock = [[StockSeries alloc] init];
         [areaup addSeries:stock];
@@ -75,6 +126,43 @@
 
 }
 
+
+
+#pragma mark - AxisXDataProvider
+- (NSString *)textForIdx:(NSUInteger)idx{
+//    NSLog(@"idx:%d",idx);
+    NSString* ret = nil;
+    int v = (int)idx;
+    NSDate* curDate = [NSDate date];
+    
+    NSDate* date = nil;
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    NSDateComponents* dateComponents = [[NSDateComponents alloc] init];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    if (v % 15 == 0) {
+        switch (self.chartType) {
+            case ChartDay:
+                [dateComponents setDay:v-90];
+                formatter.dateFormat = @"MM/dd";
+                break;
+            case ChartMin:
+                [dateComponents setMinute:(v- 90) * 5];
+                formatter.dateFormat = @"HH:mm";
+                break;
+            case ChartHour:
+                [dateComponents setHour:v-90];
+                formatter.dateFormat = @"MM/dd HH:00";
+                break;
+            default:
+                break;
+        }
+        date = [calendar dateByAddingComponents:dateComponents toDate:curDate options:0];
+        ret = [formatter stringFromDate:date];
+    }
+    
+    return ret;
+
+}
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft);
 }

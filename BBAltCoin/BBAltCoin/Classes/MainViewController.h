@@ -13,7 +13,7 @@
 #import "ECSlidingViewController.h"
 #import "NavController.h"
 
-@interface MainViewController : ECSlidingViewController<MenuDelegate>
+@interface MainViewController : ECSlidingViewController<MenuDelegate, CoinOverallViewControllerDelegate>
 
 @property (nonatomic) LeftMenuViewController* leftMenuViewController;
 @property (nonatomic) CoinDetailViewController* coinDetailViewController;

@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "DataCenter.h"
-#import "BBStockChart.h"
+#import "BBChartView.h"
+#import "Area.h"
+#import "Series.h"
+#import "BarSeries.h"
+#import "StockSeries.h"
+#import "BBTheme.h"
 
-@interface ChartViewController : UIViewController<DataCenterDelegate>
+@interface ChartViewController : UIViewController<DataCenterDelegate, AxisXLabelProvider>
 
 @property (nonatomic) NSUInteger coinID;
 @property (nonatomic) BBChartView* chartView;
+@property (nonatomic) CoinChartType chartType;
 
 - (instancetype)initWithCoin:(NSUInteger )coinID;
 @end

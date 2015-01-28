@@ -41,7 +41,7 @@
 
     self.navigationItem.leftBarButtonItem = menuBtn;
 
-
+    self.coinOverallViewController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +62,11 @@
     [self resetTopViewAnimated:YES];
 }
 
+#pragma mark - CoinOverallViewControllerDelegate
+- (void)onCoinCellTaped:(NSUInteger)coinID{
+    self.topViewController = self.coinDetailViewController;
+    self.coinDetailViewController.selectedCoinID = coinID;
+}
 /*
 #pragma mark - Navigation
 

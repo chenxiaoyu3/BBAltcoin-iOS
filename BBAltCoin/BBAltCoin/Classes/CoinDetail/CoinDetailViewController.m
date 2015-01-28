@@ -198,15 +198,17 @@
     
     [[DataCenter center] requestCoinDetail];
     self.title = NSLocalizedString(@"BBAltcoin", nil);
+    NSUInteger coinid = self.selectedCoinID;
     self.pullToRefresh = [self.rightDownScorllView addPullToRefreshPosition:AAPullToRefreshPositionTop ActionHandler:^(AAPullToRefresh *v) {
         [[DataCenter center] requestCoinDetail];
-        [[DataCenter center] requestChartDataOfCoin:_selectedCoinID andType:ChartTime];
+        [[DataCenter center] requestChartDataOfCoin:coinid andType:ChartHour];
     }];
     
     self.pullToRefresh.borderColor = [UIColor whiteColor];
     self.pullToRefresh.borderWidth = 1;
     self.pullToRefresh.activityIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     self.selectedCoinID = 0;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -230,7 +232,7 @@
     self.buyOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.buyOrder;
     self.sellOrdersView.orders = ((Coin*)[DataCenter center].coins[self.selectedCoinID]).detail.sellOrder;
     
-    [[DataCenter center] requestChartDataOfCoin:_selectedCoinID andType:ChartTime];
+    [[DataCenter center] requestChartDataOfCoin:_selectedCoinID andType:ChartHour];
     [[BBImageManager manager] requestLOGO:[[DataCenter center] coinAbbrOfID:self.selectedCoinID] success:^(NSString *coin, UIImage *image) {
         self.pullToRefresh.imageIcon = [Utils imageWithImage:image scaledToSize:CGSizeMake(15, 15)];
     }];
@@ -287,7 +289,9 @@
     if (st == 0) {
         
         Area* areaup = [[Area alloc] init];
+        areaup.bottomAxis.labelProvider = self;
         Area* areadown = [[Area alloc] init];
+        areadown.bottomAxis.labelProvider = self;
         BarSeries* bar = [[BarSeries alloc] init];
         StockSeries* stock = [[StockSeries alloc] init];
         [areaup addSeries:stock];
@@ -295,7 +299,6 @@
         int maxDataNum = 20;
         int cnt = 0;
         for (NSArray* arr in data) {
-//            NSLog(@"%f", Float(arr[0]));
             [bar addPoint:Float(arr[1])];
             [stock addPointOpen:Float(arr[2]) close:Float(arr[5]) low:Float(arr[4]) high:Float(arr[3])];
             if (cnt++ > maxDataNum) {
@@ -305,9 +308,26 @@
         [self.chartView addArea:areaup];
         [self.chartView addArea:areadown];
         [self.chartView setHeighRatio:0.3 forArea:areadown];
-        
         [self.chartView drawAnimated:YES];
     }
+}
+
+#pragma mark - AxisXDataProider
+
+- (NSString *)textForIdx:(NSUInteger)idx{
+    NSString* ret = nil;
+    if (idx % 10 == 0) {
+        int v = (int)idx;
+        NSDate* curDate = [NSDate date];
+        NSDateComponents* dateComponents = [[NSDateComponents alloc] init];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        [dateComponents setHour:v-90];
+        NSDate* date = [calendar dateByAddingComponents:dateComponents toDate:curDate options:0];
+        NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"MM/dd HH:00";
+        ret = [formatter stringFromDate:date];
+    }
+    return ret;
 }
 /*
 #pragma mark - Navigation
