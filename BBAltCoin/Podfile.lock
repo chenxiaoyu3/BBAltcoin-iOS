@@ -22,15 +22,18 @@ PODS:
     - AFNetworking/NSURLSession
   - ECSlidingViewController (2.0.3)
   - Masonry (0.6.0)
+  - UMengAnalytics-NO-IDFA (3.1.11)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - ECSlidingViewController (~> 2.0)
   - Masonry
+  - UMengAnalytics-NO-IDFA
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   ECSlidingViewController: e79fe856bfb1a99a39c995377a1943e50f7647eb
   Masonry: 0bc111d6902e3a55ff8423bcbdf7155261806547
+  UMengAnalytics-NO-IDFA: 9072529f7ac9d9b063eede39ad58661cbcd7c643
 
 COCOAPODS: 0.34.4

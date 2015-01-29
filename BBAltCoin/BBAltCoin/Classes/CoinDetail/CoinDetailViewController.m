@@ -9,7 +9,7 @@
 #import "CoinDetailViewController.h"
 #import "Utils.h"
 #import "CoinListTableViewCell.h"
-#import "BBStockChart.h"
+#import "BBChartView.h"
 #import "ChartViewController.h"
 #import "NavController.h"
 #import "BBImageManager.h"

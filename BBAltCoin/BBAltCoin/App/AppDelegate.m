@@ -13,6 +13,7 @@
 #import "LeftMenuViewController.h"
 #import "MainViewController.h"
 #import "NavController.h"
+#import "MobClick.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +28,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self judgeFirstLaunch];
     [DataCenter center];
-    
+    [MobClick startWithAppkey:@"54ca05b7fd98c5a0940009ca" reportPolicy:BATCH   channelId:nil];
 
     self.mainViewController = [[MainViewController alloc ] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -37,7 +38,6 @@
     [UINavigationBar appearance].barTintColor = UIColorFromHex(0x8c1c1c);
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-
     [self.window makeKeyAndVisible];
     
     return YES;

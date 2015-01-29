@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF8143E71A553B25003F4983"
-               BuildableName = "BBAltcoin.app"
-               BlueprintName = "BBAltcoin"
-               ReferencedContainer = "container:BBAltcoin.xcodeproj">
+               BuildableName = "bbaltcoin.app"
+               BlueprintName = "bbaltcoin"
+               ReferencedContainer = "container:bbaltcoin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF8144031A553B26003F4983"
-               BuildableName = "BBAltcoinTests.xctest"
-               BlueprintName = "BBAltcoinTests"
-               ReferencedContainer = "container:BBAltcoin.xcodeproj">
+               BuildableName = "bbaltcoin.temp_caseinsensitive_renameTests.xctest"
+               BlueprintName = "bbaltcoin.temp_caseinsensitive_renameTests"
+               ReferencedContainer = "container:bbaltcoin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF8144031A553B26003F4983"
-               BuildableName = "BBAltcoinTests.xctest"
-               BlueprintName = "BBAltcoinTests"
-               ReferencedContainer = "container:BBAltcoin.xcodeproj">
+               BuildableName = "bbaltcoin.temp_caseinsensitive_renameTests.xctest"
+               BlueprintName = "bbaltcoin.temp_caseinsensitive_renameTests"
+               ReferencedContainer = "container:bbaltcoin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF8143E71A553B25003F4983"
-            BuildableName = "BBAltcoin.app"
-            BlueprintName = "BBAltcoin"
-            ReferencedContainer = "container:BBAltcoin.xcodeproj">
+            BuildableName = "bbaltcoin.app"
+            BlueprintName = "bbaltcoin"
+            ReferencedContainer = "container:bbaltcoin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -82,7 +82,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES"
@@ -92,9 +92,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF8143E71A553B25003F4983"
-            BuildableName = "BBAltcoin.app"
-            BlueprintName = "BBAltcoin"
-            ReferencedContainer = "container:BBAltcoin.xcodeproj">
+            BuildableName = "bbaltcoin.app"
+            BlueprintName = "bbaltcoin"
+            ReferencedContainer = "container:bbaltcoin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -110,9 +110,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF8143E71A553B25003F4983"
-            BuildableName = "BBAltcoin.app"
-            BlueprintName = "BBAltcoin"
-            ReferencedContainer = "container:BBAltcoin.xcodeproj">
+            BuildableName = "bbaltcoin.app"
+            BlueprintName = "bbaltcoin"
+            ReferencedContainer = "container:bbaltcoin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

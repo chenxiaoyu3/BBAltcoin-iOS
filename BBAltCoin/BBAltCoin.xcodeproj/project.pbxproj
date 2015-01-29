@@ -15,8 +15,18 @@
 		FF06C5931A67DA1B002C0ADA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF06C5921A67DA1B002C0ADA /* Images.xcassets */; };
 		FF06C5961A67E88B002C0ADA /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF06C5951A67E88B002C0ADA /* LeftMenuViewController.m */; };
 		FF06C5991A67FC1F002C0ADA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF06C5981A67FC1F002C0ADA /* MainViewController.m */; };
-		FF1AD4CD1A63BB340066EA39 /* libBBStockChartLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */; };
 		FF6C27CC1A791195004F3EE1 /* guide.png in Resources */ = {isa = PBXBuildFile; fileRef = FF6C27CB1A791195004F3EE1 /* guide.png */; };
+		FF6EBF9B1A79231D0056B033 /* Area.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF841A79231D0056B033 /* Area.m */; };
+		FF6EBF9C1A79231D0056B033 /* AxisX.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF871A79231D0056B033 /* AxisX.m */; };
+		FF6EBF9D1A79231D0056B033 /* AxisY.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF891A79231D0056B033 /* AxisY.m */; };
+		FF6EBF9E1A79231D0056B033 /* BaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF8B1A79231D0056B033 /* BaseLayer.m */; };
+		FF6EBF9F1A79231D0056B033 /* BBChartUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF8D1A79231D0056B033 /* BBChartUtils.m */; };
+		FF6EBFA01A79231D0056B033 /* BBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF8F1A79231D0056B033 /* BBChartView.m */; };
+		FF6EBFA11A79231D0056B033 /* BBTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF911A79231D0056B033 /* BBTheme.m */; };
+		FF6EBFA21A79231D0056B033 /* BarSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF941A79231D0056B033 /* BarSeries.m */; };
+		FF6EBFA31A79231D0056B033 /* Series.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF961A79231D0056B033 /* Series.m */; };
+		FF6EBFA41A79231D0056B033 /* StockSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF981A79231D0056B033 /* StockSeries.m */; };
+		FF6EBFA51A79231D0056B033 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EBF9A1A79231D0056B033 /* ViewController.m */; };
 		FF8143EE1A553B26003F4983 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8143ED1A553B26003F4983 /* main.m */; };
 		FF81440B1A553B26003F4983 /* BBAltcoinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81440A1A553B26003F4983 /* BBAltcoinTests.m */; };
 		FF8144471A553BA6003F4983 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8144161A553BA6003F4983 /* AppDelegate.m */; };
@@ -73,12 +83,33 @@
 		FF06C5951A67E88B002C0ADA /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuViewController.m; path = BBAltCoin/Classes/LeftMenuViewController.m; sourceTree = SOURCE_ROOT; };
 		FF06C5971A67FC1F002C0ADA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = BBAltCoin/Classes/MainViewController.h; sourceTree = SOURCE_ROOT; };
 		FF06C5981A67FC1F002C0ADA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = BBAltCoin/Classes/MainViewController.m; sourceTree = SOURCE_ROOT; };
-		FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBBStockChartLib.a; path = "../../BBStockChart/BBStockChartLib/build/Debug-iphoneos/libBBStockChartLib.a"; sourceTree = "<group>"; };
 		FF6C27CB1A791195004F3EE1 /* guide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide.png; sourceTree = "<group>"; };
-		FF8143E81A553B25003F4983 /* BBAltcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAltcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF6EBF831A79231D0056B033 /* Area.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Area.h; sourceTree = "<group>"; };
+		FF6EBF841A79231D0056B033 /* Area.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Area.m; sourceTree = "<group>"; };
+		FF6EBF861A79231D0056B033 /* AxisX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisX.h; sourceTree = "<group>"; };
+		FF6EBF871A79231D0056B033 /* AxisX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisX.m; sourceTree = "<group>"; };
+		FF6EBF881A79231D0056B033 /* AxisY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisY.h; sourceTree = "<group>"; };
+		FF6EBF891A79231D0056B033 /* AxisY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisY.m; sourceTree = "<group>"; };
+		FF6EBF8A1A79231D0056B033 /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
+		FF6EBF8B1A79231D0056B033 /* BaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLayer.m; sourceTree = "<group>"; };
+		FF6EBF8C1A79231D0056B033 /* BBChartUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChartUtils.h; sourceTree = "<group>"; };
+		FF6EBF8D1A79231D0056B033 /* BBChartUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChartUtils.m; sourceTree = "<group>"; };
+		FF6EBF8E1A79231D0056B033 /* BBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChartView.h; sourceTree = "<group>"; };
+		FF6EBF8F1A79231D0056B033 /* BBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChartView.m; sourceTree = "<group>"; };
+		FF6EBF901A79231D0056B033 /* BBTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTheme.h; sourceTree = "<group>"; };
+		FF6EBF911A79231D0056B033 /* BBTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTheme.m; sourceTree = "<group>"; };
+		FF6EBF931A79231D0056B033 /* BarSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarSeries.h; sourceTree = "<group>"; };
+		FF6EBF941A79231D0056B033 /* BarSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarSeries.m; sourceTree = "<group>"; };
+		FF6EBF951A79231D0056B033 /* Series.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Series.h; sourceTree = "<group>"; };
+		FF6EBF961A79231D0056B033 /* Series.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Series.m; sourceTree = "<group>"; };
+		FF6EBF971A79231D0056B033 /* StockSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockSeries.h; sourceTree = "<group>"; };
+		FF6EBF981A79231D0056B033 /* StockSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockSeries.m; sourceTree = "<group>"; };
+		FF6EBF991A79231D0056B033 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FF6EBF9A1A79231D0056B033 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FF8143E81A553B25003F4983 /* bbaltcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbaltcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8143EC1A553B26003F4983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF8143ED1A553B26003F4983 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FF8144041A553B26003F4983 /* BBAltcoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBAltcoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF8144041A553B26003F4983 /* bbaltcoin.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bbaltcoin.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8144091A553B26003F4983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF81440A1A553B26003F4983 /* BBAltcoinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAltcoinTests.m; sourceTree = "<group>"; };
 		FF8144151A553BA6003F4983 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +149,7 @@
 		FF8144611A553D63003F4983 /* BBAltcoin.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAltcoin.pch; sourceTree = "<group>"; };
 		FFC04E951A5542F2001803A1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FFC04E961A55434A001803A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FFD8F42A1A7A1501006211A6 /* bbaltcoin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = bbaltcoin.entitlements; path = bbaltcoin/bbaltcoin.entitlements; sourceTree = "<group>"; };
 		FFDFABAC1A78A1F4001E4839 /* AAPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPullToRefresh.h; sourceTree = "<group>"; };
 		FFDFABAD1A78A1F4001E4839 /* AAPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPullToRefresh.m; sourceTree = "<group>"; };
 		FFF11EA61A78BE1C003D42E7 /* ic_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_list@2x.png"; sourceTree = "<group>"; };
@@ -129,7 +161,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF1AD4CD1A63BB340066EA39 /* libBBStockChartLib.a in Frameworks */,
 				BF455DE3FA1140CE71C3E726 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +188,6 @@
 		3B6DF724720AA59D520EADE3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FF1AD4CC1A63BB340066EA39 /* libBBStockChartLib.a */,
 				76DAE1FAAF8E3F69027A3CCD /* libPods.a */,
 			);
 			name = Frameworks;
@@ -173,9 +203,64 @@
 			path = BBAltCoin/Classes/BBImage;
 			sourceTree = SOURCE_ROOT;
 		};
+		FF6EBF811A79231D0056B033 /* BBStockChartLib */ = {
+			isa = PBXGroup;
+			children = (
+				FF6EBF821A79231D0056B033 /* Area */,
+				FF6EBF851A79231D0056B033 /* Axis */,
+				FF6EBF8A1A79231D0056B033 /* BaseLayer.h */,
+				FF6EBF8B1A79231D0056B033 /* BaseLayer.m */,
+				FF6EBF8C1A79231D0056B033 /* BBChartUtils.h */,
+				FF6EBF8D1A79231D0056B033 /* BBChartUtils.m */,
+				FF6EBF8E1A79231D0056B033 /* BBChartView.h */,
+				FF6EBF8F1A79231D0056B033 /* BBChartView.m */,
+				FF6EBF901A79231D0056B033 /* BBTheme.h */,
+				FF6EBF911A79231D0056B033 /* BBTheme.m */,
+				FF6EBF921A79231D0056B033 /* Series */,
+				FF6EBF991A79231D0056B033 /* ViewController.h */,
+				FF6EBF9A1A79231D0056B033 /* ViewController.m */,
+			);
+			path = BBStockChartLib;
+			sourceTree = "<group>";
+		};
+		FF6EBF821A79231D0056B033 /* Area */ = {
+			isa = PBXGroup;
+			children = (
+				FF6EBF831A79231D0056B033 /* Area.h */,
+				FF6EBF841A79231D0056B033 /* Area.m */,
+			);
+			path = Area;
+			sourceTree = "<group>";
+		};
+		FF6EBF851A79231D0056B033 /* Axis */ = {
+			isa = PBXGroup;
+			children = (
+				FF6EBF861A79231D0056B033 /* AxisX.h */,
+				FF6EBF871A79231D0056B033 /* AxisX.m */,
+				FF6EBF881A79231D0056B033 /* AxisY.h */,
+				FF6EBF891A79231D0056B033 /* AxisY.m */,
+			);
+			path = Axis;
+			sourceTree = "<group>";
+		};
+		FF6EBF921A79231D0056B033 /* Series */ = {
+			isa = PBXGroup;
+			children = (
+				FF6EBF931A79231D0056B033 /* BarSeries.h */,
+				FF6EBF941A79231D0056B033 /* BarSeries.m */,
+				FF6EBF951A79231D0056B033 /* Series.h */,
+				FF6EBF961A79231D0056B033 /* Series.m */,
+				FF6EBF971A79231D0056B033 /* StockSeries.h */,
+				FF6EBF981A79231D0056B033 /* StockSeries.m */,
+			);
+			path = Series;
+			sourceTree = "<group>";
+		};
 		FF8143DF1A553B25003F4983 = {
 			isa = PBXGroup;
 			children = (
+				FFD8F42A1A7A1501006211A6 /* bbaltcoin.entitlements */,
+				FF6EBF811A79231D0056B033 /* BBStockChartLib */,
 				FF8143EA1A553B25003F4983 /* BBAltcoin */,
 				FF8144071A553B26003F4983 /* BBAltcoinTests */,
 				FF8143E91A553B25003F4983 /* Products */,
@@ -187,8 +272,8 @@
 		FF8143E91A553B25003F4983 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF8143E81A553B25003F4983 /* BBAltcoin.app */,
-				FF8144041A553B26003F4983 /* BBAltcoinTests.xctest */,
+				FF8143E81A553B25003F4983 /* bbaltcoin.app */,
+				FF8144041A553B26003F4983 /* bbaltcoin.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -338,9 +423,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FF8143E71A553B25003F4983 /* BBAltcoin */ = {
+		FF8143E71A553B25003F4983 /* bbaltcoin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF81440E1A553B26003F4983 /* Build configuration list for PBXNativeTarget "BBAltcoin" */;
+			buildConfigurationList = FF81440E1A553B26003F4983 /* Build configuration list for PBXNativeTarget "bbaltcoin" */;
 			buildPhases = (
 				D5CF27FF98E0A8E9608FB588 /* Check Pods Manifest.lock */,
 				FF8143E41A553B25003F4983 /* Sources */,
@@ -352,14 +437,14 @@
 			);
 			dependencies = (
 			);
-			name = BBAltcoin;
+			name = bbaltcoin;
 			productName = BBAltcoin;
-			productReference = FF8143E81A553B25003F4983 /* BBAltcoin.app */;
+			productReference = FF8143E81A553B25003F4983 /* bbaltcoin.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FF8144031A553B26003F4983 /* BBAltcoinTests */ = {
+		FF8144031A553B26003F4983 /* bbaltcoin.temp_caseinsensitive_renameTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF8144111A553B26003F4983 /* Build configuration list for PBXNativeTarget "BBAltcoinTests" */;
+			buildConfigurationList = FF8144111A553B26003F4983 /* Build configuration list for PBXNativeTarget "bbaltcoin.temp_caseinsensitive_renameTests" */;
 			buildPhases = (
 				FF8144001A553B26003F4983 /* Sources */,
 				FF8144011A553B26003F4983 /* Frameworks */,
@@ -370,9 +455,9 @@
 			dependencies = (
 				FF8144061A553B26003F4983 /* PBXTargetDependency */,
 			);
-			name = BBAltcoinTests;
+			name = bbaltcoin.temp_caseinsensitive_renameTests;
 			productName = BBAltcoinTests;
-			productReference = FF8144041A553B26003F4983 /* BBAltcoinTests.xctest */;
+			productReference = FF8144041A553B26003F4983 /* bbaltcoin.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -387,6 +472,14 @@
 					FF8143E71A553B25003F4983 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = JT5K9NWG8Q;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					FF8144031A553B26003F4983 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -394,7 +487,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FF8143E31A553B25003F4983 /* Build configuration list for PBXProject "BBAltcoin" */;
+			buildConfigurationList = FF8143E31A553B25003F4983 /* Build configuration list for PBXProject "bbaltcoin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -407,8 +500,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FF8143E71A553B25003F4983 /* BBAltcoin */,
-				FF8144031A553B26003F4983 /* BBAltcoinTests */,
+				FF8143E71A553B25003F4983 /* bbaltcoin */,
+				FF8144031A553B26003F4983 /* bbaltcoin.temp_caseinsensitive_renameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -482,10 +575,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6EBF9F1A79231D0056B033 /* BBChartUtils.m in Sources */,
+				FF6EBF9B1A79231D0056B033 /* Area.m in Sources */,
+				FF6EBFA21A79231D0056B033 /* BarSeries.m in Sources */,
 				FF81444E1A553BA6003F4983 /* CoinDetailViewController.m in Sources */,
 				FF8144471A553BA6003F4983 /* AppDelegate.m in Sources */,
 				FF06C5961A67E88B002C0ADA /* LeftMenuViewController.m in Sources */,
 				FF81444F1A553BA6003F4983 /* CoinListTableViewCell.m in Sources */,
+				FF6EBF9C1A79231D0056B033 /* AxisX.m in Sources */,
+				FF6EBF9E1A79231D0056B033 /* BaseLayer.m in Sources */,
+				FF6EBF9D1A79231D0056B033 /* AxisY.m in Sources */,
+				FF6EBFA31A79231D0056B033 /* Series.m in Sources */,
+				FF6EBFA01A79231D0056B033 /* BBChartView.m in Sources */,
 				FF8144511A553BA6003F4983 /* CoinModel.xcdatamodeld in Sources */,
 				FF8144561A553BA6003F4983 /* Utils.m in Sources */,
 				FF8144531A553BA6003F4983 /* NumberView.m in Sources */,
@@ -498,10 +599,13 @@
 				FF8144571A553BA6003F4983 /* CoinOverallViewController.m in Sources */,
 				FF0554BD1A71101E0054D648 /* NavController.m in Sources */,
 				FF8144521A553BA6003F4983 /* DataCenter.m in Sources */,
+				FF6EBFA51A79231D0056B033 /* ViewController.m in Sources */,
 				FF8144551A553BA6003F4983 /* Theme.m in Sources */,
+				FF6EBFA11A79231D0056B033 /* BBTheme.m in Sources */,
 				FF8144501A553BA6003F4983 /* OrderListView.m in Sources */,
 				FF81444D1A553BA6003F4983 /* CoinCell.m in Sources */,
 				FF8143EE1A553B26003F4983 /* main.m in Sources */,
+				FF6EBFA41A79231D0056B033 /* StockSeries.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +622,7 @@
 /* Begin PBXTargetDependency section */
 		FF8144061A553B26003F4983 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FF8143E71A553B25003F4983 /* BBAltcoin */;
+			target = FF8143E71A553B25003F4983 /* bbaltcoin */;
 			targetProxy = FF8144051A553B26003F4983 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -576,6 +680,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/**";
 			};
 			name = Debug;
 		};
@@ -596,7 +701,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -611,7 +716,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -624,11 +731,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = BBAltcoin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = bbaltcoin;
+				PROVISIONING_PROFILE = "2ab5973b-101b-4445-876e-872fd061cfd6";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/** $(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/** $(BUILT_PRODUCTS_DIR)/**";
 			};
@@ -642,11 +751,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = BBAltcoin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = bbaltcoin;
+				PROVISIONING_PROFILE = "2ab5973b-101b-4445-876e-872fd061cfd6";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/** $(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/** $(BUILT_PRODUCTS_DIR)/**";
 			};
@@ -667,7 +779,7 @@
 				);
 				INFOPLIST_FILE = BBAltcoinTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = bbaltcoin.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBAltcoin.app/BBAltcoin";
 			};
 			name = Debug;
@@ -683,7 +795,7 @@
 				);
 				INFOPLIST_FILE = BBAltcoinTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = bbaltcoin.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBAltcoin.app/BBAltcoin";
 			};
 			name = Release;
@@ -691,7 +803,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF8143E31A553B25003F4983 /* Build configuration list for PBXProject "BBAltcoin" */ = {
+		FF8143E31A553B25003F4983 /* Build configuration list for PBXProject "bbaltcoin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF81440C1A553B26003F4983 /* Debug */,
@@ -700,7 +812,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF81440E1A553B26003F4983 /* Build configuration list for PBXNativeTarget "BBAltcoin" */ = {
+		FF81440E1A553B26003F4983 /* Build configuration list for PBXNativeTarget "bbaltcoin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF81440F1A553B26003F4983 /* Debug */,
@@ -709,7 +821,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF8144111A553B26003F4983 /* Build configuration list for PBXNativeTarget "BBAltcoinTests" */ = {
+		FF8144111A553B26003F4983 /* Build configuration list for PBXNativeTarget "bbaltcoin.temp_caseinsensitive_renameTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF8144121A553B26003F4983 /* Debug */,

@@ -2,10 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../BBStockChart/BBStockChartLib/BBStockChartLib.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:BBAltcoin.xcodeproj">
+      location = "group:bbaltcoin.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
